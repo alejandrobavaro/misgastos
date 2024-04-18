@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Gasto</title>
+    <link rel="stylesheet" href="./css/estilo.css">
+</head>
+<body>
+    <body>
+
+<div class="">
+    <img class="container1" src="./img/02-logos/logomisgastos1 (2).png" alt="">
+</div>
+
+
+
+
+
+        <div class="container">
+            <h1>Gestor de Gastos</h1>
+            <h2>Mis Gastos</h2>
+            <hr>
+            <form id="expense-form">
+                <input type="text" id="expense-name" placeholder="Nombre del gasto" required>
+                <input type="number" id="expense-amount" placeholder="Monto" required>
+                <input type="date" id="expense-due-date" required>
+                <label for="expense-paid">¿Pagado?</label>
+                <input type="checkbox" id="expense-paid">
+                <hr>
+                <button type="submit">Agregar Gasto</button>
+                <hr>
+            </form>
+            <div id="expense-list">
+                <table id="expense-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Monto</th>
+                            <th>Vencimiento</th>
+                            <th>Pagado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí se mostrarán los gastos ingresados -->
+                    </tbody>
+                </table>
+                <p id="total-expenses">Total: $0</p>
+            </div>
+        </div>
+    </body>
+    
+
+
+    <script src="misgastos-1.js"></script>
+</body>
+</html>

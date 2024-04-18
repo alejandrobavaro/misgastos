@@ -1,0 +1,76 @@
+/* Estilos para el cuerpo de la página */
+body {}
+
+html {
+  font-size: 100%;
+  margin-top: 0;
+}
+
+body {
+  background-color: #641717;
+  background-image: url(../img/00-fondos/fondo2.jpg);
+  /* Ruta de tu imagen */
+  background-size: cover;
+  /* Ajusta el tamaño de la imagen para cubrir todo el encabezado */
+  opacity: 0.8;
+  /* Opacidad de la imagen (0.0 - 1.0) */
+    background-repeat: repeat;
+  /* Evita que la imagen se repita */
+ 
+  /* Otros estilos que desees aplicar al contenedor */
+  font-family: Arial, sans-serif;
+  content: "bannerpng1";
+  /* Crea un pseudo-elemento antes del contenido del encabezado */
+  position: absolute;
+  /* Posición absoluta para que se superponga detrás del contenido */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: #a62d2d;
+}
+
+
+a {
+  color: rgba(252, 248, 230, 0.857);
+  /* Color de texto */
+  text-decoration: none;
+
+}
+
+.container {
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgb(222, 143, 143);
+}
+
+.container1 {
+  max-width: 600px;
+  margin: 0px auto;
+  padding: 20px;
+  background-color: #3d0808;
+  // background-image: url(../img/00-fondos/fondo3.jpg);
+  border-radius: 20px;
+  //border: 10px rgb(131, 53, 53) solid;
+  box-shadow: 0 0 102px rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+p {
+  color: rgb(241, 225, 192);
+  /* Color de texto */
+  font-size: medium;
+  /* Tamaño de fuente */
+}
+
+
+h1 {
+  text-align: center;
+  color: #333;
+}

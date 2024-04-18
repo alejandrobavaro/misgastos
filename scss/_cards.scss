@@ -1,0 +1,55 @@
+
+.card {
+    text-align: justify;
+    background: rgba(27, 140, 130, 0.039);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    }
+
+
+.card3 {
+    text-align: center;
+}
+
+.card4 {
+    background: transparent;
+    border-radius: 20px;
+    font-size: xx-small;
+    padding: 10px;
+    // border: 1px rgba(0, 255, 255, 0.419) solid;
+}
+
+.card-title {
+    color: rgba(249, 246, 156, 0.627);
+    text-transform: uppercase;
+    font-size: xx-small;
+    text-align: center;
+}
+
+.card-title2 {
+    text-transform: normal;
+    font-size: small;
+    text-align: center;
+}
+
+
+  .card-body {
+    padding: 10px;
+  }
+
+  .card-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+  }
+
+.bannerCarrusel1 {
+    margin-right: 0;
+}
+
+.tarjetaGaleria1 {
+    border-radius: 20px;
+}
+
+
+
