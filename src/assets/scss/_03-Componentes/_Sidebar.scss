@@ -1,0 +1,43 @@
+// src/assets/scss/_03-Componentes/_Sidebar.scss
+
+.sidebar {
+    // Estilos para el contenedor del Sidebar
+    width: 250px;
+    background-color: transparent;
+    padding: 20px;
+    border-right: 10px solid #5e5e5e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.575);
+    
+    h2 {
+      font-size: 1.2rem;
+      color: #ffe882;
+      margin-bottom: 10px;
+    }
+  
+
+    
+    ul {
+      list-style: none;
+      padding: 0;
+  
+      li {
+        margin: 5px 0;
+        color: #ffffff;
+        
+        // Estilos para los enlaces dentro del Sidebar
+        a {
+          text-decoration: none;
+          color: #ffffff;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      
+      hr {
+        margin: 10px 0;
+      }
+    }
+  }
+  

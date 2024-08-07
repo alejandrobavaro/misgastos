@@ -1,5 +1,5 @@
 import React from "react";
-import "../assets/scss/_03-Componentes/_Footer.scss"; // Importa los estilos específicos del Footer
+import "../assets/scss/_03-Componentes/_Footer.scss"; 
 
 function Footer() {
   return (

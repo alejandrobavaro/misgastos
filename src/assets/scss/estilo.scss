@@ -1,51 +1,50 @@
 /*---------------------SASS A CSS------------------------*/
-
 @import "./_01-General/BodyIndexApp";
-
-@import "./_01-General/AlertsModalsMsjs";
-
 @import "./_01-General/SweetAlert";
-
-
-
+@import "./_01-General/Toastify";
 
 //----------DISEÑO GRAL------------//
-
+// @import "./_02-Diseño/Alineacion";
+// @import "./_02-Diseño/Animaciones";
+// @import "./_02-Diseño/Botones";
+// @import "./_02-Diseño/Cards";
+// @import "./_02-Diseño/GridEstructuras";
+// @import "./_02-Diseño/Imagenes";
+// @import "./_02-Diseño/PublicidadSliders";
 // @import "./_02-Diseño/Responsive";
-
 // @import "./_02-Diseño/Textos";
 
-// @import "./_02-Diseño/Imagenes";
-
-// @import "./_02-Diseño/PublicidadSliders";
-
-// @import "./_02-Diseño/Alineacion";
-
-// @import "./_02-Diseño/GridEstructuras";
-
-// @import "./_02-Diseño/Animaciones";
-
-// @import "./_02-Diseño/Cards";
-
-// @import "./_02-Diseño/Botones";
-
-
 //----------COMPONENTES------------------------//
-
-
-
-@import "./_03-Componentes/Contacto";
-
-@import "./_03-Componentes/Footer";
-
-@import "./_03-Componentes/Header";
-
-@import "./_03-Componentes/_MainPublicidadSlider";
-
+//----------------Main------------//
+@import "./_03-Componentes/MainPublicidadSlider";
 @import "./_03-Componentes/MainContent";
 
+@import "./_03-Componentes/MainEmpresasListado";
 
+//----------------Header------------//
+@import "./_03-Componentes/Header";
 
+@import "./_03-Componentes/Contacto";
+@import "./_03-Componentes/Totales";
+@import "./_03-Componentes/Cobranza";
+@import "./_03-Componentes/Data";
 @import "./_03-Componentes/SesionLoginRegister";
 
+
+//----------------Sidebar------------//
+@import "./_03-Componentes/Sidebar";
+
+@import "./_03-Componentes/Ayuda.scss";
+@import "./_03-Componentes/Cobranza.scss";
+@import "./_03-Componentes/Comprobantes.scss";
+@import "./_03-Componentes/Data.scss";
+@import "./_03-Componentes/Pagados.scss";
+@import "./_03-Componentes/PorPagar.scss";
+@import "./_03-Componentes/SaldosYDisponibles.scss";
+@import "./_03-Componentes/Totales.scss";
+@import "./_03-Componentes/Vencimientos.scss";
+
+
+//----------------Footer------------//
+@import "./_03-Componentes/Footer";
 

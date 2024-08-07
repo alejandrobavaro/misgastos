@@ -4,97 +4,42 @@ import { useAuth } from "./SesionAuthContext";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../assets/scss/_03-Componentes/_Header.scss";
 
+// Aquí definimos el componente Header
 const Header = ({ searchQuery, setSearchQuery }) => {
   const location = useLocation();
   const { state, dispatch } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Función para alternar el menú móvil
   const handleToggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  // Función para cerrar el menú móvil
   const handleCloseMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
 
+  // Determinamos si se debe mostrar la barra de búsqueda
   const shouldShowSearchBar =
     location.pathname === "/tienda" || location.pathname === "/musica";
 
   return (
     <header className="header">
-      <div className="containerHeader">
-        <div className="header-topHeader">
-          <div className="logo-and-search">
+      <div className="header-container">
+        <div className="logo-column">
+          <Link to="/" onClick={handleCloseMobileMenu}>
             <img
               src="/img/02-logos/logomisgastos1.png"
               alt="Logo"
               className="logoHeader"
             />
-            <div className="search-bar-containerHeader">
-              {shouldShowSearchBar && (
-                <>
-                  <input
-                    type="text"
-                    placeholder={
-                      location.pathname === "/tienda"
-                        ? "Buscar productos"
-                        : "Buscar canciones"
-                    }
-                    className="search-barHeader"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                  />
-                  <button className="search-buttonHeader d-md-none">
-                    <i className="bi bi-search"></i>
-                  </button>
-                </>
-              )}
-            </div>
-            <div className="auth-buttons-container-destop">
-              {state.isAuthenticated ? (
-                <Link
-                  className="nav-linkHeader"
-                  to="/logout"
-                  onClick={() => {
-                    dispatch({ type: "LOGOUT" });
-                    handleCloseMobileMenu();
-                  }}
-                >
-                  <h2 className="textoMenu">Cerrar Sesión</h2>
-                </Link>
-              ) : (
-                <>
-                  <Link
-                    className="nav-linkHeader"
-                    to="/login"
-                    onClick={handleCloseMobileMenu}
-                  >
-                    <h3 className="textoMenu">Inicia Sesión</h3>
-                  </Link>
-                  <Link
-                    className="nav-linkHeader"
-                    to="/register"
-                    onClick={handleCloseMobileMenu}
-                  >
-                    <h3 className="textoMenu2">Regístrate</h3>
-                  </Link>
-                </>
-              )}
-            </div>
-          </div>
-          <button
-            className="navbar-togglerHeader"
-            type="button"
-            aria-label="Toggle navigation"
-            onClick={handleToggleMobileMenu}
-          >
-            <i className="bi bi-list"></i>
-          </button>
+          </Link>
         </div>
         <nav className={`navbarHeader ${isMobileMenuOpen ? "open" : ""}`}>
           <div className="navbar-navHeader">
             <Link
-              className="nav-linkHeader"
+              className="nav-linkHeader home-link"
               to="/"
               onClick={handleCloseMobileMenu}
             >
@@ -102,21 +47,21 @@ const Header = ({ searchQuery, setSearchQuery }) => {
             </Link>
             <Link
               className="nav-linkHeader"
-              to="/musica"
+              to="/totales" // Enlace actualizado
               onClick={handleCloseMobileMenu}
             >
-              <h2 className="textoMenu">GASTOS</h2>
+              <h2 className="textoMenu">TOTALES</h2>
             </Link>
             <Link
               className="nav-linkHeader"
-              to="/tienda"
+              to="/cobranza"
               onClick={handleCloseMobileMenu}
             >
               <h2 className="textoMenu">COBRANZA</h2>
             </Link>
             <Link
               className="nav-linkHeader"
-              to="/tienda"
+              to="/data"
               onClick={handleCloseMobileMenu}
             >
               <h2 className="textoMenu">DATA</h2>
@@ -130,6 +75,37 @@ const Header = ({ searchQuery, setSearchQuery }) => {
             </Link>
           </div>
         </nav>
+        <div className="auth-buttons-column">
+          {state.isAuthenticated ? (
+            <Link
+              className="nav-linkHeader"
+              to="/logout"
+              onClick={() => {
+                dispatch({ type: "LOGOUT" });
+                handleCloseMobileMenu();
+              }}
+            >
+              <h2 className="textoMenu">Cerrar Sesión</h2>
+            </Link>
+          ) : (
+            <>
+              <Link
+                className="nav-linkHeader"
+                to="/login"
+                onClick={handleCloseMobileMenu}
+              >
+                <h3 className="textoMenu">Inicia Sesión</h3>
+              </Link>
+              <Link
+                className="nav-linkHeader"
+                to="/register"
+                onClick={handleCloseMobileMenu}
+              >
+                <h3 className="textoMenu2">Regístrate</h3>
+              </Link>
+            </>
+          )}
+        </div>
       </div>
     </header>
   );

@@ -27,7 +27,7 @@ const Login = () => {
         <LoadingSpinner />
       ) : (
         <div className="auth-content">
-          <img className='auth-image top-image' src="/img/05-img-costados-larga/2.png" alt="" />
+          <img className='auth-image top-image' src="/img/05-img-costados-larga/3.png" alt="" />
           <form onSubmit={handleLogin} className="auth-form">
             <h2>Login</h2>
             <input
@@ -44,7 +44,7 @@ const Login = () => {
             />
             <button type="submit">Login</button>
           </form>
-          <img className='auth-image bottom-image' src="/img/05-img-costados-larga/20.png" alt="" />
+          <img className='auth-image bottom-image' src="/img/05-img-costados-larga/4.png" alt="" />
         </div>
       )}
     </div>

@@ -18,25 +18,45 @@ html {
 
 
 body {
-  background-color: rgb(95, 35, 35);
+  background-color: rgb(107, 15, 15);
   // background-repeat: repeat;
   // background-position: center;
   // background-size: cover;
   // background-attachment: fixed;
-  font-family: "Montserrat Alternates", sans-serif;
   // overflow-x: hidden; 
-}
+  font-family: "Arsenal SC", sans-serif;
+  //  font-family: "Gupter", serif;
+    }
+
+
+    .app {
+      font-family: 'Arial, sans-serif';
+      background-color: #f5f5f5;
+      padding: 2em;
+    }
+    
+    .main-content {
+      display: flex;
+      gap: 2em;
+    }
+    
+    .content {
+      flex-grow: 1;
+    }
+    
+
+
 
 //-----ESTILOS GENERALES P-H1/H6----------//
 p {
   color: rgb(220, 169, 136); // Color del texto de los párrafos.
-  font-size: small; // Tamaño de fuente pequeño.
+  font-size: medium; // Tamaño de fuente pequeño.
   padding: 20px;
 }
 
 h1 {
   color: rgb(255, 255, 255); // Color del texto de los encabezados de nivel 1.
-  font-size: x-large; // Tamaño de fuente extra grande.
+  font-size: xx-large; // Tamaño de fuente extra grande.
 }
 
 h2 {
@@ -79,12 +99,12 @@ td {
 //---------------ESTILOS LINKS ENLACES---------------------//
 a {
   &:link {
-    color: rgb(255, 179, 0);
+    color: rgb(255, 255, 255);
     text-decoration: none; // Sin subrayado para los enlaces.
      }
 
   &:visited {
-    color: rgba(255, 221, 0, 0.887);
+    color: rgba(255, 255, 255, 0.887);
     text-decoration: none; // Sin subrayado para los enlaces visitados.
   }
 

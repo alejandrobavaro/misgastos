@@ -19,7 +19,7 @@ const MainPublicidadSlider = () => {
     };
 
     fetchProductos();
-  }, []); // Se ejecuta una vez al montar el componente
+  }, []); 
 
   const settings = {
     dots: false,
@@ -66,7 +66,7 @@ const MainPublicidadSlider = () => {
             </Slider>
           </div>
         </div>
-        <h3 className="tituloImportante3">OFERTAS EN CAMISETAS</h3>
+        <h3 className="tituloImportante3">INVERTI EN VOS</h3>
         <div className="gridPadreProductos1">
           {productos.map((producto) => (
             <img
