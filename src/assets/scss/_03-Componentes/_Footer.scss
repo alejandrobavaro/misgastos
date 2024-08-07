@@ -1,0 +1,138 @@
+footer {
+  border-radius: 30px;
+  color: rgb(255, 222, 253);
+  width: 100%; // Asegura que el footer ocupe todo el ancho disponible
+}
+
+.gridPadreFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1080px; // Limita el ancho máximo del contenedor del footer
+  padding: 50px;
+  // box-shadow: 0 0 40px rgba(255, 0, 140, 0.467);
+  margin: 0 auto;
+}
+
+.footerContentFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%; // Asegura que el contenido ocupe todo el ancho del contenedor
+}
+
+.ElementsFooter {
+  display: flex;
+  justify-content: space-between; // Distribuye las columnas con espacio entre ellas
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px; // Añadimos un margen inferior para separar las filas
+}
+
+.columnaFooter {
+  flex: 1; // Cada columna ocupa el mismo ancho
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagenPublicidadFooter2 {
+ 
+  transition: transform 0.3s ease;
+  border-radius: 50px;
+  padding: 0;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.imgFooter1 {
+  height: auto;
+  width: 100%; // Ajusta el ancho de las imágenes
+  padding: 20px;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.imagenFooter1{
+  width: 60%;
+}
+
+.dividerFooter {
+  border: 2px solid rgba(255, 0, 170, 0.613);
+  border-top: 1px solid rgba(208, 0, 255, 0.635);
+  box-shadow: 0 0 10px rgb(255, 0, 140);
+  // border-radius: 50px;
+  width: 100%;
+}
+
+.trademarkFooter {
+  text-align: center;
+  margin-top: 0px;
+  padding: 0px;
+}
+
+.linksFooter {
+  display: flex;
+  flex-direction: column; // Cambiar a columna para pantallas pequeñas
+  justify-content: center;
+  margin: 0;
+}
+
+.linksFooter div {
+  list-style: none;
+  margin-bottom: 10px; // Añadir margen inferior para separar los enlaces
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-1px);
+  }
+  50% {
+    transform: translateX(1px);
+  }
+  75% {
+    transform: translateX(-1px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.tituloImportanteFooter4 {
+  font-size: small;
+
+  a {
+    color: inherit; /* Asegura que el color del enlace herede el color del contenedor */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    cursor: pointer; /* Asegura que el cursor se convierta en una mano al pasar sobre el enlace */
+  }
+}
+
+.textoMovimientoFooter {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    animation: shake 0.5s ease;
+  }
+}
+
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .ElementsFooter {
+    flex-direction: column; // Cambia a columna para pantallas pequeñas
+    align-items: center;
+  }
+
+  .columnaFooter {
+    margin-bottom: 20px; // Añade margen inferior entre columnas en pantallas pequeñas
+  }
+}

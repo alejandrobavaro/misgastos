@@ -1,0 +1,94 @@
+/* Añadir un reset CSS básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%; // Establece el tamaño de fuente base.
+  margin-top: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // overflow-x: hidden; // Ocultar desbordamiento horizontal.
+}
+
+//--------------ESTILOS BODY--------------------//
+
+
+body {
+  background-color: rgb(95, 35, 35);
+  // background-repeat: repeat;
+  // background-position: center;
+  // background-size: cover;
+  // background-attachment: fixed;
+  font-family: "Montserrat Alternates", sans-serif;
+  // overflow-x: hidden; 
+}
+
+//-----ESTILOS GENERALES P-H1/H6----------//
+p {
+  color: rgb(220, 169, 136); // Color del texto de los párrafos.
+  font-size: small; // Tamaño de fuente pequeño.
+  padding: 20px;
+}
+
+h1 {
+  color: rgb(255, 255, 255); // Color del texto de los encabezados de nivel 1.
+  font-size: x-large; // Tamaño de fuente extra grande.
+}
+
+h2 {
+  color: rgb(255, 218, 252); // Color del texto de los encabezados de nivel 2.
+  font-size: large; // Tamaño de fuente grande.
+}
+
+h3 {
+  color: rgb(224, 205, 190); // Color del texto de los encabezados de nivel 3.
+  font-size: medium; // Tamaño de fuente mediano.
+}
+
+h4 {
+  color: #ecd6af; // Color del texto de los encabezados de nivel 4.
+  font-size: small; // Tamaño de fuente pequeño.
+}
+
+h5 {
+  color: rgba(240, 203, 175, 0.834); // Color del texto de los encabezados de nivel 5.
+  font-size: x-small; // Tamaño de fuente extra pequeño.
+}
+
+h6 {
+  font-size: xx-small; // Tamaño de fuente extra extra pequeño.
+}
+
+//---------------ESTILOS LISTAS---------------------//
+li {
+  list-style-type: none; // Elimina los puntos de las listas.
+}
+
+ol {
+  list-style-type: circle; // Establece el tipo de lista ordenada con círculos.
+}
+
+td {
+  color: white; // Color del texto en las celdas de tabla.
+}
+
+//---------------ESTILOS LINKS ENLACES---------------------//
+a {
+  &:link {
+    color: rgb(255, 179, 0);
+    text-decoration: none; // Sin subrayado para los enlaces.
+     }
+
+  &:visited {
+    color: rgba(255, 221, 0, 0.887);
+    text-decoration: none; // Sin subrayado para los enlaces visitados.
+  }
+
+  &:hover {
+    animation: shake 0.5s ease; // Animación de sacudida al pasar el cursor sobre los enlaces.
+  }
+}

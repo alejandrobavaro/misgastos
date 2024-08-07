@@ -1,0 +1,138 @@
+.gridPadreContacto1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // Ajusta el tamaño mínimo
+  justify-content: center;
+  align-items: start;
+  margin: 0 auto;
+  max-width: 1050px;
+  border-radius: 30px;
+  padding: 10px;
+ box-shadow: 0 0 40px rgba(255, 221, 0, 0.356);
+}
+
+@media (max-width: 768px) {
+  .gridPadreContacto1 {
+    padding: 10px;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); // Ajusta el tamaño mínimo en pantallas más pequeñas
+  }
+}
+
+.contact-logo-rede-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10%; 
+  padding: 20px;
+  border-radius: 10px;
+  background: transparent;
+}
+
+.logo-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  // box-shadow: 0 0 20px rgba(255, 0, 140, 0.5);
+  padding: 0px;
+  width: 100%; // Asegura que el contenedor ocupe todo el ancho disponible
+  max-width: 600px; // Aumenta el ancho máximo para permitir una mejor visualización
+  background: transparent; // Asegura un fondo blanco para un mejor contraste
+}
+
+.logo-main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-main:hover {
+  transform: scale(1.1);
+}
+
+.logo-secondary-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; // Ajusta el espacio entre imágenes secundarias
+  justify-content: center;
+}
+
+.logoPuchulita {
+  width: 180px; // Ajusta el tamaño de la imagen principal para destacarla
+  height: auto;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  position: relative;
+  z-index: 10; // Asegura que la imagen principal esté en el frente
+}
+
+.logoPuchulita:hover {
+  transform: scale(1.2) rotate(5deg); // Agrega una rotación y escalado para un efecto más llamativo
+  // box-shadow: 0 0 20px rgba(255, 0, 128, 0.7);
+}
+
+.logo-secondary {
+  width: 100px; // Ajusta el tamaño de las imágenes secundarias
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-secondary:hover {
+  transform: scale(1.1);
+}
+
+.contact-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: transparent;
+  border-radius: 10px;
+  // box-shadow: 0 0 16px rgba(255, 0, 128, 0.717);
+  padding: 20px;
+  width: 100%;
+  // max-width: 400px; // Establece un ancho máximo para que todos los contenedores sean iguales text-align: center;
+}
+
+.contact-item {
+  border-radius: 20px;
+  padding: 10px;
+  border: none;
+  // box-shadow: 0 0 16px rgba(255, 0, 128, 0.487);
+  background-color: transparent;
+  border: #ffae0040 solid 1px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-item:hover {
+  color: #c5a523;
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(255, 221, 0, 0.356);
+}
+
+.contact-item a {
+  color: #ff9100;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #c5ad23;
+}
+
+.contact-item i {
+  font-size: 20px;
+}
+
+.transparent-hr {
+  border: none; /* Elimina el borde predeterminado */
+  height: 1px; /* Ajusta la altura según el grosor deseado */
+  background-color:transparent; /* Color de fondo con transparencia (ajusta el valor según sea necesario) */
+  margin: 10px 0; /* Espaciado superior e inferior */
+}

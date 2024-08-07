@@ -1,0 +1,330 @@
+// sass _Header.scss
+
+.header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 100px;
+  // box-shadow: 0 0 40px rgb(255, 221, 0);
+}
+
+.containerHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.header-topHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.logo-and-search {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.logoHeader {
+  width: 20%;
+  margin: 0 20px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.bi-list {
+  font-size: xx-large;
+  color: #e91e63;
+  background-color: transparent;
+  border: 2px solid rgb(255, 0, 149);
+  border-radius: 100px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(98, 81, 90, 0.269);
+  }
+}
+
+.navbar-togglerHeader {
+  border: none;
+  background-color: transparent;
+
+  @media (min-width: 769px) {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.search-bar-containerHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-barHeader {
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 200px; /* Ajusta según sea necesario */
+}
+
+.search-buttonHeader {
+  border: none;
+  background-color: #ff4081;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #e91e63;
+  }
+}
+
+.d-md-none {
+  @media (min-width: 769px) {
+    display: none !important;
+  }
+}
+
+.navbarHeader {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-navHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+}
+
+.nav-linkHeader {
+  text-align: center;
+  color: rgb(251, 255, 0);
+  text-decoration: none;
+
+  &:hover {
+    color: rgba(255, 0, 217, 0.591);
+  }
+}
+
+.textoMenu {
+  font-weight: bold;
+  color: #ffb700;
+}
+
+.textoMenu1 {
+  font-size: x-large;
+  font-weight: bold;
+  color: #e9cb70;
+}
+
+.textoMenu2 {
+  font-size: xx-small;
+  color: #f5c64f;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.auth-buttons {
+  gap: 20px;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .logoHeader {
+    width: 40%;
+  }
+
+  .search-bar-containerHeader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+  }
+
+  .search-barHeader {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  .search-buttonHeader {
+    width: 80%;
+    margin: 0;
+  }
+
+  .navbar-togglerHeader {
+    display: block;
+  }
+
+  .header-topHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .logo-and-search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbarHeader {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+
+    &.open {
+      display: flex;
+    }
+
+    .navbar-navHeader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+
+      .nav-linkHeader {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        border-bottom: 1px solid rgba(255, 0, 170, 0.1);
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .header-topHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .navbarHeader {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .nav-linkHeader {
+    margin: 0 10px;
+  }
+}
+
+.auth-buttons-container-destop {
+  display: none; /* Ocultar por defecto en todos los dispositivos */
+
+  @media (min-width: 769px) {
+    display: flex; /* Mostrar solo en modo escritorio */
+    flex-direction: column;
+    border: transparent;
+    gap: 0px; /* Espacio entre los botones */
+    padding: 0px; /* Padding del contenedor */
+    margin: 0px; /* Margen del contenedor */
+    background-color: transparent;
+    
+    .nav-linkHeader {
+      color: #e55a88;
+      text-align: center;
+      font-weight: bold;
+      text-decoration: none;
+      
+      padding: 0px 20px; /* Ajusta el padding según sea necesario */
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      
+      /* Si quieres que el contenido del botón se ajuste verticalmente */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.mini-carrito-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.mini-carrito {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  max-height: 300px; /* Limitar la altura máxima */
+  overflow-y: auto; /* Scroll si el contenido excede la altura */
+  margin-left: 20px; /* Separación del borde izquierdo */
+}
+
+.mini-carrito h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.mini-carrito ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%; /* Ancho completo */
+}
+
+.mini-carrito li {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+  width: 100%; /* Ancho completo */
+}
+
+.mini-carrito li:last-child {
+  border-bottom: none; /* Sin borde en el último elemento */
+}
+
+.mini-carrito p {
+  font-size: 1rem;
+  color: #777;
+}

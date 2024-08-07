@@ -1,0 +1,47 @@
+.sweetalert-popup {
+    background-color: #ffffff;
+    // border: 2px solid #000;
+    border-radius: 10px;
+  }
+  
+  .sweetalert-title {
+    color: #fuchsia;
+    font-family: 'Montserrat Alternates', sans-serif;
+  }
+  
+  .sweetalert-button {
+    background-color: #ff01a6; // Cambiamos el color de fondo a rosa
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #d40094; // Color de fondo al hacer hover
+    }
+  }
+  
+  .custom-swal {
+    .swal-button--confirm {
+      background-color: #ff01a6; // Cambiamos el color de fondo a rosa
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #d400d4; // Color de fondo al hacer hover
+      }
+    }
+  
+    .swal-text {
+      color: #000;
+    }
+  }
+  

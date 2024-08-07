@@ -1,57 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis Gasto</title>
-    <link rel="stylesheet" href="./css/estilo.css">
-</head>
-<body>
-    <body>
+<html lang="es">
+  <head>
+    <!----------------SEGMENTO SEO------------------->
+    <!-- Metadatos para mejorar el SEO de la página -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Página de la tienda musical Puchulita." />
+    <meta
+      name="keywords"
+      content="Tienda musical Infantil Puchulita, Música Infantil, musica infantil, puchulita musica infantil, productos infantiles musicales, juguetes, ropa de niños y niñas, ropa infantil, tienda infantil, rock, children rocks, musica, niños, niñas musica para niños y niñas, canciones para niños y niñas, cancion para niños y niñas"
+    />
 
-<div class="">
-    <img class="container1" src="./img/02-logos/logomisgastos1 (2).png" alt="">
-</div>
+    <!--------IMAGEN PARA COMPARTIR WEB------------->
+    <!-- Metaetiquetas de Open Graph para compartir en redes sociales -->
+    <meta property="og:title" content="Puchulita Tienda Musical Infantil" />
+    <meta
+      property="og:description"
+      content="Página del proyecto Musical Puchulita, música infantil."
+    />
+    <meta
+      property="og:image"
+      content="https://puchulitatiendamusicalinfantil.netlify.app/img/05-img-costados-larga/0a.png"
+    />
+    <meta
+      property="og:url"
+      content="https://puchulitamusicainfantil.netlify.app/"
+    />
+    <meta property="og:type" content="website" />
 
+    <!-- Título de la página -->
+    <title>Home - Puchulita Tienda Musical Infantil</title>
+    <!--------------------------------------------------------------->
 
+    <!----LINKS ENLACES RECURSOS EXTERNOS--------->
 
+    <!-- BOOTSTRAP LINK (No utilizado, pero mantenido como referencia) -->
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    /> -->
 
-
-        <div class="container">
-            <h1>Gestor de Gastos</h1>
-            <h2>Mis Gastos</h2>
-            <hr>
-            <form id="expense-form">
-                <input type="text" id="expense-name" placeholder="Nombre del gasto" required>
-                <input type="number" id="expense-amount" placeholder="Monto" required>
-                <input type="date" id="expense-due-date" required>
-                <label for="expense-paid">¿Pagado?</label>
-                <input type="checkbox" id="expense-paid">
-                <hr>
-                <button type="submit">Agregar Gasto</button>
-                <hr>
-            </form>
-            <div id="expense-list">
-                <table id="expense-table">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Monto</th>
-                            <th>Vencimiento</th>
-                            <th>Pagado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Aquí se mostrarán los gastos ingresados -->
-                    </tbody>
-                </table>
-                <p id="total-expenses">Total: $0</p>
-            </div>
-        </div>
-    </body>
+    <!-- BS ICONS (No utilizado, pero mantenido como referencia) -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    /> -->
     
+    <!-- FAVICON ICONO LINK IMAGEN -->
+    <link
+      rel="shortcut icon"
+      href="/img/01-favicon/logo1.ico"
+      type="image/x-icon"
+    />
+    
+    <!-------------CSS LINK (No utilizado, pero mantenido como referencia)--------------->
+    <!-- <link rel="stylesheet" href="css/estilo.css" /> -->
 
+    <!-- TIPOGRAFIAS A AGREGAR -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+      rel="stylesheet"
+    />
 
-    <script src="misgastos-1.js"></script>
-</body>
+    <!-- Google Analytics Script (No utilizado, pero mantenido como referencia) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=TU_ID_DE_ANALYTICS"></script>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);    
+      }
+      gtag('js', new Date());
+      gtag('config', 'TU_ID_DE_ANALYTICS');
+    </script> -->
+
+  </head>
+
+  <body class="container-fluid">
+    <!-- Contenedor Bootstrap -->
+
+    <!---------------Enlace a REACT ---------------------->
+    <div id="root"></div>
+    <script type="module" src="./src/main.jsx"></script>
+
+    <!--------Enlace a BOOTSTRAP DATA (No utilizado, pero mantenido como referencia)------------>
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script> -->
+
+    <!----------Enlace archivos JavaScript (No utilizado, pero mantenido como referencia)------------>
+    <!-- <script src="./js/main.js"></script>
+    <script src="./js/tienda.js"></script>
+    <script src="./js/tienda-pago.js"></script> -->
+
+    <!----------Enlace SWEET ALERT (No utilizado, pero mantenido como referencia)------------>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
+    
+    <!----------Enlace TOASTIFY (No utilizado, pero mantenido como referencia)------------>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script> -->
+
+  </body>
 </html>

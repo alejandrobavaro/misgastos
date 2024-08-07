@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "nombre": "P-1-Remera - Logo Puchulita",
+    "precio": 50000,
+    "imagenes": [
+      "/img/06-tienda/tienda1-a.png",
+      "/img/06-tienda/tienda1-b.png",
+      "/img/06-tienda/tienda1-c.png",
+      "/img/06-tienda/tienda1-d.png"
+    ],
+    "categoria": "camiseta",
+    "descripcion": "Remera con el logo de Puchulita en el frente."
+  },
+  {
+    "id": 2,
+    "nombre": "P-2-Pijama - Estampado Musical - Niños",
+    "precio": 55890,
+    "imagenes": [
+      "/img/06-tienda/tienda2-a.png",
+      "/img/06-tienda/tienda2-b.png",
+      "/img/06-tienda/tienda2-c.png",
+      "/img/06-tienda/tienda2-d.png"
+    ],
+    "categoria": "pijama",
+    "descripcion": "Pijama con divertido estampado musical para niños, cómoda y suave."
+  }
+]
