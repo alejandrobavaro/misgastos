@@ -1,5 +1,3 @@
-// src/componentes/Comprobantes.jsx
-
 import React from 'react';
 import '../assets/scss/_03-Componentes/_Comprobantes.scss';
 

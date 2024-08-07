@@ -12,7 +12,7 @@ const ContactoLogoRedes = () => {
               <img
                 alt="icono"
                 className="logo-img logo-main"
-                src="/img/02-logos/logomisgastos2.png"
+                src="/img/02-logos/logomisgastos1.png"
               />
             </a>
             {/* <div className="logo-secondary-container">

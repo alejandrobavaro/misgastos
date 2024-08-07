@@ -4,9 +4,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  background-color: transparent;
-  border-radius: 20px;
+   background-color: transparent;
+  //  border-top    : 2px solid #00f7ff1d;
+  //   border-bottom: 2px solid #00f7ff2c;
+    border-radius: 30px;
   width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
 }
 
@@ -63,7 +64,7 @@
   font-size: 24px;
   font-weight: bold;
   text-align: center;
-  color: #ffd500;
+  color: #00ccff;
   margin: 20px 0;
   animation: moveText 1.5s infinite alternate;
 }

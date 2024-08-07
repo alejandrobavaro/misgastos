@@ -1,0 +1,29 @@
+.pagados {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 10px;
+    border-bottom: 2px solid #00f7ff2c;
+    border-radius: 30px;
+  
+    h2 {
+      font-size: medium;
+      color: #00fbff; // Color del texto
+      padding: 20px; // Ajustado para evitar un espaciado excesivo
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  
+    h1 {
+      font-size: large;
+      color: #ffffff;
+      text-align: center;
+      margin-top: 0; // No es necesario poner "px" si es 0
+    }
+  }
+  

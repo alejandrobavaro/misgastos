@@ -4,21 +4,30 @@
     align-items: center;
     width: 100%;
     background-color: transparent;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.575);
-    padding: 20px;
+    padding: 10px;
+    border-bottom: 2px solid #00f7ff7c;
+    border-radius: 30px;
+    flex-direction: column;  // Asegura que los elementos hijos se alineen verticalmente
   
     h2 {
-      color: #4caf50;
-      margin-bottom: 20px;
+      font-size: medium;
+      color: #00fbff; // Color del texto
+      padding: 20px; // Ajustado para evitar un espaciado excesivo
     }
   
     form {
-      width: 100%;
-      max-width: 600px;
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      align-items: center;
+      width: 100%;
+      padding: 10px; // Añade padding al formulario si es necesario
+    }
+  
+    h1 {
+      font-size: large;
+      color: #ffffff;
+      text-align: center;
+      margin-top: 0; // No es necesario poner "px" si es 0
     }
   }
   

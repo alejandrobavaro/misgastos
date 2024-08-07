@@ -1,5 +1,3 @@
-// src/componentes/SaldosYDisponibles.jsx
-
 import React from 'react';
 import '../assets/scss/_03-Componentes/_SaldosYDisponibles.scss';
 

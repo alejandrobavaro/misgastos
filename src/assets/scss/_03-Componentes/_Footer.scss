@@ -1,7 +1,11 @@
 footer {
   border-radius: 30px;
   color: rgb(255, 222, 253);
-  width: 100%; // Asegura que el footer ocupe todo el ancho disponible
+  width: 100%; 
+
+  padding: 10px;
+  border-top: 2px solid #00f7ff7c;
+  border-radius: 30px;
 }
 
 .gridPadreFooter {
@@ -62,13 +66,13 @@ footer {
   width: 60%;
 }
 
-.dividerFooter {
-  border: 2px solid rgba(255, 0, 170, 0.613);
-  border-top: 1px solid rgba(208, 0, 255, 0.635);
-  box-shadow: 0 0 10px rgb(255, 0, 140);
-  // border-radius: 50px;
-  width: 100%;
-}
+// .dividerFooter {
+//   padding: 10px;
+//   border-bottom: 5px solid #00f7ff;
+//   border-radius: 30px;
+//   // border-radius: 50px;
+//   width: 100%;
+// }
 
 .trademarkFooter {
   text-align: center;

@@ -6,7 +6,7 @@ const Data = () => {
     <div className="data">
       <h2>Mis Datos</h2>
       <form>
-      <h1>Esta es la pagina de datos de las cuentas de cada servicio </h1>
+        <h1>Esta es la pagina de datos de las cuentas de cada servicio</h1>
       </form>
     </div>
   );

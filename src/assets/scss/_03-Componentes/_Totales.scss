@@ -1,20 +1,17 @@
-  // _Totales.scss
-
 .totales {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   background-color: transparent;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.575);
-  padding: 20px;
+  border-bottom: 2px solid #00f7ff2c;
+  border-radius: 30px;
 }
 
 .totales h2 {
-  font-size: 2rem;
-  color: #ffffff; // Color del texto
-  margin-bottom: 20px;
+  font-size: medium;
+  color: #00fbff; // Color del texto
+  padding: 20px; // Ajustado para un espaciado adecuado
 }
 
 .totales form {
@@ -25,8 +22,8 @@
 }
 
 .totales h1 {
-  font-size: 1.5rem;
-  color: #fffbb3;
+  font-size: large;
+  color: #ffffff;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 0; // No es necesario poner "px" si es 0
 }

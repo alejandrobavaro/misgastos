@@ -2,7 +2,10 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    padding: 0px;
+    padding: 10px;
+    border-top    : 2px solid #00f7ff1d;
+    border-bottom: 2px solid #00f7ff2c;
+    border-radius: 30px;
   
     .empresa-card {
       display: flex;
@@ -11,8 +14,10 @@
       padding: 10px;
       background-color: transparent;
     //   border: 1px solid #ffe100;
-      border-radius: 20px;
-      box-shadow: 0 0px 10px rgb(254, 247, 208);
+    padding: 10px;
+    border-bottom: 2px solid #00f7ff7c;
+    border-right: 2px solid #00f7ff7c;
+    border-radius: 30px;
       transition: transform 0.2s;
   
       &:hover {

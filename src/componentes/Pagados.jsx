@@ -1,5 +1,3 @@
-// src/componentes/Pagados.jsx
-
 import React from 'react';
 import '../assets/scss/_03-Componentes/_Pagados.scss';
 

@@ -5,9 +5,9 @@
   align-items: start;
   margin: 0 auto;
   max-width: 1050px;
-  border-radius: 30px;
   padding: 10px;
- box-shadow: 0 0 20px rgba(255, 255, 255, 0.356);
+  border-bottom: 2px solid #00f7ff7c;
+  border-radius: 30px;
 }
 
 @media (max-width: 768px) {
@@ -119,8 +119,8 @@
 .contact-item a {
   color: #ffffff;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease, transform 0.3s ease;
+  // font-weight: bold;
+  // transition: color 0.3s ease, transform 0.3s ease;
 }
 
 // .contact-item a:hover {

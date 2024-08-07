@@ -19,7 +19,7 @@ function MainContent() {
           <img
             alt="imagen"
             className="imagen-publicidadMainContent2"
-            src="/img/02-logos/logomisgastos2.png"
+            src="/img/02-logos/logomisgastos1.png"
           />
           <a href="#">
             <img

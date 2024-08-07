@@ -1,5 +1,3 @@
-// src/componentes/Vencimientos.jsx
-
 import React from 'react';
 import '../assets/scss/_03-Componentes/_Vencimientos.scss';
 

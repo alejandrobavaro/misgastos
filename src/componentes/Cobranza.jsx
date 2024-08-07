@@ -6,7 +6,7 @@ const Cobranza = () => {
     <div className="cobranza">
       <h2>Mi Cobranza</h2>
       <form>
-       <h1>Aqui esta la pagina de Cobranza</h1>
+        <h1>Aquí está la página de Cobranza</h1>
       </form>
     </div>
   );

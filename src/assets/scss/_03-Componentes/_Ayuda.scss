@@ -1,0 +1,32 @@
+.ayuda {
+    display: flex;
+    flex-direction: column; // Cambiado para alinear correctamente los elementos hijos
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: transparent;
+    border-bottom: 2px solid #00f7ff7c;
+    border-radius: 30px;
+    padding: 20px; // Añadido para espacio interno
+  
+    h2 {
+      font-size: medium;
+      color: #00fbff; // Color del texto
+      margin-bottom: 20px; // Añadido para espacio entre los elementos
+    }
+    
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  
+    h1 {
+      font-size: large;
+      color: #ffffff;
+      text-align: center;
+      margin-top: 0;
+    }
+  }
+  
