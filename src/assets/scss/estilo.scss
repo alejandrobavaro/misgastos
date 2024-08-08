@@ -19,7 +19,7 @@
 @import "./_03-Componentes/MainPublicidadSlider";
 @import "./_03-Componentes/MainContent";
 
-@import "./_03-Componentes/MainEmpresasListado";
+
 
 //----------------Header------------//
 @import "./_03-Componentes/Header";
@@ -34,15 +34,17 @@
 //----------------Sidebar------------//
 @import "./_03-Componentes/Sidebar";
 
-@import "./_03-Componentes/Ayuda.scss";
+@import "./_03-Componentes/ConsultasAyuda.scss";
 @import "./_03-Componentes/Cobranza.scss";
-@import "./_03-Componentes/Comprobantes.scss";
+@import "./_03-Componentes/ConsultasComprobantes.scss";
 @import "./_03-Componentes/Data.scss";
-@import "./_03-Componentes/Pagados.scss";
-@import "./_03-Componentes/PorPagar.scss";
-@import "./_03-Componentes/SaldosYDisponibles.scss";
+@import "./_03-Componentes/MisGastosPagados.scss";
+@import "./_03-Componentes/MisGastosPorPagar.scss";
+@import "./_03-Componentes/BancoSaldosDisponibles.scss";
 @import "./_03-Componentes/Totales.scss";
-@import "./_03-Componentes/Vencimientos.scss";
+@import "./_03-Componentes/ConsultasVencimientos.scss";
+
+@import "./_03-Componentes/ServiciosEmpresasListado";
 
 
 //----------------Footer------------//

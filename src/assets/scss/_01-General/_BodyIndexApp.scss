@@ -89,7 +89,8 @@ h6 {
 
 //---------------ESTILOS LISTAS---------------------//
 li {
-  list-style-type: none; // Elimina los puntos de las listas.
+  // list-style-type: none;
+  list-style-type: circle;  // Elimina los puntos de las listas.
 }
 
 ol {

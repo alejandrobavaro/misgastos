@@ -1,7 +1,7 @@
 import React from 'react';
-import '../assets/scss/_03-Componentes/_Comprobantes.scss';
+import '../assets/scss/_03-Componentes/_ConsultasComprobantes.scss';
 
-const Comprobantes = () => {
+const ConsultasComprobantes = () => {
   return (
     <div className="comprobantes">
       <h2>Comprobantes</h2>
@@ -10,4 +10,4 @@ const Comprobantes = () => {
   );
 }
 
-export default Comprobantes;
+export default ConsultasComprobantes;

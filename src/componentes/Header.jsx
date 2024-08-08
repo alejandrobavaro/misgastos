@@ -1,28 +1,21 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "./SesionAuthContext";
-import "bootstrap-icons/font/bootstrap-icons.css";
+import HeaderDolarApi from "./HeaderDolarApi"; // Asegúrate de que el path sea correcto
 import "../assets/scss/_03-Componentes/_Header.scss";
 
-// Aquí definimos el componente Header
-const Header = ({ searchQuery, setSearchQuery }) => {
+const Header = () => {
   const location = useLocation();
   const { state, dispatch } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Función para alternar el menú móvil
   const handleToggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  // Función para cerrar el menú móvil
   const handleCloseMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
-
-  // Determinamos si se debe mostrar la barra de búsqueda
-  const shouldShowSearchBar =
-    location.pathname === "/tienda" || location.pathname === "/musica";
 
   return (
     <header className="header">
@@ -47,32 +40,14 @@ const Header = ({ searchQuery, setSearchQuery }) => {
             </Link>
             <Link
               className="nav-linkHeader"
-              to="/totales" // Enlace actualizado
-              onClick={handleCloseMobileMenu}
-            >
-              <h2 className="textoMenu">TOTALES</h2>
-            </Link>
-            <Link
-              className="nav-linkHeader"
-              to="/cobranza"
-              onClick={handleCloseMobileMenu}
-            >
-              <h2 className="textoMenu">COBRANZA</h2>
-            </Link>
-            <Link
-              className="nav-linkHeader"
-              to="/data"
-              onClick={handleCloseMobileMenu}
-            >
-              <h2 className="textoMenu">DATA</h2>
-            </Link>
-            <Link
-              className="nav-linkHeader"
               to="/contacto"
               onClick={handleCloseMobileMenu}
             >
               <h2 className="textoMenu">CONTACTO</h2>
             </Link>
+            <div className="contenedor-dolarappi">
+              <HeaderDolarApi /> {/* Muestra el valor del dólar aquí */}
+            </div>
           </div>
         </nav>
         <div className="auth-buttons-column">

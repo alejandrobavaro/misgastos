@@ -1,5 +1,5 @@
 import React from 'react';
-import "../assets/scss/_03-Componentes/_MainEmpresasListado.scss";
+import "../assets/scss/_03-Componentes/_ServiciosEmpresasListado.scss";
 
 const empresas = [
   { name: 'Tarjetas de Credito', count: 3, icon: 'credit-card' },
@@ -17,7 +17,7 @@ const empresas = [
   { name: 'Bienes Personales', count: 1, icon: 'home' },
 ];
 
-const MainEmpresasListado = () => {
+const ServiciosEmpresasListado = () => {
   return (
     <div className="main-empresas-listado">
       {empresas.map((empresa, index) => (
@@ -35,4 +35,4 @@ const MainEmpresasListado = () => {
   );
 };
 
-export default MainEmpresasListado;
+export default ServiciosEmpresasListado;

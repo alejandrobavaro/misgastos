@@ -2,27 +2,31 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Header from './componentes/Header';
+import Sidebar from './componentes/Sidebar';
 import MainContent from './componentes/MainContent';
 import ContactoLogoRedes from './componentes/ContactoLogoRedes';
 import ContactoFormularioSlider from './componentes/ContactoFormularioSlider';
 import PublicidadDebajo from './componentes/MainPublicidadSlider';
 import Footer from './componentes/Footer';
-
 import { AuthProvider } from './componentes/SesionAuthContext';
 import Login from './componentes/SesionLogin';
 import Register from './componentes/SesionRegistrate';
 import Logout from './componentes/SesionLogout';
-
 import MainWhatsappIcon from './componentes/MainWhatsappIcon';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import 'bootstrap-icons/font/bootstrap-icons.css'; 
 import './assets/scss/_01-General/_BodyIndexApp.scss';
 
-import Totales from './componentes/Totales'; // Importación correcta
+import MisGastosPagados from './componentes/MisGastosPagados';
+import MisGastosPorPagar from './componentes/MisGastosPorPagar';
+import ServiciosEmpresasListado from './componentes/ServiciosEmpresasListado';
+import ConsultasVencimientos from './componentes/ConsultasVencimientos';
+import ConsultasComprobantes from './componentes/ConsultasComprobantes';
+import ConsultasAyuda from './componentes/ConsultasAyuda';
+import Totales from './componentes/Totales';
 import Cobranza from './componentes/Cobranza';
 import Data from './componentes/Data';
-import Sidebar from './componentes/Sidebar';
-import MainEmpresasListado from './componentes/MainEmpresasListado';
+import BancoSaldosDisponibles from './componentes/BancoSaldosDisponibles';  // Importación añadida
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -41,10 +45,16 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/logout" element={<Logout />} />
-              <Route path="/totales" element={<Totales />} /> {/* Ruta para Totales */}
+              <Route path="/totales" element={<Totales />} />
               <Route path="/cobranza" element={<Cobranza />} />
               <Route path="/data" element={<Data />} />
-              <Route path="/empresas" element={<MainEmpresasListado />} />
+              <Route path="/por-pagar" element={<MisGastosPorPagar />} />
+              <Route path="/pagados" element={<MisGastosPagados />} />
+              <Route path="/empresas" element={<ServiciosEmpresasListado />} />
+              <Route path="/vencimientos" element={<ConsultasVencimientos />} />
+              <Route path="/comprobantes" element={<ConsultasComprobantes />} />
+              <Route path="/ayuda" element={<ConsultasAyuda />} />
+              <Route path="/banco-saldos" element={<BancoSaldosDisponibles />} />  {/* Ruta para Saldos Disponibles */}
             </Routes>
           </div>
         </div>

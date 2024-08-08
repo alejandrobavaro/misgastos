@@ -30,13 +30,27 @@ const Sidebar = () => {
         <li>
           <Link to="/comprobantes">Comprobantes</Link>
         </li>
-        <li>
-          <Link to="/ayuda">Ayuda</Link>
-        </li>
+       
         <hr />
-        <h2>Banco</h2>
+      </ul>
+      <h2>Banco</h2>
+      <ul>
         <li>
-          <Link to="/saldos-y-disponibles">Saldos y disponibles</Link>
+          <Link to="/banco-saldos">Saldos Disponibles</Link>{" "}
+          {/* Enlace corregido */}
+        </li>
+        <li>
+          <Link to="/cobranza">Cobranza</Link>
+        </li>
+        <li>
+          <Link to="/totales">Totales</Link> {/* Enlace añadido */}
+        </li>
+      </ul>
+      <hr />
+      <h2>Data</h2>
+      <ul>
+        <li>
+          <Link to="/data">Info de Cuentas</Link>
         </li>
         <hr />
       </ul>
@@ -48,7 +62,14 @@ const Sidebar = () => {
         <li>
           <Link to="/logout">Cerrar Sesión</Link>
         </li>
+        <hr />
       </ul>
+      <h2>Otros</h2>
+      <ul>
+      <li>
+          <Link to="/ayuda">Ayuda</Link>
+        </li>
+        </ul>
     </div>
   );
 };
