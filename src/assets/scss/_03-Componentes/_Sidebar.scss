@@ -1,41 +1,46 @@
-// src/assets/scss/_03-Componentes/_Sidebar.scss
+//---------contenedor del sidebar--------------------//
 
 .sidebar {
-  // Estilos para el contenedor del Sidebar
   width: auto;
   background-color: transparent;
   border-right: 4px solid #00f7ff7c;
-  border-radius: 10px;
-  // background: linear-gradient(135deg, #10534b11, #0e896212);
-//   border-bottom: 3px solid #00ff9d;
   border-radius: 30px;
   padding: 0px 60px;
   margin: 0px;
 
+  //---------títulos h2--------------------//
+
   h2 {
-    font-size: medium;
-    color:  #00f7ffc6;
+    font-size: small;
+    color: #00f7ffc6;
     margin-bottom: 10px;
   }
 
+  //---------lista sin estilos--------------------//
+
   ul {
-    // list-style: none;
     padding: 0px;
 
+    //---------elementos de la lista (li)--------------------//
+
     li {
-        font-size: small;
+      font-size: x-small;
       margin: 0px;
       color: #ffffff;
 
-      // Estilos para los enlaces dentro del Sidebar
+      //---------enlaces (a)--------------------//
+
       a {
         text-decoration: none;
         color: #ffffff;
+
         &:hover {
-         color: rgb(0, 170, 255);
+          color: rgb(0, 170, 255);
         }
       }
     }
+
+    //---------líneas horizontales (hr)--------------------//
 
     hr {
       margin: 10px 0;

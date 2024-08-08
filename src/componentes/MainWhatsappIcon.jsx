@@ -1,6 +1,6 @@
 // src/componentes/MainWhatsappIcon.jsx
 import React from 'react';
-import '../assets/scss/_03-Componentes/_MainContent.scss'; // Asegúrate de tener este archivo de estilos
+import '../assets/scss/_03-Componentes/_MainContent.scss';
 
 function MainWhatsappIcon() {
   return (

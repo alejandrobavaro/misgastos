@@ -1,15 +1,15 @@
-// src/assets/scss/_03-Componentes/_MainPublicidadSlider.scss
+//---------contenedor principal--------------------//
 
 .gridPadrePublicidad1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-   background-color: transparent;
-  //  border-top    : 2px solid #00f7ff1d;
-  //   border-bottom: 2px solid #00f7ff2c;
-    border-radius: 30px;
+  background-color: transparent;
+  border-radius: 30px;
   width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
 }
+
+//---------contenedor de publicidad--------------------//
 
 .publicidad-grid-contenedor {
   display: flex;
@@ -17,6 +17,8 @@
   align-items: center;
   width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
 }
+
+//---------fila de publicidad--------------------//
 
 .fila-publicidad {
   display: flex;
@@ -32,6 +34,8 @@
   }
 }
 
+//---------contenedor de slider--------------------//
+
 .publicidad-container {
   width: 100%;
   max-width: 520px;
@@ -41,11 +45,12 @@
   box-shadow: 0 0 40px rgba(255, 145, 0, 0.463);
 }
 
+//---------elemento del slider--------------------//
+
 .slide-item {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-
 
   .imagen-publicidad {
     width: 90%;
@@ -60,6 +65,8 @@
   }
 }
 
+//---------título importante--------------------//
+
 .tituloImportante3 {
   font-size: 24px;
   font-weight: bold;
@@ -68,6 +75,8 @@
   margin: 20px 0;
   animation: moveText 1.5s infinite alternate;
 }
+
+//---------contenedor de productos--------------------//
 
 .gridPadreProductos1 {
   display: flex;
@@ -78,6 +87,8 @@
   justify-content: center;
   width: 90%;
 }
+
+//---------imagen limitada--------------------//
 
 .imagen-limitada8 {
   max-width: 100px;
@@ -91,7 +102,8 @@
   }
 }
 
-/* Línea divisoria transparente */
+//---------línea divisoria transparente--------------------//
+
 .transparent-hr {
   border: none; /* Elimina el borde predeterminado */
   height: 1px; /* Ajusta la altura según el grosor deseado */

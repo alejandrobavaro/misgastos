@@ -50,36 +50,39 @@ const Header = () => {
             </div>
           </div>
         </nav>
-        <div className="auth-buttons-column">
-          {state.isAuthenticated ? (
-            <Link
-              className="nav-linkHeader"
-              to="/logout"
-              onClick={() => {
-                dispatch({ type: "LOGOUT" });
-                handleCloseMobileMenu();
-              }}
-            >
-              <h2 className="textoMenu">Cerrar Sesión</h2>
-            </Link>
-          ) : (
-            <>
+        <div className="auth-buttons-container">
+          <div className="auth-buttons-column">
+            {state.isAuthenticated ? (
               <Link
                 className="nav-linkHeader"
-                to="/login"
-                onClick={handleCloseMobileMenu}
+                to="/logout"
+                onClick={() => {
+                  dispatch({ type: "LOGOUT" });
+                  handleCloseMobileMenu();
+                }}
               >
-                <h3 className="textoMenu">Inicia Sesión</h3>
+                <h2 className="textoMenu">Cerrar Sesión</h2>
               </Link>
-              <Link
-                className="nav-linkHeader"
-                to="/register"
-                onClick={handleCloseMobileMenu}
-              >
-                <h3 className="textoMenu2">Regístrate</h3>
-              </Link>
-            </>
-          )}
+            ) : (
+              <>
+                <Link
+                  className="nav-linkHeader"
+                  to="/login"
+                  onClick={handleCloseMobileMenu}
+                >
+                  <h3 className="textoMenu">Inicia Sesión</h3>
+                </Link>
+                <hr className="auth-divider" />
+                <Link
+                  className="nav-linkHeader"
+                  to="/register"
+                  onClick={handleCloseMobileMenu}
+                >
+                  <h3 className="textoMenu2">Regístrate</h3>
+                </Link>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </header>

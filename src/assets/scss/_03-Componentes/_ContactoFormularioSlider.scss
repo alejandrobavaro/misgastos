@@ -1,3 +1,5 @@
+//---------gridPadreContacto2--------------------//
+
 .gridPadreContacto2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // Ajusta el tamaño mínimo
@@ -5,11 +7,12 @@
   align-items: start;
   margin: 0 auto;
   max-width: 1050px;
-  
   padding: 10px;
   border-bottom: 2px solid #00f7ff7c;
   border-radius: 30px;
 }
+
+//---------contact-form-slider-container--------------------//
 
 .contact-form-slider-container {
   display: flex;
@@ -20,6 +23,7 @@
   padding: 1rem;
   flex-wrap: wrap;
 
+  // Estilo para el contenedor con sombra
   .box-shadow {
     box-shadow: 0 0px 16px rgba(255, 255, 255, 0.487);
     border-radius: 30px;
@@ -32,6 +36,7 @@
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.356);
   }
 
+  // Estilos para las columnas del formulario y el slider
   .form-column,
   .slider-column {
     flex: 1;
@@ -40,103 +45,113 @@
     box-sizing: border-box;
   }
 
+  // Estilo específico para la columna del formulario
   .form-column {
     margin-right: 1rem; // Espacio entre columnas en pantallas grandes
   }
+}
 
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+//---------contact-form--------------------//
 
-    .form-group {
-      margin-bottom: 1rem;
-      position: relative;
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 
-      label {
-        display: block;
-        margin-bottom: 0.5rem;
-        font-weight: bold;
-        color: #ffffff;
-      }
+  // Estilo para los grupos de formulario
+  .form-group {
+    margin-bottom: 1rem;
+    position: relative;
 
-      input,
-      textarea {
-        width: 100%;
-        padding: 0.75rem;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        box-sizing: border-box;
-        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: #ffffff;
+    }
 
-        &:focus {
-          border-color: #ffffff;
-          box-shadow: 0 0 40px rgba(255, 255, 255, 0.356);
-          outline: none;
-        }
-      }
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
 
-      textarea {
-        resize: vertical;
+      &:focus {
+        border-color: #ffffff;
+        box-shadow: 0 0 40px rgba(255, 255, 255, 0.356);
+        outline: none;
       }
     }
 
-    .text-end {
-      text-align: right;
-
-      .btn-submit {
-        background-color: #7b5510;
-        color: #fff;
-        border: none;
-        padding: 0.75rem 1.5rem;
-        border-radius: 10px;
-        cursor: pointer;
-        font-size: 1rem;
-        font-weight: bold;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-
-        &:hover {
-          background-color: #a57c1c;
-          transform: scale(1.05);
-        }
-      }
+    textarea {
+      resize: vertical;
     }
   }
 
-  .slider-column {
-    .slider-title {
-      font-size: 1.5rem;
+  // Estilo para el botón de envío
+  .text-end {
+    text-align: right;
+
+    .btn-submit {
+      background-color: #7b5510;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
       font-weight: bold;
-      text-align: center;
-      margin-bottom: 1rem;
-      color: #ffbb00;
-      position: relative;
-      z-index: 1;
+      transition: background-color 0.3s ease, transform 0.3s ease;
 
-      i {
-        font-size: 1.5rem;
-        color: #ffb300;
-        margin: 0 0.5rem;
-      }
-    }
-
-    .slick-slide {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      .slider-image {
-        max-width: 100%;
-        border-radius: 12px;
-        transition: transform 0.3s ease;
-
-        &:hover {
-          transform: scale(1.05);
-        }
+      &:hover {
+        background-color: #a57c1c;
+        transform: scale(1.05);
       }
     }
   }
 }
+
+//---------slider-column--------------------//
+
+.slider-column {
+  .slider-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #ffbb00;
+    position: relative;
+    z-index: 1;
+
+    i {
+      font-size: 1.5rem;
+      color: #ffb300;
+      margin: 0 0.5rem;
+    }
+  }
+
+  // Estilos para las imágenes en el slider
+  .slick-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .slider-image {
+      max-width: 100%;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+//---------Estilos de media queries--------------------//
 
 @media (max-width: 768px) {
   .contact-form-slider-container {

@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "nombre": "Edea",
+    "categoria": "Electricidad",
+    "servicio": "Electricidad - Luz",
+    "codigo": ""
+  },
+  {
+    "id": 2,
+    "nombre": "Camuzzi Gas Pampeana",
+    "categoria": "Gas",
+    "servicio": "Gas",
+    "codigo": ""
+  },
+  {
+    "id": 3,
+    "nombre": "Obras Sanitarias - Osse",
+    "categoria": "Agua",
+    "servicio": "Agua",
+    "codigo": ""
+  },
+  {
+    "id": 4,
+    "nombre": "Personal - Ex Fibertel",
+    "categoria": "Servicio de TV e Internet",
+    "servicio": "Servicio de TV e Internet",
+    "codigo": ""
+  },
+  {
+    "id": 5,
+    "nombre": "Personal - Telefonia Mobil",
+    "categoria": "Telefonia",
+    "servicio": "Telefonia Movil",
+    "codigo": ""
+  },
+  {
+    "id": 6,
+    "nombre": "Movistar - Telefonia Fija",
+    "categoria": "Telefonia Fija",
+    "servicio": "Telefonia Fija",
+    "codigo": ""
+  },
+  {
+    "id": 7,
+    "nombre": "Alquiler Oficina",
+    "categoria": "Alquiler",
+    "servicio": "Alquiler",
+    "codigo": ""
+  },
+  {
+    "id": 8,
+    "nombre": "Power System",
+    "categoria": "Sistema Adm",
+    "servicio": "Sistema Adm",
+    "codigo": ""
+  },
+  {
+    "id": 9,
+    "nombre": "Sueldo Nicolas",
+    "categoria": "Sueldos",
+    "servicio": "Sueldo Nicolas",
+    "codigo": ""
+  },
+  {
+    "id": 10,
+    "nombre": "Sueldo Maria",
+    "categoria": "Sueldos",
+    "servicio": "Sueldo Maria",
+    "codigo": ""
+  },
+  {
+    "id": 11,
+    "nombre": "Sueldo Alejandro",
+    "categoria": "Sueldos",
+    "servicio": "Sueldo Alejandro",
+    "codigo": ""
+  },
+  {
+    "id": 12,
+    "nombre": "Sueldo Luis",
+    "categoria": "Sueldos",
+    "servicio": "Sueldo Luis",
+    "codigo": ""
+  },
+  {
+    "id": 13,
+    "nombre": "Sueldo Gabriela",
+    "categoria": "Sueldos",
+    "servicio": "Sueldo Gabriela",
+    "codigo": ""
+  }
+]

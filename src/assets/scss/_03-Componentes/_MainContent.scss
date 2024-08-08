@@ -1,4 +1,5 @@
-// Estilos sass _MainContent//
+//---------contenedor principal--------------------//
+
 .mainContent {
   display: flex;
   justify-content: center;
@@ -10,27 +11,27 @@
   border-radius: 30px;
 }
 
-// Contenedor principal del grid
-.gridPadre1MainContent, .gridPadreMainContent {
+//---------grid principal primera sección--------------------//
+
+.gridPadre1MainContent {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0p;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   width: 100%;
   background-color: transparent;
-  // border-radius: 20px;
-  // box-shadow: 0 0 40px rgb(255, 166, 0);
   
   @media (max-width: 768px) {
     flex-direction: column;
     width: 90%;
-    margin: 0px;
+    margin: 0;
     padding: 15px;
   }
 }
 
-// Estilo para centrar objetos en la primera sección del grid
+//---------centrar objetos primera sección--------------------//
+
 .objetoCentradoMainContent1 {
   display: flex;
   justify-content: center;
@@ -43,7 +44,8 @@
   }
 }
 
-// Estilos para imágenes de publicidad
+//---------imágenes de publicidad primera sección--------------------//
+
 .imagen-publicidadMainContent1 {
   width: 200px;
   height: auto;
@@ -73,6 +75,27 @@
   }
 }
 
+//---------grid principal segunda sección--------------------//
+
+.gridPadreMainContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: transparent;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 90%;
+    margin: 0;
+    padding: 15px;
+  }
+}
+
+//---------imágenes de publicidad segunda sección--------------------//
+
 .imagen-publicidadMainContent3 {
   width: 100%;
   max-width: 900px;
@@ -89,7 +112,8 @@
   }
 }
 
-// Estilos para íconos de WhatsApp
+//---------íconos de WhatsApp -------------------//
+
 #telefonoWhatsappMainContent {
   position: fixed;
   bottom: 1px; 

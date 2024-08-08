@@ -1,3 +1,5 @@
+//---------contenedores header--------------------//
+
 .gridPadreContacto1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // Ajusta el tamaño mínimo
@@ -18,22 +20,25 @@
   }
 }
 
+//---------logo header--------------------//
+
 .contact-logo-rede-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10%; 
+  gap: 10%;
   padding: 20px;
   border-radius: 10px;
   background: transparent;
 }
+
+//---------logo main--------------------//
 
 .logo-column {
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  // box-shadow: 0 0 20px rgba(255, 0, 140, 0.5);
   padding: 0px;
   width: 100%; // Asegura que el contenedor ocupe todo el ancho disponible
   max-width: 600px; // Aumenta el ancho máximo para permitir una mejor visualización
@@ -52,6 +57,8 @@
   transform: scale(1.1);
 }
 
+//---------logo secondary--------------------//
+
 .logo-secondary-container {
   display: flex;
   flex-wrap: wrap;
@@ -69,7 +76,6 @@
 
 .logoPuchulita:hover {
   transform: scale(1.2) rotate(5deg); // Agrega una rotación y escalado para un efecto más llamativo
-  // box-shadow: 0 0 20px rgba(255, 0, 128, 0.7);
 }
 
 .logo-secondary {
@@ -82,26 +88,26 @@
   transform: scale(1.1);
 }
 
+//---------contact icons--------------------//
+
 .contact-icons {
   display: flex;
   flex-direction: column;
   gap: 15px;
   background-color: transparent;
   border-radius: 10px;
-  // box-shadow: 0 0 16px rgba(255, 0, 128, 0.717);
   padding: 20px;
   width: 100%;
-  // max-width: 400px; // Establece un ancho máximo para que todos los contenedores sean iguales text-align: center;
+  text-align: center;
 }
 
 .contact-item {
   border-radius: 20px;
   padding: 10px;
   border: none;
-  // box-shadow: 0 0 16px rgba(255, 0, 128, 0.487);
   background-color: transparent;
   border: #ffffff40 solid 1px;
-    color: #ffffff;
+  color: #ffffff;
   font-size: 16px;
   display: flex;
   align-items: center;
@@ -119,21 +125,17 @@
 .contact-item a {
   color: #ffffff;
   text-decoration: none;
-  // font-weight: bold;
-  // transition: color 0.3s ease, transform 0.3s ease;
 }
-
-// .contact-item a:hover {
-//   color: #898989;
-// }
 
 .contact-item i {
   font-size: 20px;
 }
 
+//---------transparent hr--------------------//
+
 .transparent-hr {
   border: none; /* Elimina el borde predeterminado */
   height: 1px; /* Ajusta la altura según el grosor deseado */
-  background-color:transparent; /* Color de fondo con transparencia (ajusta el valor según sea necesario) */
+  background-color: transparent; /* Color de fondo con transparencia (ajusta el valor según sea necesario) */
   margin: 10px 0; /* Espaciado superior e inferior */
 }

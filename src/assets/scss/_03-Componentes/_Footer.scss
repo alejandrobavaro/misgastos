@@ -1,12 +1,14 @@
+//---------footer--------------------//
+
 footer {
   border-radius: 30px;
   color: rgb(255, 222, 253);
   width: 100%; 
-
   padding: 10px;
   border-top: 2px solid #00f7ff7c;
-  border-radius: 30px;
 }
+
+//---------contenedor principal del footer--------------------//
 
 .gridPadreFooter {
   display: flex;
@@ -14,9 +16,10 @@ footer {
   align-items: center;
   max-width: 1080px; // Limita el ancho máximo del contenedor del footer
   padding: 50px;
-  // box-shadow: 0 0 40px rgba(255, 0, 140, 0.467);
   margin: 0 auto;
 }
+
+//---------contenido del footer--------------------//
 
 .footerContentFooter {
   display: flex;
@@ -24,6 +27,8 @@ footer {
   align-items: center;
   max-width: 100%; // Asegura que el contenido ocupe todo el ancho del contenedor
 }
+
+//---------elementos del footer--------------------//
 
 .ElementsFooter {
   display: flex;
@@ -33,6 +38,8 @@ footer {
   margin-bottom: 20px; // Añadimos un margen inferior para separar las filas
 }
 
+//---------columnas del footer--------------------//
+
 .columnaFooter {
   flex: 1; // Cada columna ocupa el mismo ancho
   display: flex;
@@ -40,8 +47,9 @@ footer {
   align-items: center;
 }
 
+//---------imágenes y enlaces--------------------//
+
 .imagenPublicidadFooter2 {
- 
   transition: transform 0.3s ease;
   border-radius: 50px;
   padding: 0;
@@ -62,23 +70,19 @@ footer {
   }
 }
 
-.imagenFooter1{
+.imagenFooter1 {
   width: 60%;
 }
 
-// .dividerFooter {
-//   padding: 10px;
-//   border-bottom: 5px solid #00f7ff;
-//   border-radius: 30px;
-//   // border-radius: 50px;
-//   width: 100%;
-// }
+//---------sección de derechos de autor--------------------//
 
 .trademarkFooter {
   text-align: center;
   margin-top: 0px;
   padding: 0px;
 }
+
+//---------enlaces a redes sociales--------------------//
 
 .linksFooter {
   display: flex;
@@ -91,6 +95,8 @@ footer {
   list-style: none;
   margin-bottom: 10px; // Añadir margen inferior para separar los enlaces
 }
+
+//---------estilos de texto y animaciones--------------------//
 
 @keyframes shake {
   0% {
@@ -128,8 +134,8 @@ footer {
   }
 }
 
+//---------estilos responsivos--------------------//
 
-/* Estilos responsivos */
 @media (max-width: 768px) {
   .ElementsFooter {
     flex-direction: column; // Cambia a columna para pantallas pequeñas

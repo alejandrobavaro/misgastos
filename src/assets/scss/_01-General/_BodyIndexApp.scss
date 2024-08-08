@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 
+/*--------------Estilos Globales--------------*/
 
 html {
   font-size: 100%; // Establece el tamaño de fuente base.
@@ -15,12 +16,11 @@ html {
   // overflow-x: hidden; // Ocultar desbordamiento horizontal.
 }
 
-//--------------ESTILOS BODY--------------------//
-
+/*--------------Estilos Body--------------*/
 
 body {
   // background-color: rgb(110, 109, 109);
-  background: linear-gradient( #033640, #580202f4);
+  background: linear-gradient(#033640, #580202f4);
   // background-repeat: repeat;
   // background-position: center;
   // background-size: cover;
@@ -30,31 +30,30 @@ body {
   font-family: "Chelsea Market", system-ui;
   // text-transform: uppercase;
   //  font-family: "Gupter", serif;
-    }
+}
 
+/*--------------Estilos para el Contenedor Principal--------------*/
 
-    .app {
-      font-family: 'Arial, sans-serif';
-      // background-color: #f5f5f5;
-      padding: 2em;
-    }
-    
-    .main-content {
-      display: flex;
-      gap: 2em;
-    }
-    
-    .content {
-      flex-grow: 1;
-    }
-    
+.app {
+  font-family: 'Arial, sans-serif';
+  // background-color: #f5f5f5;
+  padding: 2em;
+}
 
+.main-content {
+  display: flex;
+  gap: 2em;
+}
 
+.content {
+  flex-grow: 1;
+}
 
-//-----ESTILOS GENERALES P-H1/H6----------//
+/*--------------Estilos para los Encabezados y Texto--------------*/
+
 p {
   color: rgb(0, 0, 0); // Color del texto de los párrafos.
-  font-size: medium; // Tamaño de fuente pequeño.
+  font-size: medium; // Tamaño de fuente mediano.
   padding: 20px;
 }
 
@@ -87,26 +86,28 @@ h6 {
   font-size: xx-small; // Tamaño de fuente extra extra pequeño.
 }
 
-//---------------ESTILOS LISTAS---------------------//
+/*--------------Estilos para Listas--------------*/
+
 li {
   // list-style-type: none;
-  list-style-type: circle;  // Elimina los puntos de las listas.
+  list-style-type: circle;  // Tipo de lista con círculos.
 }
 
 ol {
-  list-style-type: circle; // Establece el tipo de lista ordenada con círculos.
+  list-style-type: circle; // Tipo de lista ordenada con círculos.
 }
 
 td {
   color: rgb(86, 50, 50); // Color del texto en las celdas de tabla.
 }
 
-//---------------ESTILOS LINKS ENLACES---------------------//
+/*--------------Estilos para Enlaces--------------*/
+
 a {
   &:link {
     color: rgb(255, 255, 255);
     text-decoration: none; // Sin subrayado para los enlaces.
-     }
+  }
 
   &:visited {
     color: rgba(255, 245, 220, 0.887);
@@ -116,4 +117,11 @@ a {
   &:hover {
     animation: shake 0.5s ease; // Animación de sacudida al pasar el cursor sobre los enlaces.
   }
+}
+
+/* Animación de sacudida */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
 }

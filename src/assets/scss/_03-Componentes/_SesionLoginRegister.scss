@@ -1,4 +1,5 @@
-//SASS de _SesionLoginRegister.scss ---- //
+//---------contenedor de autenticación--------------------//
+
 .auth-container {
   display: flex;
   justify-content: center;
@@ -18,6 +19,8 @@
     width: 100%;
     position: relative;
 
+    //---------imagen de autenticación--------------------//
+
     .auth-image {
       width: 80px;
       height: auto;
@@ -28,6 +31,8 @@
         transform: scale(1.1);
       }
     }
+
+    //---------formulario de autenticación--------------------//
 
     .auth-form {
       flex: 1;
@@ -82,12 +87,14 @@
   }
 }
 
+//---------spinner de carga--------------------//
+
 .loading-spinner {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient( #03293f, #656565);
+  background: linear-gradient(#03293f, #656565);
   position: absolute;
   top: 0;
   left: 0;

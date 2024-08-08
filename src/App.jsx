@@ -19,14 +19,16 @@ import './assets/scss/_01-General/_BodyIndexApp.scss';
 
 import MisGastosPagados from './componentes/MisGastosPagados';
 import MisGastosPorPagar from './componentes/MisGastosPorPagar';
-import ServiciosEmpresasListado from './componentes/ServiciosEmpresasListado';
+import ServiciosEmpresasListado from './componentes/CPEServiciosListado';
 import ConsultasVencimientos from './componentes/ConsultasVencimientos';
 import ConsultasComprobantes from './componentes/ConsultasComprobantes';
 import ConsultasAyuda from './componentes/ConsultasAyuda';
 import Totales from './componentes/Totales';
 import Cobranza from './componentes/Cobranza';
 import Data from './componentes/Data';
-import BancoSaldosDisponibles from './componentes/BancoSaldosDisponibles';  // Importación añadida
+import BancoSaldosDisponibles from './componentes/BancoSaldosDisponibles'; 
+import CPECargarNuevoCPE from './componentes/CPECargarNuevoCPE';
+import CPEImpuestosListado from './componentes/CPEImpuestosListado'; // Asegúrate de que esta importación sea correcta
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -50,11 +52,13 @@ function App() {
               <Route path="/data" element={<Data />} />
               <Route path="/por-pagar" element={<MisGastosPorPagar />} />
               <Route path="/pagados" element={<MisGastosPagados />} />
-              <Route path="/empresas" element={<ServiciosEmpresasListado />} />
+              <Route path="/servicios" element={<ServiciosEmpresasListado />} />
+              <Route path="/impuestos" element={<CPEImpuestosListado />} />
+              <Route path="/nuevo-cpe" element={<CPECargarNuevoCPE />} />
               <Route path="/vencimientos" element={<ConsultasVencimientos />} />
               <Route path="/comprobantes" element={<ConsultasComprobantes />} />
               <Route path="/ayuda" element={<ConsultasAyuda />} />
-              <Route path="/banco-saldos" element={<BancoSaldosDisponibles />} />  {/* Ruta para Saldos Disponibles */}
+              <Route path="/banco-saldos" element={<BancoSaldosDisponibles />} />  
             </Routes>
           </div>
         </div>
