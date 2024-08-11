@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "./SesionAuthContext";
-import HeaderDolarApi from "./HeaderDolarApi"; // Asegúrate de que el path sea correcto
+import HeaderDolarApi from "./HeaderDolarApi";
+import HeaderNotificaciones from "./HeaderNotificaciones"; 
+import { useHeaderNotifications } from "./HeaderNotificacionesContext"; 
 import "../assets/scss/_03-Componentes/_Header.scss";
 
 const Header = () => {
   const location = useLocation();
   const { state, dispatch } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  // Usar el contexto de notificaciones
+  const { notifications } = useHeaderNotifications();
 
   const handleToggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -17,9 +22,24 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const getFormattedDate = () => {
+    const today = new Date();
+    const options = {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    };
+    const formattedDate = today.toLocaleDateString("es-ES", options);
+    const [weekday, dayMonthYear] = formattedDate.split(", ");
+    return { weekday, dayMonthYear };
+  };
+
+  const { weekday, dayMonthYear } = getFormattedDate();
+
   return (
     <header className="header">
-      <div className="header-container">
+      <div className="header-grid">
         <div className="logo-column">
           <Link to="/" onClick={handleCloseMobileMenu}>
             <img
@@ -29,27 +49,48 @@ const Header = () => {
             />
           </Link>
         </div>
-        <nav className={`navbarHeader ${isMobileMenuOpen ? "open" : ""}`}>
-          <div className="navbar-navHeader">
-            <Link
-              className="nav-linkHeader home-link"
-              to="/"
-              onClick={handleCloseMobileMenu}
-            >
-              <h2 className="textoMenu1">HOME</h2>
-            </Link>
-            <Link
-              className="nav-linkHeader"
-              to="/contacto"
-              onClick={handleCloseMobileMenu}
-            >
-              <h2 className="textoMenu">CONTACTO</h2>
-            </Link>
-            <div className="contenedor-dolarappi">
-              <HeaderDolarApi /> {/* Muestra el valor del dólar aquí */}
+
+        <div className="header-container">
+          <nav className={`navbarHeader ${isMobileMenuOpen ? "open" : ""}`}>
+            <div className="navbar-navHeader">
+              <Link
+                className="nav-linkHeader home-link"
+                to="/"
+                onClick={handleCloseMobileMenu}
+              >
+                <h2 className="textoMenu1">HOME</h2>
+              </Link>
+              <Link
+                className="nav-linkHeader"
+                to="/contacto"
+                onClick={handleCloseMobileMenu}
+              >
+                <h2 className="textoMenu">CONTACTO</h2>
+              </Link>
             </div>
+          </nav>
+        </div>
+
+        <div className="contenedor-dolarappi">
+          <HeaderDolarApi /> {/* Muestra el valor del dólar aquí */}
+        </div>
+
+        <div className="notifications-container">
+      <HeaderNotificaciones
+        reminderCount={notifications.today} // Pasa el conteo de notificaciones como prop
+        onClick={() => console.log('Notificaciones clickeadas')} // Implementa la lógica para manejar el clic
+      />
+    </div>
+
+        <div className="date-container">
+          <div className="date-text">
+            <span>Hoy es: </span>
+            <span>{weekday},</span>
+            <br />
+            <span>{dayMonthYear}</span>
           </div>
-        </nav>
+        </div>
+
         <div className="auth-buttons-container">
           <div className="auth-buttons-column">
             {state.isAuthenticated ? (

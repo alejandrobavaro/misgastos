@@ -1,24 +1,48 @@
 //---------contenedores header--------------------//
 
 .header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   border-bottom: 2px solid #00f7ff7c;
   border-radius: 30px;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
 }
 
-.header-container {
+.header-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  width: 100%;
+  grid-template-columns: 15% 15% 25% 5% 20% 15%;
   align-items: center;
-  padding: 0px;
-  margin: 0px;
+  justify-content: space-between;
+  gap: 10px; /* Espacio entre las columnas */
+  width: 100%;
 }
+
+//---------contenedor fecha--------------------//
+
+.date-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 100px;
+  border-left: 1px solid #00f7ff37;
+  border-right: 1px solid #00f7ff37;
+  border-radius: 30px;
+  transition: transform 0.3s ease;
+}
+
+.date-text {
+  font-size: x-small;
+  color: white;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+
+  &:hover {
+    color: rgb(196, 244, 231);
+  }
+}
+
+//---------auth-buttons--------------------//
 
 .auth-buttons-container {
   display: flex;
@@ -105,14 +129,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 20px;
-  border-left: 1px solid #00f7ff37;
-  border-right: 1px solid #00f7ff37;
-  border-radius: 30px;
+    margin-left: 20px;
   transition: transform 0.3s ease;
+  
+  &:hover {
+    color: #52cce7;
+  }
+}
+
+//---------notificaciones--------------------//
+
+.headerNotificaciones {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #ffffff; /* Color del ícono */
+  font-size: small;
+  transition: color 0.3s ease;
 
   &:hover {
-    transform: scale(1.1);
+    color: #bbd0cd; /* Color del ícono en hover */
   }
 }
 
@@ -141,7 +177,6 @@
   font-size: xx-small;
   color: white;
   text-transform: uppercase;
-
 
   &:hover {
     color: #c3dde2;
@@ -181,7 +216,7 @@
     position: absolute;
     top: 80px;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
+    // background-color: rgba(0, 0, 0, 0.8);
     padding: 20px;
     z-index: 10;
 
@@ -202,12 +237,12 @@
 .dollar-column {
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #00f7ff7c; /* Línea divisoria entre columnas */
+  border-right: 1px solid #00f7ff7c; 
   padding-right: 10px;
 }
 
 .dollar-column:last-child {
-  border-right: none; /* No mostrar línea divisoria en la última columna */
+  border-right: none; 
 }
 
 .dollar-column div {
@@ -218,5 +253,8 @@
 }
 
 .dollar-name {
-  font-weight: normal;
+  font-weight: bold;
+  color: #52cce7;
 }
+
+

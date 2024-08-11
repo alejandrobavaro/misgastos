@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import MainCalendarioPagos from './MainCalendarioPagos';
+import MainNotas from './MainNotas'; 
 import '../assets/scss/_03-Componentes/_MainContent.scss';
 
 function MainContent() {
@@ -6,56 +8,21 @@ function MainContent() {
 
   return (
     <main className="mainContent">
-      {/* Primera sección del grid */}
-      <div className="gridPadre1MainContent">
-        <div className="objetoCentradoMainContent1">
-          <a href="#">
-            <img
-              alt="icono"
-              className="imagen-publicidadMainContent1"
-              src="/img/05-img-costados-larga/4.png"
-            />
-          </a>
+      <div className="gridContainerMainContent">
+        <div className="gridItem">
+          <MainCalendarioPagos />
+        </div>
+       
+        <div className="gridItem">
+          <MainNotas /> {/* Agrega el componente MainNotas aquí */}
+        </div>
+        {/* <div className="gridItem">
           <img
             alt="imagen"
             className="imagen-publicidadMainContent2"
             src="/img/02-logos/logomisgastos1.png"
           />
-          <a href="#">
-            <img
-              alt="icono"
-              className="imagen-publicidadMainContent1"
-              src="/img/05-img-costados-larga/3.png"
-            />
-          </a>
-        </div>
-      </div>
-
-      {/* Segunda sección del grid */}
-      <div className="gridPadreMainContent">
-        <div className="objetoCentradoMainContent1">
-          {/* <a href="#">
-            <img
-              alt="icono"
-              className="imagen-publicidadMainContent1"
-              src="/img/05-img-costados-larga/20.png"
-            />
-          </a> */}
-          <a href="#">
-            <img
-              className="imagen-publicidadMainContent3"
-              src="/img/05-gif/i-love-money-pay-day.gif"
-              alt=""
-            />
-          </a>
-          {/* <a href="#">
-            <img
-              alt="icono"
-              className="imagen-publicidadMainContent1"
-              src="/img/05-img-costados-larga/2.png"
-            />
-          </a> */}
-        </div>
+        </div> */}
       </div>
     </main>
   );

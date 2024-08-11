@@ -27,37 +27,39 @@ const Register = () => {
   };
 
   return (
-    <div className="auth-container">
-      {loading ? (
-        <LoadingSpinner />
-      ) : (
-        <div className="auth-content">
-          <img className='auth-image top-image' src="/img/05-img-costados-larga/4.png" alt="" />
-          <form onSubmit={handleRegister} className="auth-form">
-            <h2>Registrate</h2>
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <input
-              type="password"
-              placeholder="Confirm Password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-            />
-            <button type="submit">Register</button>
-          </form>
-          <img className='auth-image bottom-image' src="/img/05-img-costados-larga/3.png" alt="" />
-        </div>
-      )}
+    <div className="auth-overlay">
+      <div className="auth-container">
+        {loading ? (
+          <LoadingSpinner />
+        ) : (
+          <div className="auth-content">
+            <img className='auth-image top-image' src="/img/05-img-costados-larga/4.png" alt="" />
+            <form onSubmit={handleRegister} className="auth-form">
+              <h2>Registrate</h2>
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+              <button type="submit">Register</button>
+            </form>
+            <img className='auth-image bottom-image' src="/img/05-img-costados-larga/3.png" alt="" />
+          </div>
+        )}
+      </div>
     </div>
   );
 };

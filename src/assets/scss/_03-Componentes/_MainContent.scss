@@ -11,40 +11,46 @@
   border-radius: 30px;
 }
 
-//---------grid principal primera sección--------------------//
+//---------contenedor grid principal--------------------//
 
-.gridPadre1MainContent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
+.gridContainerMainContent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  grid-template-rows: repeat(3, auto); /* 3 filas */
+  gap: 20px; /* Espacio entre elementos */
   width: 100%;
-  background-color: transparent;
-  
-  @media (max-width: 768px) {
-    flex-direction: column;
-    width: 90%;
-    margin: 0;
-    padding: 15px;
-  }
+  max-width: 1200px; /* Ajusta según sea necesario */
 }
 
-//---------centrar objetos primera sección--------------------//
+//---------items del grid--------------------//
 
-.objetoCentradoMainContent1 {
+.gridItem {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  
-  @media (max-width: 768px) {
-    flex-direction: column;
+  background-color: transparent;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  border-radius: 10px;
+  // box-shadow: 0 0px 10px rgb(0, 217, 255);
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .calendarSectionMainContent {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 20px;
+    background-color: #fff; /* Ajusta según sea necesario */
+    border-radius: 10px;
+    // box-shadow: 0 4px 80px rgb(255, 0, 0);
   }
 }
 
-//---------imágenes de publicidad primera sección--------------------//
+//---------imágenes de publicidad--------------------//
 
 .imagen-publicidadMainContent1 {
   width: 200px;
@@ -75,27 +81,6 @@
   }
 }
 
-//---------grid principal segunda sección--------------------//
-
-.gridPadreMainContent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  background-color: transparent;
-  
-  @media (max-width: 768px) {
-    flex-direction: column;
-    width: 90%;
-    margin: 0;
-    padding: 15px;
-  }
-}
-
-//---------imágenes de publicidad segunda sección--------------------//
-
 .imagen-publicidadMainContent3 {
   width: 100%;
   max-width: 900px;
@@ -104,13 +89,14 @@
   transition: transform 0.3s ease;
 
   &:hover {
-    // transform: scale(1.1);
+    transform: scale(1.1);
   }
 
   @media (max-width: 768px) {
     max-width: 300px;
   }
 }
+
 
 //---------íconos de WhatsApp -------------------//
 

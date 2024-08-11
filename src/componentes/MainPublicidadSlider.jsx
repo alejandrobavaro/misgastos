@@ -10,7 +10,7 @@ const MainPublicidadSlider = () => {
   useEffect(() => {
     const fetchProductos = async () => {
       try {
-        const response = await fetch("/productos.json"); // Carga los productos desde un archivo JSON
+        const response = await fetch("/productos.json");
         const productos = await response.json();
         setProductos(productos);
       } catch (error) {

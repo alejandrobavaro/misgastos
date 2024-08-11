@@ -11,7 +11,7 @@ const Logout = () => {
   React.useEffect(() => {
     dispatch({ type: 'LOGOUT' });
     setTimeout(() => {
-      navigate('/tienda');
+      navigate('/login'); // Cambiado para redirigir a la página de inicio de sesión
     }, 2000); // Simula un retraso
   }, [dispatch, navigate]);
 

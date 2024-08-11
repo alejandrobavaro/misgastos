@@ -1,5 +1,18 @@
-//---------contenedor de autenticación--------------------//
+//---------overlay de autenticación--------------------//
+.auth-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.888); // Fondo oscuro y semi-transparente
+  z-index: 1000;
+}
 
+//---------contenedor de autenticación--------------------//
 .auth-container {
   display: flex;
   justify-content: center;
@@ -9,7 +22,7 @@
   .auth-content {
     display: flex;
     align-items: center;
-    flex-direction: column; // Cambiado para que las imágenes se coloquen arriba y abajo en mobile
+    flex-direction: column;
     background: transparent;
     padding: 2rem;
     border-radius: 20px;
@@ -20,7 +33,6 @@
     position: relative;
 
     //---------imagen de autenticación--------------------//
-
     .auth-image {
       width: 80px;
       height: auto;
@@ -33,7 +45,6 @@
     }
 
     //---------formulario de autenticación--------------------//
-
     .auth-form {
       flex: 1;
       width: 100%;
@@ -75,6 +86,25 @@
       }
     }
 
+    //---------enlaces de autenticación--------------------//
+    .auth-links {
+      margin-top: 1rem;
+
+      p {
+        color: #ffffff;
+        font-size: 0.9rem;
+
+        a {
+          color: #ff00c8;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
     @media (min-width: 768px) {
       flex-direction: row; // Volver a la dirección de fila en pantallas grandes
 
@@ -83,39 +113,6 @@
         border-radius: 50px;
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.467);
       }
-    }
-  }
-}
-
-//---------spinner de carga--------------------//
-
-.loading-spinner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: linear-gradient(#03293f, #656565);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-
-  .spinner {
-    border: 4px solid rgb(0, 0, 0);
-    border-top: 10px solid #00fffb;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
     }
   }
 }

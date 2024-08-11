@@ -1,0 +1,117 @@
+.calendar-outer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+}
+
+.calendar-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: transparent;
+  border-radius: 20px;
+  box-shadow: 0 0px 20px rgb(255, 255, 255);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  button {
+    background-color: #188289;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #0e4e5d;
+    }
+  }
+
+  h2 {
+    margin: 0;
+    color: #333;
+  }
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+
+  .day {
+    background: white;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    position: relative; 
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .date {
+      display: block;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .reminder-icon {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      font-size: 0.75rem;
+      color: #ff0000;
+    }
+  }
+
+  .highlight {
+    color: white;
+    border-radius: 50%;
+    border: rgb(30, 195, 187) solid 3px;
+  }
+}
+
+.reminders-container {
+  margin-top: 2rem;
+  background: transparent;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 40px rgba(255, 255, 255, 0.1);
+  max-width: 800px;
+  width: 100%;
+
+  h3 {
+    margin-top: 0;
+    color: #00ffee;
+    font-size: medium;
+  }
+
+  ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    font-size: small;
+    color: #ffffff;
+  }
+
+  p {
+    margin: 0;
+    color: #c4f5f8;
+  }
+}
