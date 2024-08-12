@@ -1,0 +1,45 @@
+.theme-switcher {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+  }
+  
+  .theme-button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: 1px solid transparent; // Cambié a 'transparent' para evitar errores visuales
+    border-radius: 50%;
+    padding: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  
+    &.light {
+      background-color: rgb(83, 183, 193);
+      color: #000;
+  
+      &:hover {
+        background-color: #e0e0e0;
+      }
+    }
+  
+    &.dark {
+      background-color: #3498a9;
+      color: #fff;
+  
+      &:hover {
+        background-color: #0c6c79;
+      }
+    }
+  
+    svg {
+      margin-right: 3px;
+    }
+  
+    span {
+      font-size: xx-large;
+  
+    }
+  }
+  

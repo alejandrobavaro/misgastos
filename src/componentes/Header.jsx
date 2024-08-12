@@ -1,18 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "./SesionAuthContext";
 import HeaderDolarApi from "./HeaderDolarApi";
-import HeaderNotificaciones from "./HeaderNotificaciones"; 
-import { useHeaderNotifications } from "./HeaderNotificacionesContext"; 
+import HeaderNotificaciones from "./HeaderNotificaciones";
+import { useHeaderNotifications } from "./HeaderNotificacionesContext";
+import AppModoClaroOscuro from './AppModoClaroOscuro'; // Importa el componente
 import "../assets/scss/_03-Componentes/_Header.scss";
+import { BsFillPersonPlusFill, BsBoxArrowRight } from 'react-icons/bs'; // Importa iconos de Bootstrap
 
 const Header = () => {
   const location = useLocation();
   const { state, dispatch } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => document.body.classList.contains('dark-mode')); // Obtener el modo actual desde el body
   
   // Usar el contexto de notificaciones
   const { notifications } = useHeaderNotifications();
+
+  useEffect(() => {
+    document.body.classList.toggle('dark-mode', isDarkMode); // Aplicar la clase al body para todo el documento
+  }, [isDarkMode]);
 
   const handleToggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -37,6 +44,10 @@ const Header = () => {
 
   const { weekday, dayMonthYear } = getFormattedDate();
 
+  const toggleDarkMode = () => {
+    setIsDarkMode(prevMode => !prevMode);
+  };
+
   return (
     <header className="header">
       <div className="header-grid">
@@ -50,37 +61,24 @@ const Header = () => {
           </Link>
         </div>
 
-        <div className="header-container">
-          <nav className={`navbarHeader ${isMobileMenuOpen ? "open" : ""}`}>
-            <div className="navbar-navHeader">
-              <Link
-                className="nav-linkHeader home-link"
-                to="/"
-                onClick={handleCloseMobileMenu}
-              >
-                <h2 className="textoMenu1">HOME</h2>
-              </Link>
-              <Link
-                className="nav-linkHeader"
-                to="/contacto"
-                onClick={handleCloseMobileMenu}
-              >
-                <h2 className="textoMenu">CONTACTO</h2>
-              </Link>
-            </div>
+        <div className="navbarHeader">
+          <nav className={`navbar-navHeader ${isMobileMenuOpen ? "open" : ""}`}>
+            <Link
+              className="nav-linkHeader home-link"
+              to="/"
+              onClick={handleCloseMobileMenu}
+            >
+              <h2 className="textoMenu1">HOME</h2>
+            </Link>
+            <Link
+              className="nav-linkHeader"
+              to="/contacto"
+              onClick={handleCloseMobileMenu}
+            >
+              <h2 className="textoMenu">CONTACTO</h2>
+            </Link>
           </nav>
         </div>
-
-        <div className="contenedor-dolarappi">
-          <HeaderDolarApi /> {/* Muestra el valor del dólar aquí */}
-        </div>
-
-        <div className="notifications-container">
-      <HeaderNotificaciones
-        reminderCount={notifications.today} // Pasa el conteo de notificaciones como prop
-        onClick={() => console.log('Notificaciones clickeadas')} // Implementa la lógica para manejar el clic
-      />
-    </div>
 
         <div className="date-container">
           <div className="date-text">
@@ -89,6 +87,24 @@ const Header = () => {
             <br />
             <span>{dayMonthYear}</span>
           </div>
+        </div>
+
+        <div className="contenedor-dolarappi">
+          <HeaderDolarApi />
+        </div>
+
+        
+
+        <div className="notifications-container">
+          <HeaderNotificaciones
+            reminderCount={notifications.today}
+            onClick={() => console.log('Notificaciones clickeadas')}
+          />
+        </div>
+
+
+        <div className="theme-switcher-container">
+          <AppModoClaroOscuro isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
         </div>
 
         <div className="auth-buttons-container">
@@ -102,7 +118,7 @@ const Header = () => {
                   handleCloseMobileMenu();
                 }}
               >
-                <h2 className="textoMenu">Cerrar Sesión</h2>
+                <BsBoxArrowRight className="auth-icon" />
               </Link>
             ) : (
               <>
@@ -111,7 +127,7 @@ const Header = () => {
                   to="/login"
                   onClick={handleCloseMobileMenu}
                 >
-                  <h3 className="textoMenu">Inicia Sesión</h3>
+                  <BsFillPersonPlusFill className="auth-icon" />
                 </Link>
                 <hr className="auth-divider" />
                 <Link
@@ -125,6 +141,8 @@ const Header = () => {
             )}
           </div>
         </div>
+
+
       </div>
     </header>
   );

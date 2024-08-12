@@ -6,16 +6,18 @@
   border-radius: 30px;
   padding: 0;
   margin: 0;
+  // max-width: 1000px;
 }
 
 .header-grid {
   display: grid;
-  grid-template-columns: 15% 15% 25% 5% 20% 15%;
+  grid-template-columns: 20% 20% 10% 15% 5% 5% 5% 5%; 
   align-items: center;
   justify-content: space-between;
-  gap: 10px; /* Espacio entre las columnas */
   width: 100%;
+  
 }
+
 
 //---------contenedor fecha--------------------//
 
@@ -23,9 +25,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 100px;
+  margin: 0px;
   border-left: 1px solid #00f7ff37;
   border-right: 1px solid #00f7ff37;
+  padding: 0px;
   border-radius: 30px;
   transition: transform 0.3s ease;
 }
@@ -44,12 +47,32 @@
 
 //---------auth-buttons--------------------//
 
-.auth-buttons-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 20px;
+// En _Header.scss
+
+.auth-icon {
+  font-size: 24px; // Ajusta el tamaño según sea necesario
+  color: #ffffff; // Ajusta el color según el tema
+  transition: color 0.3s ease;
+  margin: 0px;
+
+  &:hover {
+    color: #00ddff; // Cambia el color al pasar el ratón sobre el icono
+  }
 }
+
+.auth-buttons-column {
+  display: flex;
+  align-items: center;
+}
+
+.auth-divider {
+  margin: 0px;
+  border: none;
+  height: 24px;
+  width: 1px;
+  // background-color: #ccc;
+}
+
 
 //---------logo header--------------------//
 
@@ -129,7 +152,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-    margin-left: 20px;
+  margin-left: 20px;
   transition: transform 0.3s ease;
   
   &:hover {
@@ -155,14 +178,14 @@
 //---------Inicio Sesion--------------------//
 
 .auth-buttons-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-left: 1px solid #00f7ff37;
-  border-right: 1px solid #00f7ff37;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  // border-left: 1px solid #00f7ff37;
+  // border-right: 1px solid #00f7ff37;
   padding: 0px;
-  border-radius: 50px;
+  // border-radius: 50px;
   background-color: transparent;
 }
 
@@ -201,7 +224,7 @@
 //---------media queries--------------------//
 
 @media (max-width: 768px) {
-  .header-container {
+  .header-grid {
     grid-template-columns: 1fr;
   }
 
@@ -257,4 +280,23 @@
   color: #52cce7;
 }
 
+//---------Modo Oscuro/Claro--------------------//
 
+.theme-switcher-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-switcher-button {
+  background: transparent;
+  border: none;
+  color: #ffffff; /* Color del ícono */
+  font-size: large;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #bbd0cd; /* Color del ícono en hover */
+  }
+}

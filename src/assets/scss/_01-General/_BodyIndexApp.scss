@@ -32,6 +32,19 @@ body {
   //  font-family: "Gupter", serif;
 }
 
+// Modo claro
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+// Modo oscuro
+body.dark-mode {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+
 /*--------------Estilos para el Contenedor Principal--------------*/
 
 .app {
@@ -39,6 +52,17 @@ body {
   // background-color: #f5f5f5;
   padding: 2em;
 }
+
+.app {
+  transition: background-color 0.3s;
+
+  &.dark-mode {
+    background-color: #121212;
+    color: #fff;
+  }
+}
+
+
 
 .main-content {
   display: flex;

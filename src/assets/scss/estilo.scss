@@ -1,5 +1,7 @@
 /*---------------------SASS A CSS------------------------*/
 @import "./_01-General/BodyIndexApp";
+@import "./_01-General/AppModoClaroOscuro";
+
 @import "./_01-General/SweetAlert";
 @import "./_01-General/Toastify";
 
@@ -20,6 +22,8 @@
 @import "./_03-Componentes/MainContent";
 @import "./_03-Componentes/MainCalendarioPagos";
 @import "./_03-Componentes/MainNotas";
+@import "./_03-Componentes/MainTareasEnProceso.scss";
+
 
 //----------------Header------------//
 @import "./_03-Componentes/Header";

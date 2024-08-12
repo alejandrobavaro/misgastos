@@ -1,9 +1,17 @@
 //---------contenedor principal--------------------//
 
-.mainContent {
-  display: flex;
+.gridPadre {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  max-width: 1168px;
+  border-radius: 30px;
+  padding: 30px;
+}
+
+.mainContent {
   width: 100%;
   background-color: transparent;
   padding: 10px;
@@ -11,18 +19,24 @@
   border-radius: 30px;
 }
 
-//---------contenedor grid principal--------------------//
+//---------contenedor principal de los elementos--------------------//
 
-.gridContainerMainContent {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
-  grid-template-rows: repeat(3, auto); /* 3 filas */
-  gap: 20px; /* Espacio entre elementos */
+.mainContentContainer {
   width: 100%;
   max-width: 1200px; /* Ajusta según sea necesario */
+  padding: 10px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+  grid-template-rows: auto auto; /* Dos filas: una para el calendario y notas, y una para las tareas */
+  gap: 20px; /* Espacio entre elementos */
 }
 
 //---------items del grid--------------------//
+
+
+
+
 
 .gridItem {
   display: flex;
@@ -33,22 +47,25 @@
   height: auto;
   padding: 10px;
   border-radius: 10px;
-  // box-shadow: 0 0px 10px rgb(0, 217, 255);
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .calendarSectionMainContent {
-    width: 100%;
-    margin-top: 2rem;
-    padding: 20px;
-    background-color: #fff; /* Ajusta según sea necesario */
-    border-radius: 10px;
-    // box-shadow: 0 4px 80px rgb(255, 0, 0);
-  }
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: Agrega una sombra para mejorar la visualización */
 }
+
+// // Coloca el calendario y notas en la primera fila
+// .gridItem.calendar {
+//   grid-column: 1 / 2; /* Columna 1 */
+//   grid-row: 1; /* Fila 1 */
+// }
+
+// .gridItem.notes {
+//   grid-column: 2 / 3; /* Columna 2 */
+//   grid-row: 1; /* Fila 1 */
+// }
+
+// // Coloca el componente de tareas en la segunda fila
+// .gridItem.tasks {
+//   grid-column: 1 / span 2; /* Ocupa ambas columnas */
+//   grid-row: 2; /* Fila 2 */
+// }
 
 //---------imágenes de publicidad--------------------//
 
@@ -96,7 +113,6 @@
     max-width: 300px;
   }
 }
-
 
 //---------íconos de WhatsApp -------------------//
 

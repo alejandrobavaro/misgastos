@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Header from './componentes/Header';
 import Sidebar from './componentes/Sidebar';
@@ -28,7 +28,7 @@ import Data from './componentes/Data';
 import BancoSaldosDisponibles from './componentes/BancoSaldosDisponibles';
 import CPECargarNuevoCPE from './componentes/CPECargarNuevoCPE';
 import CPEImpuestosListado from './componentes/CPEImpuestosListado';
-import { HeaderNotificationsProvider } from './componentes/HeaderNotificacionesContext'; // Corregido aquí
+import { HeaderNotificationsProvider } from './componentes/HeaderNotificacionesContext'; 
 
 const ProtectedRoute = ({ element, ...rest }) => {
   const { state } = useAuth();
@@ -36,13 +36,19 @@ const ProtectedRoute = ({ element, ...rest }) => {
 };
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   return (
     <AuthProvider>
-      <HeaderNotificationsProvider> {/* Envuelve la aplicación con el proveedor del contexto de notificaciones */}
+      <HeaderNotificationsProvider>
         <Router>
-          <Header />
+          <Header isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} /> {/* Pasa props al Header */}
           <hr className="border border-0 opacity-20" />
-          <div className="main-content">
+          <div className={`main-content ${isDarkMode ? 'dark-mode' : ''}`}>
             <Sidebar />
             <div className="content">
               <Routes>
