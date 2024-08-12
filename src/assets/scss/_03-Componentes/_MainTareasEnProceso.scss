@@ -1,124 +1,12 @@
-
 .mainTareasEnProceso {
-    display: flex;
-    flex-direction: column;
-    background: transparent;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 40px rgb(255, 255, 255);
-    gap: 1rem;
-    color: #ab6262;
-  
-    .task-form {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 2rem;
-  
-      input,
-      textarea,
-      select {
-        padding: 0.75rem;
-        border: 1px solid #00f7ff;
-        border-radius: 8px;
-        background: #b08585;
-        color: #000; // Ajustar color del texto para mejor legibilidad
-        box-shadow: 0 0px 10px rgba(255, 255, 255, 0.3);
-      }
-  
-      button {
-        background-color: #007bff; // Bootstrap primary color
-        color: #fff;
-        padding: 8px 16px;
-        font-size: small;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-  
-        &:hover {
-          background-color: #0056b3; // Darker blue for hover
-        }
-      }
-  
-      .task-form-extra {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
-    }
-  
-    .task-columns {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-  
-      .task-column {
-        flex: 1;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        padding: 1rem;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        min-height: 300px;
-  
-        h2 {
-          text-align: center;
-          margin-bottom: 1rem;
-        }
-  
-        .task-list {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-  
-          .task-item {
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            padding: 1rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            position: relative;
-  
-            &:hover {
-              background-color: rgba(255, 255, 255, 0.3);
-            }
-  
-            strong {
-              display: block;
-              margin-bottom: 0.5rem;
-              font-size: 1.1rem;
-            }
-  
-            p {
-              margin-bottom: 0.5rem;
-            }
-  
-            small {
-              display: block;
-              margin-bottom: 0.25rem;
-              color: #9c6666;
-            }
-  
-            .edit-button {
-              position: absolute;
-              top: 1rem;
-              right: 1rem;
-              background: transparent;
-              border: none;
-              cursor: pointer;
-              color: #007bff;
-              font-size: 1.2rem;
-              transition: color 0.3s ease;
-  
-              &:hover {
-                color: #0056b3;
-              }
-            }
-          }
-        }
-      }
-    }
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 40px rgb(255, 255, 255);
+  gap: 1rem;
+  color: #ab6262;
 
   .task-form {
     display: flex;
@@ -130,16 +18,32 @@
     textarea,
     select {
       padding: 0.75rem;
-      border: 1px solid #00f7ff64;
       border-radius: 8px;
+      box-shadow: 0 0px 10px rgba(255, 255, 255, 0.3);
+    }
+
+    input[type="text"],
+    input[type="date"] {
+      border: 1px solid #00f7ff;
       background: rgb(255, 255, 255);
-      color: #000000;
-      box-shadow: 0 0px 10px rgba(255, 255, 255, 0.358);
+      color: #000;
+    }
+
+    select {
+      border: 1px solid #00f7ff;
+      background: rgb(255, 255, 255);
+      color: #000;
+    }
+
+    textarea {
+      border: 1px solid #00f7ff;
+      background: rgb(255, 255, 255);
+      color: #000;
     }
 
     button {
-      background-color: #188289;
-      color: white;
+      background-color: #007bff;
+      color: #fff;
       padding: 8px 16px;
       font-size: small;
       border: none;
@@ -148,7 +52,7 @@
       transition: background-color 0.3s ease;
 
       &:hover {
-        background-color: rgb(9, 61, 73);
+        background-color: #0056b3;
       }
     }
 
@@ -226,7 +130,7 @@
             color: #545454;
           }
 
-          .task-actions {
+          .task-item-controls {
             display: flex;
             justify-content: flex-end;
             gap: 0.5rem;
@@ -243,6 +147,14 @@
               &:hover {
                 color: #0f5f4c;
               }
+
+              &.move-left-button {
+                color: #fff;
+              }
+
+              &.move-right-button {
+                color: #fff;
+              }
             }
           }
         }
@@ -250,7 +162,7 @@
     }
   }
 
-  .task-modal {
+  .task-detail-modal {
     padding: 2rem;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.8);
@@ -269,9 +181,7 @@
       width: 100%;
       margin-bottom: 1rem;
       padding: 0.75rem;
-      border: 1px solid #555;
       border-radius: 8px;
-      background: rgba(255, 255, 255, 0.1);
       color: #fff;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     }
@@ -307,160 +217,3 @@
     background-color: rgb(6, 131, 106);
   }
 }
-
-.task-detail-modal {
-  background: transparent;
-  border-radius: 8px;
-  color: #fff;
-  padding: 2rem;
-  max-width: 500px;
-  margin: 0 auto;
-  position: relative;
-  box-shadow: 0 1px 30px rgb(255, 255, 255);
-
-  h2 {
-    margin-bottom: 1rem;
-    color: #fff;
-  }
-
-  .task-detail-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    input,
-    textarea,
-    select {
-      padding: 0.75rem;
-      border: 1px solid #555;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-      box-shadow: 0 1px 3px rgb(255, 255, 255);
-    }
-
-    button {
-      background-color: #196361;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      padding: 0.75rem 1.5rem;
-      cursor: pointer;
-      margin-right: 0.5rem;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 1px 3px rgb(255, 255, 255);
-
-      &:hover {
-        background-color: #139987;
-      }
-    }
-  }
-
-  .modal-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 0.5rem;
-    padding: 10px;
-
-    button {
-      margin-left: 0.5rem;
-      border: none;
-      background-color: #188289;
-      border-radius: 15px;
-      padding: 10px;
-    }
-  }
-}
-
-
-
-//-------------------------//
-
-  
-    .task-detail-modal {
-      background: #074356;
-      border-radius: 10px;
-      padding: 2rem;
-      width: 90%;
-      max-width: 500px;
-      position: relative;
-    }
-  
-    .task-detail-modal-overlay {
-        background-color: #139987;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  
-    .task-detail-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-  
-      input,
-      textarea,
-      select {
-        padding: 0.75rem;
-        border: 1px solid #00f7ff;
-        border-radius: 8px;
-        background: #fff;
-        color: #000;
-        box-shadow: 0 0px 10px rgba(255, 255, 255, 0.3);
-      }
-  
-      .modal-buttons {
-        display: flex;
-        gap: 1rem;
-        margin-top: 1rem;
-  
-        .save-button {
-          background-color: #28a745;
-          color: #fff;
-          padding: 8px 16px;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-  
-          &:hover {
-            background-color: #218838;
-          }
-        }
-  
-        .delete-button {
-            background-color: #139987;
-          color: #fff;
-          padding: 8px 16px;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-  
-          &:hover {
-            background-color: rgb(94, 210, 169);
-          }
-        }
-  
-        .close-button {
-          background-color: #6c757d;
-          color: #fff;
-          padding: 8px 16px;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-  
-          &:hover {
-            background-color: #5a6268;
-          }
-        }
-      }
-    }
-  
-  

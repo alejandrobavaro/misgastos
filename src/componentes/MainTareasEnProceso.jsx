@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import Modal from 'react-modal';
-import { FaEdit } from 'react-icons/fa';
-import { BsArrowRight, BsArrowLeft } from 'react-icons/bs'; // Importamos íconos de Bootstrap
+import { FaEdit, FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 import '../assets/scss/_03-Componentes/_MainTareasEnProceso.scss';
 
 Modal.setAppElement('#root');
@@ -22,7 +20,7 @@ const initialTasks = {
   blocked: []
 };
 
-const columnOrder = ["todo", "doing", "done", "blocked"];
+const columns = ["todo", "doing", "done", "blocked"];
 
 function MainTareasEnProceso() {
   const [tasks, setTasks] = useState(initialTasks);
@@ -44,52 +42,33 @@ function MainTareasEnProceso() {
     setNewTask({ ...newTask, [name]: value });
   };
 
+  const handleColorChange = (color) => {
+    setNewTask({ ...newTask, color });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTasks(prevTasks => ({
-      ...prevTasks,
-      todo: [...prevTasks.todo, newTask]
-    }));
-    setNewTask({ title: "", description: "", color: "#333", date: "", priority: "medium", assignedTo: "" });
-  };
-
-  const handleDragEnd = (result) => {
-    if (!result.destination) return;
-
-    const { source, destination } = result;
-    
-    const updatedTasks = {
-      ...tasks,
-      [source.droppableId]: Array.from(tasks[source.droppableId]),
-      [destination.droppableId]: Array.from(tasks[destination.droppableId]),
-    };
-    
-    const [movedTask] = updatedTasks[source.droppableId].splice(source.index, 1);
-    updatedTasks[destination.droppableId].splice(destination.index, 0, movedTask);
-    
-    setTasks(updatedTasks);
-  };
-
-  const moveTask = (direction) => {
-    if (!currentTask || !currentColumn) return;
-
-    const currentIndex = columnOrder.indexOf(currentColumn);
-    let newColumn = currentColumn;
-
-    if (direction === "next" && currentIndex < columnOrder.length - 1) {
-      newColumn = columnOrder[currentIndex + 1];
-    } else if (direction === "prev" && currentIndex > 0) {
-      newColumn = columnOrder[currentIndex - 1];
+    if (Object.values(newTask).every(field => field !== "")) {
+      setTasks(prevTasks => ({
+        ...prevTasks,
+        todo: [...prevTasks.todo, newTask]
+      }));
+      setNewTask({ title: "", description: "", color: "#333", date: "", priority: "medium", assignedTo: "" });
     }
+  };
 
-    if (newColumn !== currentColumn) {
-      const updatedTasks = {
-        ...tasks,
-        [currentColumn]: tasks[currentColumn].filter(task => task.title !== currentTask.title),
-        [newColumn]: [...tasks[newColumn], currentTask]
-      };
-      setTasks(updatedTasks);
-      setCurrentColumn(newColumn);
+  const moveTask = (task, fromColumn, direction) => {
+    const currentIndex = columns.indexOf(fromColumn);
+    const newIndex = currentIndex + direction;
+    if (newIndex >= 0 && newIndex < columns.length) {
+      const newColumn = columns[newIndex];
+
+      setTasks(prevTasks => {
+        const newTasks = { ...prevTasks };
+        newTasks[fromColumn] = prevTasks[fromColumn].filter(t => t !== task);
+        newTasks[newColumn] = [...prevTasks[newColumn], task];
+        return newTasks;
+      });
     }
   };
 
@@ -106,61 +85,77 @@ function MainTareasEnProceso() {
   };
 
   const handleTaskUpdate = () => {
-    const updatedTasks = {
-      ...tasks,
-      [currentColumn]: tasks[currentColumn].map(task =>
+    setTasks(prevTasks => ({
+      ...prevTasks,
+      [currentColumn]: prevTasks[currentColumn].map(task =>
         task.title === currentTask.title ? currentTask : task
       )
-    };
-    setTasks(updatedTasks);
+    }));
     closeTaskModal();
   };
 
   const handleTaskDelete = () => {
-    const updatedTasks = {
-      ...tasks,
-      [currentColumn]: tasks[currentColumn].filter(task => task.title !== currentTask.title)
-    };
-    setTasks(updatedTasks);
+    setTasks(prevTasks => ({
+      ...prevTasks,
+      [currentColumn]: prevTasks[currentColumn].filter(task => task.title !== currentTask.title)
+    }));
     closeTaskModal();
   };
 
   return (
     <div className="mainTareasEnProceso">
       <form className="task-form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="title"
-          value={newTask.title}
-          onChange={handleInputChange}
-          placeholder="Título de la Tarea"
-          required
-        />
-        <textarea
-          name="description"
-          value={newTask.description}
-          onChange={handleInputChange}
-          placeholder="Descripción de la Tarea"
-        />
-        <div className="task-form-extra">
+        <div className="form-group">
+          <label htmlFor="title">Título de la Tarea:</label>
           <input
+            id="title"
+            type="text"
+            name="title"
+            value={newTask.title}
+            onChange={handleInputChange}
+            placeholder="Título de la Tarea"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="description">Descripción de la Tarea:</label>
+          <textarea
+            id="description"
+            name="description"
+            value={newTask.description}
+            onChange={handleInputChange}
+            placeholder="Descripción de la Tarea"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="date">Fecha:</label>
+          <input
+            id="date"
             type="date"
             name="date"
             value={newTask.date}
             onChange={handleInputChange}
           />
-          <select
-            name="color"
-            value={newTask.color}
-            onChange={handleInputChange}
-          >
+        </div>
+        <div className="form-group color-selector">
+          <label>Color de Tarjeta:</label>
+          <div className="color-options">
             {colorOptions.map(option => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
+              <div
+                key={option.value}
+                className={`color-option ${newTask.color === option.value ? 'selected' : ''}`}
+                style={{ backgroundColor: option.value }}
+                onClick={() => handleColorChange(option.value)}
+              >
+                {newTask.color === option.value && <span className="checkmark">✓</span>}
+              </div>
             ))}
-          </select>
+          </div>
+        </div>
+        <div className="form-group">
+          <label htmlFor="priority">Prioridad:</label>
           <select
+            id="priority"
             name="priority"
             value={newTask.priority}
             onChange={handleInputChange}
@@ -169,7 +164,11 @@ function MainTareasEnProceso() {
             <option value="medium">Media</option>
             <option value="high">Alta</option>
           </select>
+        </div>
+        <div className="form-group">
+          <label htmlFor="assignedTo">Asignado a:</label>
           <input
+            id="assignedTo"
             type="text"
             name="assignedTo"
             value={newTask.assignedTo}
@@ -180,69 +179,48 @@ function MainTareasEnProceso() {
         <button type="submit" className="add-task-button">Agregar</button>
       </form>
 
-      <DragDropContext onDragEnd={handleDragEnd}>
-        <div className="task-columns">
-          {columnOrder.map((status) => (
-            <Droppable key={status} droppableId={status}>
-              {(provided) => (
-                <div
-                  className="task-column"
-                  ref={provided.innerRef}
-                  {...provided.droppableProps}
-                >
-                  <h2>{status.toUpperCase()}</h2>
-                  <div className="task-list">
-                    {tasks[status].map((task, index) => (
-                      <Draggable key={task.title} draggableId={task.title} index={index}>
-                        {(provided) => (
-                          <div
-                            className="task-item"
-                            ref={provided.innerRef}
-                            {...provided.draggableProps}
-                            {...provided.dragHandleProps}
-                            style={{ ...provided.draggableProps.style, backgroundColor: task.color }}
-                          >
-                            <div className="task-item-content" onClick={() => openTaskModal(task, status)}>
-                              <strong>{task.title}</strong>
-                              <p>{task.description}</p>
-                              <small>Fecha: {task.date}</small>
-                              <small>Prioridad: {task.priority}</small>
-                              <small>Asignado a: {task.assignedTo}</small>
-                            </div>
-                            <div className="task-item-actions">
-                              <button
-                                className="move-button"
-                                onClick={() => moveTask("prev")}
-                                disabled={columnOrder.indexOf(status) === 0} // Deshabilitar si es la primera columna
-                              >
-                                <BsArrowLeft />
-                              </button>
-                              <button
-                                className="move-button"
-                                onClick={() => moveTask("next")}
-                                disabled={columnOrder.indexOf(status) === columnOrder.length - 1} // Deshabilitar si es la última columna
-                              >
-                                <BsArrowRight />
-                              </button>
-                              <button className="edit-button" onClick={(e) => {
-                                e.stopPropagation();
-                                openTaskModal(task, status);
-                              }}>
-                                <FaEdit />
-                              </button>
-                            </div>
-                          </div>
-                        )}
-                      </Draggable>
-                    ))}
-                    {provided.placeholder}
+      <div className="task-columns">
+        {columns.map((status) => (
+          <div key={status} className="task-column">
+            <h2>{status.toUpperCase()}</h2>
+            <div className="task-list">
+              {tasks[status].map((task, index) => (
+                <div key={index} className="task-item" style={{ backgroundColor: task.color }}>
+                  <div className="task-item-content" onClick={() => openTaskModal(task, status)}>
+                    <strong>{task.title}</strong>
+                    <p>{task.description}</p>
+                    <small>Fecha: {task.date}</small>
+                    <small>Prioridad: {task.priority}</small>
+                    <small>Asignado a: {task.assignedTo}</small>
+                  </div>
+                  <div className="task-item-controls">
+                    <button
+                      className="move-left-button"
+                      onClick={() => moveTask(task, status, -1)}
+                      disabled={columns.indexOf(status) === 0}
+                    >
+                      <FaArrowLeft />
+                    </button>
+                    <button
+                      className="move-right-button"
+                      onClick={() => moveTask(task, status, 1)}
+                      disabled={columns.indexOf(status) === columns.length - 1}
+                    >
+                      <FaArrowRight />
+                    </button>
+                    <button className="edit-button" onClick={(e) => {
+                      e.stopPropagation();
+                      openTaskModal(task, status);
+                    }}>
+                      <FaEdit />
+                    </button>
                   </div>
                 </div>
-              )}
-            </Droppable>
-          ))}
-        </div>
-      </DragDropContext>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
 
       {currentTask && (
         <Modal

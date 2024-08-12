@@ -30,7 +30,7 @@
     }
 
     button {
-      background-color: #007bff; // Bootstrap primary color
+      background-color: rgba(0, 225, 255, 0.607);
       color: #fff;
       padding: 8px 16px;
       font-size: small;
@@ -40,7 +40,7 @@
       transition: background-color 0.3s ease;
 
       &:hover {
-        background-color: #0056b3; // Darker blue for hover
+        background-color: rgba(65, 203, 221, 0.395);
       }
     }
 
@@ -72,7 +72,7 @@
 
     .task-column {
       flex: 1;
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: rgba(65, 203, 221, 0.395);
       border-radius: 12px;
       padding: 1rem;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -94,7 +94,7 @@
         //---------Elemento de Tarea--------------------//
 
         .task-item {
-          background-color: rgba(255, 255, 255, 0.2);
+          background-color: rgba(221, 187, 187, 0.2);
           border-radius: 12px;
           padding: 1rem;
           color: #fff;
@@ -297,7 +297,7 @@
   //---------Overlay del Modal de Detalle--------------------//
 
   .task-detail-modal-overlay {
-    background-color: #139987;
+    background-color: #000000;
     position: fixed;
     top: 0;
     left: 0;
