@@ -1,32 +1,37 @@
 .mainTareasEnProceso {
   // Estilos generales para el contenedor principal
   margin: 0;
-  padding: 20px;
-  // background-color: #1c626e;
-  border-radius: 20px;
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 10px;
   box-shadow: 0 0 40px rgb(252, 252, 252);
+  
 
   // Estilos para el formulario de tareas
   .task-form {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
     gap: 12px;
     margin: 0;
     padding: 15px;
     background-color: #0b3e4cb1;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
 
     .form-group {
       display: flex;
       flex-direction: column;
+      width: 100%;
+      height: auto;
       margin: 0;
       padding: 0;
 
       label {
         margin-bottom: 6px;
-        font-size: 14px;
         color: #ffffff;
+        font-size: x-small;
       }
 
       input,
@@ -34,7 +39,7 @@
       select {
         width: 100%;
         padding: 8px;
-        font-size: 14px;
+        font-size: x-small;
         border: 1px solid #ddd;
         border-radius: 6px;
         background-color: #f9f9f9;
@@ -43,7 +48,8 @@
 
       textarea {
         resize: vertical;
-        min-height: 80px;
+       width: auto;
+        
       }
     }
 
@@ -52,19 +58,27 @@
       color: white;
       border: none;
       border-radius: 6px;
-      font-size: 14px;
-      padding: 10px;
+      font-size: small;
+      padding: 5px 10px;
       cursor: pointer;
       transition: background-color 0.3s ease;
-      grid-column: span 3; // Ocupa toda la fila en el grid
-
+     
       &:hover {
         background-color: #1d7184;
       }
     }
   }
 
-  // Estilos para las columnas de tareas
+
+
+
+
+
+
+
+
+  // Estilos para las columnas de tareas----//
+
   .task-columns {
     display: flex;
     justify-content: space-between;
@@ -85,7 +99,7 @@
         text-align: center;
         margin-bottom: 1rem;
         color: #fff;
-        font-size: 1.2rem;
+        font-size: medium;
       }
 
       // Contenedor de la lista de tareas
@@ -142,49 +156,52 @@
   }
 }
 
-.modal-container {
-  // Estilos para el contenedor del modal
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
+
+//------------modal editar-------------//
+
+// .modal-container {
+//   // Estilos para el contenedor del modal
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
 
 .task-detail-modal {
-  background-color: #021225;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgb(0, 0, 0);
-  width: auto;
-  height: auto;
-  margin: 0px;
+  background: #03232ae9;
+  border-radius: 8px;
+  color: #fff;
   padding: 20px;
-  color: #ffffff;
-
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 1px 30px rgba(0, 166, 255, 0.947);
 
   h2 {
     margin-top: 0;
     margin-bottom: 1.5rem;
-    font-size: 1.75rem;
+    font-size: medium;
     color: #ffffff;
   }
 
   .task-detail-form {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 10px;
 
     input,
     textarea,
     select {
-      padding: 0.75rem;
-      border: 1px solid #ddd;
+      padding: 5px;
+      border: 1px solid #00f7ff71;
       border-radius: 6px;
-      font-size: 1rem;
+      font-size: small;
       background-color: #f9f9f9;
     }
 
     textarea {
       resize: vertical;
-      min-height: 120px;
+      min-height: auto;
     }
 
     .color-picker {
@@ -219,12 +236,12 @@
       background-color: #188289;
       color: #fff;
       border: none;
-      border-radius: 6px;
-      padding: 0.75rem 1.5rem;
-      font-size: 1.125rem;
+      border-radius: 10px;
+      padding: 5px 8px;
+      font-size: medium;
       cursor: pointer;
       transition: background-color 0.3s ease;
-      margin-top: 1.25rem;
+      margin: 0px;
 
       &:hover {
         background-color: #0e4e5d;
@@ -248,3 +265,27 @@
     }
   }
 }
+
+
+
+// // Estilos para el overlay del modal
+// .ReactModal__Overlay {
+//   background-color: rgba(0, 0, 0, 0.5) !important; // Fondo semitransparente
+// }
+
+// // Estilos para el contenido del modal
+// .ReactModal__Content {
+//   padding: 20px;
+//   background-color: transparent; 
+//   border-radius: 8px;
+//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//   position: relative;
+//   max-width: 90vw;
+//   max-height: 90vh;
+//   overflow-y: auto;
+// }
+
+// // Estilos adicionales para el modal
+// .task-detail-modal {
+  
+// }
