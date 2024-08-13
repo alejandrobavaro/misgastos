@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Swal from 'sweetalert2';
 import '../assets/scss/_03-Componentes/_MainCalendarioPagos.scss';
 import { FaCheckCircle } from 'react-icons/fa';
@@ -12,15 +12,17 @@ const MainCalendarioPagos = ({ highlightedDay, onDaySelect }) => {
 
   const { addNotification, removeNotification } = useHeaderNotifications();
 
+  // Memoiza la fecha de hoy para evitar que cause renders infinitos
+  const todayKey = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+
   useEffect(() => {
     // Actualiza notificaciones solo cuando hay recordatorios para hoy
-    const key = `${currentYear}-${currentMonth + 1}-${today.getDate()}`;
-    if (reminders[key] && reminders[key].length > 0) {
-      addNotification('today', reminders[key].length);
+    if (reminders[todayKey] && reminders[todayKey].length > 0) {
+      addNotification('today', reminders[todayKey].length);
     } else {
       removeNotification('today');
     }
-  }, [reminders, currentMonth, currentYear, today, addNotification, removeNotification]);
+  }, [reminders, todayKey, addNotification, removeNotification]);
 
   const daysInMonth = (month, year) => new Date(year, month + 1, 0).getDate();
 
