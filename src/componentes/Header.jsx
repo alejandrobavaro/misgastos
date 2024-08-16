@@ -4,21 +4,20 @@ import { useAuth } from "./SesionAuthContext";
 import HeaderDolarApi from "./HeaderDolarApi";
 import HeaderNotificaciones from "./HeaderNotificaciones";
 import { useHeaderNotifications } from "./HeaderNotificacionesContext";
-import AppModoClaroOscuro from './AppModoClaroOscuro'; // Importa el componente
+import AppModoClaroOscuro from "./AppModoClaroOscuro";
 import "../assets/scss/_03-Componentes/_Header.scss";
-import { BsFillPersonPlusFill, BsBoxArrowRight } from 'react-icons/bs'; // Importa iconos de Bootstrap
+import { BsFillPersonPlusFill, BsBoxArrowRight } from "react-icons/bs";
 
-const Header = () => {
+const Header = ({ isDarkMode, toggleDarkMode }) => {
   const location = useLocation();
   const { state, dispatch } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(() => document.body.classList.contains('dark-mode')); // Obtener el modo actual desde el body
-  
+
   // Usar el contexto de notificaciones
   const { notifications } = useHeaderNotifications();
 
   useEffect(() => {
-    document.body.classList.toggle('dark-mode', isDarkMode); // Aplicar la clase al body para todo el documento
+    document.body.classList.toggle("dark-mode", isDarkMode); // Aplicar la clase al body para todo el documento
   }, [isDarkMode]);
 
   const handleToggleMobileMenu = () => {
@@ -44,10 +43,6 @@ const Header = () => {
 
   const { weekday, dayMonthYear } = getFormattedDate();
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(prevMode => !prevMode);
-  };
-
   return (
     <header className="header">
       <div className="header-grid">
@@ -68,17 +63,30 @@ const Header = () => {
               to="/"
               onClick={handleCloseMobileMenu}
             >
-              <h2 className="textoMenu1">HOME</h2>
+              <h2 className="textoMenu">HOME</h2>
             </Link>
+         
+            <Link
+              className="nav-linkHeader"
+              to="/main-notas"
+              onClick={handleCloseMobileMenu}
+            >
+             <h3 className="textoMenuTareas">NOTAS</h3>
+            </Link>
+
             <Link
               className="nav-linkHeader"
               to="/contacto"
               onClick={handleCloseMobileMenu}
             >
-              <h2 className="textoMenu">CONTACTO</h2>
+              <h2 className="textoMenu1">CONTACTO</h2>
             </Link>
+
+      
           </nav>
         </div>
+
+        
 
         <div className="date-container">
           <div className="date-text">
@@ -93,18 +101,28 @@ const Header = () => {
           <HeaderDolarApi />
         </div>
 
-        
 
-        <div className="notifications-container">
-          <HeaderNotificaciones
-            reminderCount={notifications.today}
-            onClick={() => console.log('Notificaciones clickeadas')}
+
+        <Link to="/" className="campana nav-linkHeader" onClick={handleCloseMobileMenu}>
+          <HeaderNotificaciones reminderCount={notifications.today} />
+        </Link>
+
+
+
+        <Link
+          className="nav-linkHeader"
+          to="/MainTareasEnProceso"
+          onClick={handleCloseMobileMenu}
+        >
+          <h6 className="textoMenuTareas">TAREAS EN PROCESO</h6>
+        </Link>
+
+
+        <div className="theme-switcher-container ">
+          <AppModoClaroOscuro
+            isDarkMode={isDarkMode}
+            toggleDarkMode={toggleDarkMode}
           />
-        </div>
-
-
-        <div className="theme-switcher-container">
-          <AppModoClaroOscuro isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
         </div>
 
         <div className="auth-buttons-container">
@@ -129,6 +147,7 @@ const Header = () => {
                 >
                   <BsFillPersonPlusFill className="auth-icon" />
                 </Link>
+
                 <hr className="auth-divider" />
                 <Link
                   className="nav-linkHeader"
@@ -141,8 +160,6 @@ const Header = () => {
             )}
           </div>
         </div>
-
-
       </div>
     </header>
   );

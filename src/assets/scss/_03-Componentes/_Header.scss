@@ -105,6 +105,16 @@
   gap: 30px;
 }
 
+.campana {
+  text-align: center;
+  color: #bbffe9;
+  text-decoration: none;
+}
+
+
+
+
+
 //---------home--------------------//
 
 .nav-linkHeader.home-link {
@@ -118,7 +128,7 @@
 }
 
 .textoMenu1 {
-  font-size: large;
+  font-size: medium;
   color: #c8fcffe9;
 
   &:hover {
@@ -138,6 +148,15 @@
   }
 }
 
+
+.textoMenuTareas {
+  color: #d5dfff;
+
+  &:hover {
+    color: #52cce7;
+  }
+}
+
 .textoMenu {
   color: #ffffff;
 
@@ -145,6 +164,11 @@
     color: #52cce7;
   }
 }
+
+
+.textoMenu2 {
+  font-size: medium;
+  color: #ffffff;}
 
 //---------Dolar api--------------------//
 

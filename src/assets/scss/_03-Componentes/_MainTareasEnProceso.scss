@@ -1,10 +1,10 @@
 .mainTareasEnProceso {
   // Estilos generales para el contenedor principal
   margin: 0;
-  padding: 10px;
+  padding: 20px;
   background-color: transparent;
   border-radius: 10px;
-  box-shadow: 0 0 40px rgb(252, 252, 252);
+  box-shadow: 0 0 20px rgb(252, 252, 252);
   
 
   // Estilos para el formulario de tareas
@@ -17,7 +17,7 @@
     padding: 15px;
     background-color: transparent;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
     
 
     .form-group {
