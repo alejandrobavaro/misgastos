@@ -6,8 +6,9 @@
   border-radius: 30px;
   padding: 0;
   margin: 0;
-  // max-width: 1000px;
 }
+
+//---------grid layout del header--------------------//
 
 .header-grid {
   display: grid;
@@ -15,7 +16,6 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  
 }
 
 //---------contenedor fecha--------------------//
@@ -46,8 +46,6 @@
 
 //---------auth-buttons--------------------//
 
-// En _Header.scss
-
 .auth-icon {
   font-size: 24px; // Ajusta el tamaño según sea necesario
   color: #ffffff; // Ajusta el color según el tema
@@ -69,9 +67,7 @@
   border: none;
   height: 24px;
   width: 1px;
-  // background-color: #ccc;
 }
-
 
 //---------logo header--------------------//
 
@@ -102,17 +98,24 @@
   align-items: center;
   font-size: large;
   gap: 30px;
+
+  // Estilos para el menú en dispositivos móviles
+  @media (max-width: 768px) {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9); // Fondo oscuro para el menú desplegable
+    padding: 20px;
+    z-index: 10;
+
+    &.open {
+      display: flex;
+    }
+  }
 }
-
-.campana {
-  text-align: center;
-  color: #ffffff;
-  text-decoration: none;
-}
-
-
-
-
 
 //---------home--------------------//
 
@@ -147,7 +150,6 @@
   }
 }
 
-
 .textoMenuTareas {
   color: #d5dfff;
 
@@ -164,10 +166,10 @@
   }
 }
 
-
 .textoMenu2 {
   font-size: medium;
-  color: #ffffff;}
+  color: #ffffff;
+}
 
 //---------Dolar api--------------------//
 
@@ -201,14 +203,7 @@
 //---------Inicio Sesion--------------------//
 
 .auth-buttons-column {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-  // border-left: 1px solid #00f7ff37;
-  // border-right: 1px solid #00f7ff37;
   padding: 0px;
-  // border-radius: 50px;
   background-color: transparent;
 }
 
@@ -253,22 +248,6 @@
 
   .logoHeader {
     width: 100px; /* Ajusta el tamaño según tus necesidades */
-  }
-
-  .navbarHeader {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    // background-color: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    z-index: 10;
-
-    &.open {
-      display: flex;
-    }
   }
 }
 
@@ -317,33 +296,10 @@
   color: #ffffff; /* Color del ícono */
   font-size: large;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: transform 0.3s ease;
 
   &:hover {
-    color: #bbd0cd; /* Color del ícono en hover */
-  }
-}
-
-.search-icon-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px; /* Ajusta el tamaño del icono */
-  height: 24px; /* Ajusta el tamaño del icono */
-  border: none;
-  background: transparent;
-  cursor: pointer;
-
-}
-
-.search-icon {
-  color: #ffffff; /* Cambia el color según el diseño */
-  // opacity: 1; /* Hacer el icono ligeramente transparente */
-  font-size: 1.5rem; /* Ajusta el tamaño del icono */
-
-
-  &:hover {
-    color: #00fff2; /* Color del ícono en hover */
+    color: #00ddff;
   }
 }
 

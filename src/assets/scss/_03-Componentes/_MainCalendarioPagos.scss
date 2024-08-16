@@ -1,21 +1,19 @@
 .calendar-outer-container {
-  display: flex; /* Cambiar de column a row para alinearlos uno al lado del otro */
-  justify-content: space-between; /* Espacio entre los dos contenedores */
-  align-items: flex-start; /* Alinear los elementos al inicio verticalmente */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   width: 100%;
   padding: 10px;
   background: transparent;
 }
 
 .calendar-container {
-  width: 70%; /* Ajustar el ancho del calendario */
-
+  width: auto; /* Tamaño fijo para el calendario */
   padding: 20px;
   background: transparent;
   border-radius: 20px;
   box-shadow: 0 0px 20px rgb(255, 255, 255);
 }
-
 
 .calendar-header {
   display: flex;
@@ -47,6 +45,7 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 0.5rem;
+  margin-top: 1rem; /* Espacio entre el header y la cuadrícula */
 
   .day {
     background: white;
@@ -57,6 +56,10 @@
     cursor: pointer;
     position: relative; 
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 60px; /* Asegura que los días tengan un tamaño uniforme */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
       transform: scale(1.05);
@@ -86,14 +89,15 @@
 }
 
 .reminders-container {
+  flex-grow: 1; /* Permite que los recordatorios se adapten al resto de la pantalla */
   margin-top: 0px;
   margin-left: 20px;
   background: transparent;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 40px rgba(255, 255, 255, 0.74);
-  max-width: 800px;
-  width: 100%;
+  width: auto;
+
 
   h3 {
     margin-left: 10px;
@@ -102,15 +106,15 @@
   }
 
   ul {
-    list-style-type: disc; /* Asegúrate de que los puntos sean visibles */
-    padding-left: 20px; /* Espaciado adecuado */
-    color: #ffffff; /* Asegura que el texto sea visible */
-    margin: 0; /* Elimina márgenes adicionales que puedan estar afectando */
-    list-style-position: inside; /* Asegura que los puntos estén dentro del padding */
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #ffffff;
+    margin: 0;
+    list-style-position: inside;
   }
 
   li {
-    margin-bottom: 10px; /* Añade un margen para separar las filas */
+    margin-bottom: 10px;
     font-size: small;
     color: #ffffff;
   }
