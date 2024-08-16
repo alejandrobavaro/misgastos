@@ -1,7 +1,7 @@
 import React from 'react';
-import '../assets/scss/_03-Componentes/_Cobranza.scss';
+import '../assets/scss/_03-Componentes/_BancoCobranza.scss';
 
-const Cobranza = () => {
+const BancoCobranza = () => {
   return (
     <div className="cobranza">
       <h2>Mi Cobranza</h2>
@@ -12,4 +12,4 @@ const Cobranza = () => {
   );
 }
 
-export default Cobranza;
+export default BancoCobranza;

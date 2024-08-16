@@ -1,5 +1,5 @@
 import React from 'react';
-import "../assets/scss/_03-Componentes/_CPEServiciosListado.scss";
+import "../assets/scss/_03-Componentes/_CPEEmpresasListado.scss";
 
 const servicios = [
   { name: 'Tarjetas de Credito', count: 3, icon: 'credit-card' },
@@ -16,7 +16,7 @@ const servicios = [
 
 ];
 
-const CPEServiciosListado = () => {
+const CPEEmpresasListado = () => {
   return (
     <div className="main-empresas-listado">
       {servicios.map((servicio, index) => (
@@ -34,4 +34,4 @@ const CPEServiciosListado = () => {
   );
 };
 
-export default CPEServiciosListado;
+export default CPEEmpresasListado;

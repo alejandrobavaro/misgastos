@@ -6,7 +6,11 @@ import HeaderNotificaciones from "./HeaderNotificaciones";
 import { useHeaderNotifications } from "./HeaderNotificacionesContext";
 import AppModoClaroOscuro from "./AppModoClaroOscuro";
 import "../assets/scss/_03-Componentes/_Header.scss";
-import { BsFillPersonPlusFill, BsBoxArrowRight } from "react-icons/bs";
+import {
+  BsFillPersonPlusFill,
+  BsBoxArrowRight,
+  BsSearch,
+} from "react-icons/bs";
 
 const Header = ({ isDarkMode, toggleDarkMode }) => {
   const location = useLocation();
@@ -65,13 +69,13 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
             >
               <h2 className="textoMenu">HOME</h2>
             </Link>
-         
+
             <Link
               className="nav-linkHeader"
               to="/main-notas"
               onClick={handleCloseMobileMenu}
             >
-             <h3 className="textoMenuTareas">NOTAS</h3>
+              <h3 className="textoMenuTareas">NOTAS</h3>
             </Link>
 
             <Link
@@ -81,12 +85,8 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
             >
               <h2 className="textoMenu1">CONTACTO</h2>
             </Link>
-
-      
           </nav>
         </div>
-
-        
 
         <div className="date-container">
           <div className="date-text">
@@ -101,13 +101,13 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
           <HeaderDolarApi />
         </div>
 
-
-
-        <Link to="/" className="campana nav-linkHeader" onClick={handleCloseMobileMenu}>
+        <Link
+          to="/"
+          className="campana nav-linkHeader"
+          onClick={handleCloseMobileMenu}
+        >
           <HeaderNotificaciones reminderCount={notifications.today} />
         </Link>
-
-
 
         <Link
           className="nav-linkHeader"
@@ -117,12 +117,18 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
           <h6 className="textoMenuTareas">TAREAS EN PROCESO</h6>
         </Link>
 
-
-        <div className="theme-switcher-container ">
-          <AppModoClaroOscuro
-            isDarkMode={isDarkMode}
-            toggleDarkMode={toggleDarkMode}
-          />
+        <div className="theme-switcher-container separadorR">
+          <div>
+            <Link to="/HeaderSearchBar" className="search-icon-link">
+              <BsSearch className="search-icon" />
+            </Link>
+          </div>
+          <div className="separadorL">
+            <AppModoClaroOscuro
+              isDarkMode={isDarkMode}
+              toggleDarkMode={toggleDarkMode}
+            />
+          </div>
         </div>
 
         <div className="auth-buttons-container">

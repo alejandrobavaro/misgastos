@@ -1,7 +1,7 @@
 import React from 'react';
-import '../assets/scss/_03-Componentes/_Totales.scss';
+import '../assets/scss/_03-Componentes/_GastosTotales.scss';
 
-const Totales = () => {
+const GastosTotales = () => {
   return (
     <div className="totales">
       <h2>Mis Totales</h2>
@@ -12,4 +12,4 @@ const Totales = () => {
   );
 }
 
-export default Totales;
+export default GastosTotales;

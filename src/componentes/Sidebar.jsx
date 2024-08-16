@@ -5,7 +5,7 @@ import "../assets/scss/_03-Componentes/_Sidebar.scss";
 const Sidebar = () => {
   return (
     <div className="sidebar">
-      <h2>Mis Gastos</h2>
+      <h2>Gastos</h2>
       <ul>
         <li>
           <Link to="/por-pagar">Por Pagar</Link>
@@ -14,19 +14,23 @@ const Sidebar = () => {
           <Link to="/pagados">Pagados</Link>
         </li>
         <hr />
-        <h2>CPE Adheridos</h2>
+        <li>
+          <Link to="/totales">TOTALES</Link>
+        </li>
+        <hr />
+        <h2>CPE</h2>
         <ul>
           <li>
-            <Link to="/servicios">Empresas adheridas</Link>
+            <Link to="/empresas">Empresas</Link>
           </li>
           <li>
-            <Link to="/impuestos">Impuestos adheridos</Link>
+            <Link to="/impuestos">Impuestos</Link>
           </li>
           <li>
-            <Link to="/nuevo-cpe">Cargar Nuevo CPE</Link>
+            <Link to="/nuevo-cpe">Nuevo CPE</Link>
           </li>
         </ul>
-        <hr />
+      
       </ul>
       <h2>Consultas</h2>
       <ul>
@@ -36,37 +40,47 @@ const Sidebar = () => {
         <li>
           <Link to="/comprobantes">Comprobantes</Link>
         </li>
-        <hr />
+        <li>
+          <Link to="/facturas">Facturas</Link>
+        </li>
+   
       </ul>
       <h2>Banco</h2>
       <ul>
         <li>
-          <Link to="/banco-saldos">Saldos Disponibles</Link>
+          <Link to="/banco-saldos">Saldos</Link>
         </li>
         <li>
           <Link to="/cobranza">Cobranza</Link>
         </li>
+      
+      </ul>
+
+
+      <h2>Rentas</h2>
+      <ul>
         <li>
-          <Link to="/totales">Totales</Link>
+          <Link to="/alquileres">Alquileres</Link>
         </li>
       </ul>
-      <hr />
+
       <h2>Data</h2>
       <ul>
         <li>
-          <Link to="/data">Info de Cuentas</Link>
+          <Link to="/data">Info Cuentas</Link>
         </li>
         <hr />
       </ul>
       <h2>Tu Sesión</h2>
       <ul>
         <li>
-          <Link to="/login">Iniciar Sesión</Link>
+        <h2>VER</h2>
+          <Link to="/login">Tu Usuario</Link>
         </li>
         <li>
           <Link to="/logout">Cerrar Sesión</Link>
         </li>
-        <hr />
+
       </ul>
       <h2>Otros</h2>
       <ul>

@@ -5,37 +5,55 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
-import Header from "./componentes/Header";
-import Sidebar from "./componentes/Sidebar";
-import MainContent from "./componentes/MainContent";
-import ContactoLogoRedes from "./componentes/ContactoLogoRedes";
-import ContactoFormularioSlider from "./componentes/ContactoFormularioSlider";
-import PublicidadDebajo from "./componentes/MainPublicidadSlider";
-import Footer from "./componentes/Footer";
-import { AuthProvider, useAuth } from "./componentes/SesionAuthContext";
-import Login from "./componentes/SesionLogin";
-import Register from "./componentes/SesionRegistrate";
-import Logout from "./componentes/SesionLogout";
-import MainWhatsappIcon from "./componentes/MainWhatsappIcon";
+
+//------------ESTILOS--------------//
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./assets/scss/_01-General/_BodyIndexApp.scss";
-
-import MisGastosPagados from "./componentes/MisGastosPagados";
-import MisGastosPorPagar from "./componentes/MisGastosPorPagar";
-import ServiciosEmpresasListado from "./componentes/CPEServiciosListado";
+//------------HEADER--------------//
+import Header from "./componentes/Header";
+import { HeaderNotificationsProvider } from "./componentes/HeaderNotificacionesContext";
+import HeaderSearchBar from "./componentes/HeaderSearchBar";
+//------------SIDEBAR--------------//
+import Sidebar from "./componentes/Sidebar";
+//-----------HOME - MAIN-----------------//
+import MainContent from "./componentes/MainContent";
+import MainWhatsappIcon from "./componentes/MainWhatsappIcon";
+import MainPublicidadSlider from "./componentes/MainPublicidadSlider";
+import MainTareasEnProceso from "./componentes/MainTareasEnProceso";
+import MainNotas from "./componentes/MainNotas";
+//--------------FOOTER----------------//
+import Footer from "./componentes/Footer";
+//-----------CONTACTO-----------------//
+import ContactoLogoRedes from "./componentes/ContactoLogoRedes";
+import ContactoFormularioSlider from "./componentes/ContactoFormularioSlider";
+//-----------GASTOS--------------//
+import GastosPagados from "./componentes/GastosPagados";
+import GastosPorPagar from "./componentes/GastosPorPagar";
+import GastosTotales from "./componentes/GastosTotales";
+//-----------CPE ADHERIDOS--------------//
+import CPEEmpresasListado from "./componentes/CPEEmpresasListado";
+import CPEImpuestosListado from "./componentes/CPEImpuestosListado";
+import CPECargarNuevoCPE from "./componentes/CPECargarNuevoCPE";
+//-----------CONSULTAS--------------//
 import ConsultasVencimientos from "./componentes/ConsultasVencimientos";
 import ConsultasComprobantes from "./componentes/ConsultasComprobantes";
+import ConsultasFacturas from "./componentes/ConsultasFacturas";
+//-----------BANCO--------------//
+import BancoSaldos from "./componentes/BancoSaldos";
+import BancoCobranza from "./componentes/BancoCobranza";
+//-----------RENTAS--------------//
+import RentasAlquileres from "./componentes/RentasAlquileres";
+//-----------DATA------------//
+import DataInfoCuentas from "./componentes/DataInfoCuentas";
+//-----------LOGIN-LOGOUT-REGISTRO-----------------//
+import { AuthProvider, useAuth } from "./componentes/SesionAuthContext";
+import SesionRegister from "./componentes/SesionRegistrate";
+import SesionLogout from "./componentes/SesionLogout";
+import SesionLogin from "./componentes/SesionLogin";
+//-----------OTROS--------------//
 import ConsultasAyuda from "./componentes/ConsultasAyuda";
-import Totales from "./componentes/Totales";
-import Cobranza from "./componentes/Cobranza";
-import Data from "./componentes/Data";
-import BancoSaldosDisponibles from "./componentes/BancoSaldosDisponibles";
-import CPECargarNuevoCPE from "./componentes/CPECargarNuevoCPE";
-import CPEImpuestosListado from "./componentes/CPEImpuestosListado";
-import { HeaderNotificationsProvider } from "./componentes/HeaderNotificacionesContext";
-import MainTareasEnProceso from './componentes/MainTareasEnProceso'; 
-import MainNotas from './componentes/MainNotas'; 
+//---------------------------------------------------------//
 
 const ProtectedRoute = ({ element, ...rest }) => {
   const { state } = useAuth();
@@ -60,9 +78,9 @@ function App() {
             <Sidebar />
             <div className="content">
               <Routes>
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/logout" element={<Logout />} />
+                <Route path="/login" element={<SesionLogin />} />
+                <Route path="/register" element={<SesionRegister />} />
+                <Route path="/logout" element={<SesionLogout />} />
                 <Route
                   path="/"
                   element={<ProtectedRoute element={<MainContent />} />}
@@ -82,29 +100,27 @@ function App() {
                 />
                 <Route
                   path="/totales"
-                  element={<ProtectedRoute element={<Totales />} />}
+                  element={<ProtectedRoute element={<GastosTotales />} />}
                 />
                 <Route
                   path="/cobranza"
-                  element={<ProtectedRoute element={<Cobranza />} />}
+                  element={<ProtectedRoute element={<BancoCobranza />} />}
                 />
                 <Route
                   path="/data"
-                  element={<ProtectedRoute element={<Data />} />}
+                  element={<ProtectedRoute element={<DataInfoCuentas />} />}
                 />
                 <Route
                   path="/por-pagar"
-                  element={<ProtectedRoute element={<MisGastosPorPagar />} />}
+                  element={<ProtectedRoute element={<GastosPorPagar />} />}
                 />
                 <Route
                   path="/pagados"
-                  element={<ProtectedRoute element={<MisGastosPagados />} />}
+                  element={<ProtectedRoute element={<GastosPagados />} />}
                 />
                 <Route
-                  path="/servicios"
-                  element={
-                    <ProtectedRoute element={<ServiciosEmpresasListado />} />
-                  }
+                  path="/empresas"
+                  element={<ProtectedRoute element={<CPEEmpresasListado />} />}
                 />
                 <Route
                   path="/impuestos"
@@ -132,23 +148,35 @@ function App() {
                 />
                 <Route
                   path="/banco-saldos"
-                  element={
-                    <ProtectedRoute element={<BancoSaldosDisponibles />} />
-                  }
+                  element={<ProtectedRoute element={<BancoSaldos />} />}
+                />
+                <Route
+                  path="/facturas"
+                  element={<ProtectedRoute element={<ConsultasFacturas />} />}
+                />
+                <Route
+                  path="/alquileres"
+                  element={<ProtectedRoute element={<RentasAlquileres />} />}
                 />
                 <Route
                   path="/MainTareasEnProceso"
-                  element={<ProtectedRoute element={<MainTareasEnProceso />} />} 
+                  element={<ProtectedRoute element={<MainTareasEnProceso />} />}
                 />
                 <Route
                   path="/main-notas"
-                  element={<ProtectedRoute element={<MainNotas />} />} 
+                  element={<ProtectedRoute element={<MainNotas />} />}
                 />
+
+                <Route
+                  path="/HeaderSearchBar"
+                  element={<ProtectedRoute element={<HeaderSearchBar />} />}
+                />
+
               </Routes>
             </div>
           </div>
           <hr className="border border-0 opacity-20" />
-          <PublicidadDebajo />
+          <MainPublicidadSlider />
           <Footer />
           <MainWhatsappIcon />
         </Router>

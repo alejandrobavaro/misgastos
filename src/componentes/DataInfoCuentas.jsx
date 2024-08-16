@@ -1,7 +1,7 @@
 import React from 'react';
-import '../assets/scss/_03-Componentes/_Data.scss';
+import '../assets/scss/_03-Componentes/_DataInfoCuentas.scss';
 
-const Data = () => {
+const DataInfoCuentas = () => {
   return (
     <div className="data">
       <h2>Mis Datos</h2>
@@ -12,4 +12,4 @@ const Data = () => {
   );
 }
 
-export default Data;
+export default DataInfoCuentas;

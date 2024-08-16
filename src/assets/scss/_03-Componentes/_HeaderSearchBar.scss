@@ -1,0 +1,51 @@
+// src/assets/scss/_03-Componentes/_HeaderSearchBar.scss
+.searchbar {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: #22bcb75f; // Fondo oscuro para el buscador
+    border-radius: 20px;
+    align-items: center;
+    
+    select {
+      background-color: #208982;
+      color: #fff;
+      border: 1px solid #444;
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      transition: border-color 0.3s;
+  
+      &:hover,
+      &:focus {
+        border-color: #00fbff;
+        outline: none;
+      }
+    }
+  
+    input {
+        background-color: #208982;
+      color: #fff;
+      border: 1px solid #444;
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      transition: border-color 0.3s;
+      
+      &:hover,
+      &:focus {
+        border-color: #00fbff;
+        outline: none;
+      }
+  
+      &::placeholder {
+        color: #ffffff;
+      }
+    }
+  
+    select, input {
+      width: 100%;
+    }
+  }
+  

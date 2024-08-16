@@ -1,6 +1,6 @@
 import React from "react";
 import MainCalendarioPagos from "./MainCalendarioPagos";
-import MainNotas from "./MainNotas";
+
 
 import "../assets/scss/_03-Componentes/_MainContent.scss";
 

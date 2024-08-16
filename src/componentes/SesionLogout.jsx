@@ -4,7 +4,7 @@ import { useAuth } from './SesionAuthContext';
 import LoadingSpinner from './SesionLoadingSpinner';
 import '../assets/scss/_03-Componentes/_SesionLoginRegister.scss';
 
-const Logout = () => {
+const SesionLogout = () => {
   const { dispatch } = useAuth();
   const navigate = useNavigate();
 
@@ -18,4 +18,4 @@ const Logout = () => {
   return <LoadingSpinner />;
 };
 
-export default Logout;
+export default SesionLogout;

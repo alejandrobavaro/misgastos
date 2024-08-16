@@ -1,7 +1,7 @@
 import React from 'react';
 import '../assets/scss/_03-Componentes/_SesionLoginRegister.scss';
 
-const LoadingSpinner = () => {
+const SesionLoginRegister = () => {
   return (
     <div className="loading-spinner">
       <div className="spinner"></div>
@@ -9,4 +9,4 @@ const LoadingSpinner = () => {
   );
 };
 
-export default LoadingSpinner;
+export default SesionLoginRegister;

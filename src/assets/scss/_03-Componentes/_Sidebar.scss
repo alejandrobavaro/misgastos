@@ -1,19 +1,20 @@
 //---------contenedor del sidebar--------------------//
 
 .sidebar {
-  width: auto;
+  width: 200px; // Ancho fijo para el sidebar
   background-color: transparent;
   border-right: 4px solid #00f7ff7c;
   border-radius: 30px;
-  padding: 0px 60px;
+  padding: 0px 20px; 
   margin: 0px;
+  flex-shrink: 0;
 
   //---------títulos h2--------------------//
 
   h2 {
     font-size: small;
     color: #00f7ffc6;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
   //---------lista sin estilos--------------------//
@@ -35,7 +36,7 @@
         color: #ffffff;
 
         &:hover {
-          color: rgb(0, 170, 255);
+          color: rgb(0, 255, 204);
         }
       }
     }

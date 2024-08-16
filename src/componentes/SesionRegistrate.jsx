@@ -4,7 +4,7 @@ import { useAuth } from './SesionAuthContext';
 import LoadingSpinner from './SesionLoadingSpinner';
 import '../assets/scss/_03-Componentes/_SesionLoginRegister.scss';
 
-const Register = () => {
+const SesionRegister = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -64,4 +64,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default SesionRegister;

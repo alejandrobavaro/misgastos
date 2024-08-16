@@ -1,5 +1,5 @@
 import React from "react"; // Importa React
-import "../assets/scss/_03-Componentes/_ContactoLogoRedes.scss"; // Importa los estilos SCSS personalizados
+import "../assets/scss/_03-Componentes/_ContactoLogoRedes.scss";
 
 // Componente ContactoLogoRedes
 const ContactoLogoRedes = () => {
@@ -150,4 +150,4 @@ const ContactoLogoRedes = () => {
   );
 };
 
-export default ContactoLogoRedes; // Exporta el componente ContactoLogoRedes
+export default ContactoLogoRedes; 

@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext, useCallback } from 'react';
 
-// Crear el contexto
+// contexto
 const HeaderNotificationsContext = createContext();
 
 // Proveedor del contexto

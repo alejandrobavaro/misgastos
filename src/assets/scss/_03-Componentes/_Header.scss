@@ -18,7 +18,6 @@
   
 }
 
-
 //---------contenedor fecha--------------------//
 
 .date-container {
@@ -107,7 +106,7 @@
 
 .campana {
   text-align: center;
-  color: #bbffe9;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -323,4 +322,39 @@
   &:hover {
     color: #bbd0cd; /* Color del ícono en hover */
   }
+}
+
+.search-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px; /* Ajusta el tamaño del icono */
+  height: 24px; /* Ajusta el tamaño del icono */
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+}
+
+.search-icon {
+  color: #ffffff; /* Cambia el color según el diseño */
+  // opacity: 1; /* Hacer el icono ligeramente transparente */
+  font-size: 1.5rem; /* Ajusta el tamaño del icono */
+
+
+  &:hover {
+    color: #00fff2; /* Color del ícono en hover */
+  }
+}
+
+
+.separadorL {
+  border-left: 1px dotted #ffffff;
+  // border-right: 1px solid #00f7ff;
+  margin: 5px;
+}
+
+.separadorR {
+  // border-left: 1px solid #00f7ff;
+  // border-right: 1px solid #00f7ff;
 }

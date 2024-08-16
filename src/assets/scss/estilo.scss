@@ -1,7 +1,7 @@
-/*---------------------SASS A CSS------------------------*/
+/*-----------------SASS A CSS------------------------*/
+//------------GENERAL--------------//
 @import "./_01-General/BodyIndexApp";
 @import "./_01-General/AppModoClaroOscuro";
-
 @import "./_01-General/SweetAlert";
 @import "./_01-General/Toastify";
 
@@ -17,17 +17,71 @@
 // @import "./_02-Diseño/Textos";
 
 //----------COMPONENTES------------------------//
-//----------------Main------------//
+//------------HEADER--------------//
+@import "./_03-Componentes/Header";
+@import "./_03-Componentes/HeaderNotificaciones";
+@import "./_03-Componentes/HeaderSearchBar.scss";
+
+//------------SIDEBAR--------------//
+@import "./_03-Componentes/Sidebar";
+
+//-----------HOME - MAIN-----------------//
 @import "./_03-Componentes/MainPublicidadSlider";
 @import "./_03-Componentes/MainContent";
 @import "./_03-Componentes/MainCalendarioPagos";
 @import "./_03-Componentes/MainNotas";
 @import "./_03-Componentes/MainTareasEnProceso.scss";
 
+//--------------FOOTER----------------//
+@import "./_03-Componentes/Footer";
 
-//----------------Header------------//
-@import "./_03-Componentes/Header";
-@import "./_03-Componentes/HeaderNotificaciones";
+
+
+
+
+//-----------CONTACTO-----------------//
+
+
+//-----------GASTOS--------------//
+
+
+
+//-----------CPE ADHERIDOS--------------//
+
+
+
+//-----------CONSULTAS--------------//
+
+
+
+//-----------BANCO--------------//
+
+
+
+//-----------RENTAS--------------//
+
+
+
+//-----------DATA------------//
+
+
+
+//-----------LOGIN-LOGOUT-REGISTRO-----------------//
+
+
+
+
+//-----------OTROS--------------//
+
+
+
+
+//---------------------------------------------------------//
+
+
+
+
+
 
 @import "./_03-Componentes/Contacto";
 @import "./_03-Componentes/Totales";
@@ -36,23 +90,39 @@
 @import "./_03-Componentes/SesionLoginRegister";
 
 
-//----------------Sidebar------------//
-@import "./_03-Componentes/Sidebar";
+
+
 
 @import "./_03-Componentes/ConsultasAyuda.scss";
-@import "./_03-Componentes/Cobranza.scss";
+
 @import "./_03-Componentes/ConsultasComprobantes.scss";
-@import "./_03-Componentes/Data.scss";
-@import "./_03-Componentes/MisGastosPagados.scss";
-@import "./_03-Componentes/MisGastosPorPagar.scss";
-@import "./_03-Componentes/BancoSaldosDisponibles.scss";
-@import "./_03-Componentes/Totales.scss";
+@import "./_03-Componentes/ConsultasFacturas.scss";
+
+
+@import "./_03-Componentes/DataInfoCuentas.scss";
+
+@import "./_03-Componentes/GastosPagados.scss";
+@import "./_03-Componentes/GastosPorPagar.scss";
+@import "./_03-Componentes/GastosTotales.scss";
+
+
+@import "./_03-Componentes/BancoSaldos.scss";
+@import "./_03-Componentes/BancoCobranza.scss";
+
+
+
+@import "./_03-Componentes/RentasAlquileres.scss";
+
+
+
 @import "./_03-Componentes/ConsultasVencimientos.scss";
 
-@import "./_03-Componentes/CPEServiciosListado";
+@import "./_03-Componentes/CPEEmpresasListado";
 @import "./_03-Componentes/CPEImpuestosListado";
 @import "./_03-Componentes/CPECargarNuevoCPE";
 
-//----------------Footer------------//
-@import "./_03-Componentes/Footer";
+
+
+
+
 

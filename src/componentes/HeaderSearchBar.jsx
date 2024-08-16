@@ -1,17 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import '../assets/scss/_03-Componentes/_HeaderSearchBar.scss';
 
-function HeaderSearchBar({ categories, onCategoryChange, searchQuery, setSearchQuery, placeholder }) {
+function HeaderSearchBar({ categories = [], onCategoryChange, searchQuery = '', setSearchQuery, placeholder = 'Search...' }) {
   const handleCategoryChange = (event) => {
-    onCategoryChange(event.target.value);
+    if (onCategoryChange) {
+      onCategoryChange(event.target.value);
+    }
   };
 
   const handleSearchChange = (event) => {
-    setSearchQuery(event.target.value);
+    if (setSearchQuery) {
+      setSearchQuery(event.target.value);
+    }
   };
 
   return (
-    <div className="search-bar-container">
+    <div className="searchbar">
       <select onChange={handleCategoryChange}>
+        <option value="">Select Category</option>
         {categories.map((category) => (
           <option key={category} value={category}>
             {category}
@@ -27,5 +34,13 @@ function HeaderSearchBar({ categories, onCategoryChange, searchQuery, setSearchQ
     </div>
   );
 }
+
+HeaderSearchBar.propTypes = {
+  categories: PropTypes.arrayOf(PropTypes.string),
+  onCategoryChange: PropTypes.func.isRequired,
+  searchQuery: PropTypes.string,
+  setSearchQuery: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
+};
 
 export default HeaderSearchBar;

@@ -1,7 +1,7 @@
 import React from 'react';
-import '../assets/scss/_03-Componentes/_BancoSaldosDisponibles.scss';
+import '../assets/scss/_03-Componentes/_BancoSaldos.scss';
 
-const BancoSaldosDisponibles = () => {
+const BancoSaldos = () => {
   return (
     <div className="saldos-y-disponibles">
       <h2>Saldos y Disponibles</h2>
@@ -10,4 +10,4 @@ const BancoSaldosDisponibles = () => {
   );
 }
 
-export default BancoSaldosDisponibles;
+export default BancoSaldos;
