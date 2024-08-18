@@ -1,5 +1,6 @@
 import React from "react";
-import "../assets/scss/_03-Componentes/_Footer.scss"; 
+import FooterGondraWorldDev from './FooterGondraWorldDev';
+import "../assets/scss/_03-Componentes/_Footer.scss";
 
 function Footer() {
   return (
@@ -14,7 +15,11 @@ function Footer() {
             {/* Imagen y enlace del logo izquierdo */}
             <div className="imgFooter1 imagenPublicidadFooter2">
               <a href="#">
-                <img className="imagenFooter1" src="/img/02-logos/logoheader1-izquierda.png" alt="" />
+                <img
+                  className="imagenFooter1"
+                  src="/img/02-logos/logoheader1-izquierda.png"
+                  alt=""
+                />
               </a>
             </div>
           </div>
@@ -63,25 +68,26 @@ function Footer() {
             {/* Imagen y enlace del logo derecho */}
             <div className="imgFooter1 imagenPublicidadFooter2">
               <a href="#">
-                <img className="imagenFooter1" src="/img/02-logos/logoheader2-derecha.png" alt="" />
+                <img
+                  className="imagenFooter1"
+                  src="/img/02-logos/logoheader2-derecha.png"
+                  alt=""
+                />
               </a>
             </div>
           </div>
         </div>
         <hr className="dividerFooter" />
         {/* Línea divisoria */}
-        <div className="trademarkFooter">
+        <div >
           {/* Sección de derechos de autor */}
+
           <div className="textoMovimientoFooter tituloImportanteFooter4">
-            <h3>
-              <a
-                href="https://alejandrobavaro.github.io/gondraworld-dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="bi bi-brilliance" />- Gondra World Dev -<i className="bi bi-brilliance" />
-              </a>
-            </h3>
+     
+
+          <FooterGondraWorldDev />
+
+
           </div>
         </div>
       </div>

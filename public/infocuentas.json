@@ -1,0 +1,135 @@
+[
+    {
+      "edificioPropiedad": "NIJOCALI XVII",
+      "empresa": "EDEA",
+      "detalleSeccion": "BOMBA",
+      "cuentas": "73-0015344",
+      "codigoPagoElectronico": "32707300153443",
+      "pagado": "6600,95",
+      "vence": "06/ del mes",
+      "sePagaCon": "PAGOMISCUENTAS",
+      "titular": "CONS AV COLON 2535",
+      "facDig": "SI"
+    },
+    {
+      "edificioPropiedad": "NIJOCALI XVII",
+      "empresa": "EDEA",
+      "detalleSeccion": "FUERZA MOTRIZ",
+      "cuentas": "73-0015343",
+      "codigoPagoElectronico": "32707300153436",
+      "pagado": "21855,23",
+      "vence": "06/ del mes",
+      "sePagaCon": "PAGOMISCUENTAS",
+      "titular": "CONS AV COLON 2535",
+      "facDig": "SI"
+    },
+    {
+      "edificioPropiedad": "NIJOCALI XVII",
+      "empresa": "EDEA",
+      "detalleSeccion": "PORTERIA - 1ºL",
+      "cuentas": "73-0015356",
+      "codigoPagoElectronico": "32707300153563",
+      "pagado": "1135,49",
+      "vence": "06/ del mes",
+      "sePagaCon": "PAGOMISCUENTAS",
+      "titular": "CONS AV COLON 2535",
+      "facDig": "SI"
+    },
+    {
+      "edificioPropiedad": "NIJOCALI XVII",
+      "empresa": "GAS",
+      "detalleSeccion": "PORTERIA",
+      "cuentas": "7600/0-9406-0210762/8",
+      "codigoPagoElectronico": "76000940602107628",
+      "pagado": "2309,06",
+      "vence": "15/ del mes",
+      "sePagaCon": "PAGOMISCUENTAS",
+      "titular": "CONS AV COLON 2535",
+      "facDig": "SI"
+    },
+    {
+      "edificioPropiedad": "NIJOCALI XVII",
+      "empresa": "AFIP",
+      "detalleSeccion": "CARGAS SOCIAL",
+      "cuentas": "CUIT",
+      "codigoPagoElectronico": "30521167269",
+      "pagado": "VEP",
+      "vence": "",
+      "sePagaCon": "PAGOMISCUENTAS",
+      "titular": "CONS AV COLON 2535",
+      "facDig": "POWER"
+    },
+    {
+      "edificioPropiedad": "AMPA",
+      "empresa": "EDEA",
+      "detalleSeccion": "PORTERIA",
+      "cuentas": "73-73-279938",
+      "codigoPagoElectronico": "32707302799385",
+      "pagado": "842,05",
+      "vence": "18/ del mes",
+      "sePagaCon": "PAGOMISCUENTAS",
+      "titular": "AMPA",
+      "facDig": "SI"
+    },
+    {
+      "edificioPropiedad": "AMPA",
+      "empresa": "EDEA",
+      "detalleSeccion": "PASILLOS",
+      "cuentas": "73-73-297331",
+      "codigoPagoElectronico": "32707302973314",
+      "pagado": "2042,22",
+      "vence": "18/ del mes",
+      "sePagaCon": "PAGOMISCUENTAS",
+      "titular": "AMPA",
+      "facDig": "SI"
+    },
+    {
+      "edificioPropiedad": "AMPA",
+      "empresa": "EDEA",
+      "detalleSeccion": "BOMBA",
+      "cuentas": "73-73-073365",
+      "codigoPagoElectronico": "32707300733652",
+      "pagado": "2029,58",
+      "vence": "18/ del mes",
+      "sePagaCon": "PAGOMISCUENTAS",
+      "titular": "AMPA",
+      "facDig": "SI"
+    },
+    {
+      "edificioPropiedad": "AMPA",
+      "empresa": "GAS",
+      "detalleSeccion": "PORTERIA",
+      "cuentas": "7600/0-1412-0557256/7",
+      "codigoPagoElectronico": "76000141205572567",
+      "pagado": "",
+      "vence": "18/ del mes",
+      "sePagaCon": "PAGOMISCUENTAS",
+      "titular": "AMPA",
+      "facDig": "SI"
+    },
+    {
+      "edificioPropiedad": "AMPA",
+      "empresa": "OSSE",
+      "detalleSeccion": "AGUA",
+      "cuentas": "",
+      "codigoPagoElectronico": "2655/005",
+      "pagado": "1117002655005",
+      "vence": "NO PAGAR",
+      "sePagaCon": "NO PAGAR",
+      "titular": "NO PAGAR",
+      "facDig": "AMPA"
+    },
+    {
+      "edificioPropiedad": "AMPA",
+      "empresa": "AFIP",
+      "detalleSeccion": "CARGAS SOCIAL",
+      "cuentas": "CUIT",
+      "codigoPagoElectronico": "30542346112",
+      "pagado": "VEP",
+      "vence": "",
+      "sePagaCon": "PAGOMISCUENTAS",
+      "titular": "AMPA",
+      "facDig": "POWER"
+    }
+  ]
+  

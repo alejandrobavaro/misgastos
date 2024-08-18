@@ -3,7 +3,7 @@ footer {
   color: rgb(255, 222, 253);
   width: 100%; 
   padding: 10px;
-  border-top: 2px solid rgba(0, 247, 255, 0.49); // Corregido valor rgba
+  border-top: 2px solid rgba(0, 247, 255, 0.49); 
 }
 
 .gridPadreFooter {
@@ -11,7 +11,7 @@ footer {
 justify-content: center;
   align-items: center;
   max-width: 1080px; // Limita el ancho máximo del contenedor del footer
-  padding: 20px;
+  padding: 0px;
   margin: 0 auto;
 }
 
@@ -51,19 +51,6 @@ justify-content: center;
   }
 }
 
-// .dividerFooter {
-//   padding: 10px;
-//   border-bottom: 5px solid #00f7ff;
-//   border-radius: 30px;
-//   width: 100%;
-// }
-
-.trademarkFooter {
-  text-align: center;
-  margin-top: 0px;
-  padding: 0px;
-  
-}
 
 .linksFooter {
   display: flex;
@@ -84,3 +71,6 @@ justify-content: center;
     flex-direction: column; // Cambia a columna para pantallas pequeñas
   }
 }
+
+
+

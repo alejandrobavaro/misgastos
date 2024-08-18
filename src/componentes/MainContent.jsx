@@ -1,7 +1,5 @@
 import React from "react";
 import MainCalendarioPagos from "./MainCalendarioPagos";
-
-
 import "../assets/scss/_03-Componentes/_MainContent.scss";
 
 function MainContent() {

@@ -1,6 +1,6 @@
 // src/componentes/MainWhatsappIcon.jsx
 import React from 'react';
-import '../assets/scss/_03-Componentes/_MainContent.scss';
+import '../assets/scss/_03-Componentes/_MainWhatsappIcon.scss';
 
 function MainWhatsappIcon() {
   return (
