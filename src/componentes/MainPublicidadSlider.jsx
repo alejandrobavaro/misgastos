@@ -209,6 +209,8 @@ const MainPublicidadSlider = () => {
             className="imagen-limitada8 objetoCentrado1"
           />
         </div>
+
+        <h3 className="tituloImportante3">INVERTI EN TUS PROYECTOS</h3>
         <hr className="transparent-hr" />
       </div>
     </div>
