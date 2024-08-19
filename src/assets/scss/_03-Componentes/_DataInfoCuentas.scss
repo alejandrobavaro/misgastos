@@ -3,11 +3,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  background-color: #1e1e1e;
+  width: auto;
+  background-color: transparent;
   padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 0px 40px rgba(255, 255, 255, 0.658);
 
   h2 {
     font-size: 14px;
@@ -28,7 +28,7 @@
     color: #fff;
     border-radius: 5px;
     padding: 5px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgb(0, 238, 255); /* Sombra suave */
     display: flex;
     flex-direction: column;
     min-width: 0;
@@ -74,4 +74,105 @@
       color: #333;
     }
   }
+}
+
+
+//-------------SEARCHBAR EN DATAINFO CUENTAS------//
+// src/assets/scss/_03-Componentes/_DataInfoCuentasSearchBar.scss
+
+// src/assets/scss/_03-Componentes/_DataInfoCuentasSearchBar.scss
+
+.search-filter-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // 4 columnas de igual tamaño
+  grid-template-rows: auto auto; // 2 filas automáticas
+  gap: 5px; // Espacio entre los elementos
+  padding: 10px 50px;
+  background-color: #22bcb75f; // Fondo oscuro para el contenedor del buscador y filtros
+  border-radius: 20px;
+  margin-bottom: 10px;
+  align-items: center;
+
+  // Fila superior: botones de categoría
+  .category-buttons {
+    grid-column: span 4; // Ocupa toda la fila
+    display: flex;
+    gap: 10px;
+    justify-content: center; // Centra los botones
+    margin-bottom: 0px;
+
+    button {
+      background-color: #82fff5; /* Color de fondo claro */
+      border-radius: 10px; /* Bordes redondeados */
+      box-shadow: 0 2px 4px rgb(0, 238, 255); /* Sombra suave */
+      border-radius: 4px;
+      padding: 3px 10px;
+      font-size: x-small;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+      &.selected {
+        background-color: #0e5757;
+        color: #fff;
+        // border-color: #007bff;
+      }
+
+      &:hover {
+        background-color: #315750;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 5px 5px rgba(6, 255, 243, 0.534);
+      }
+    }
+  }
+
+  // Fila inferior: filtros
+  .filters {
+    grid-column: span 4; // Ocupa toda la fila
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); // 4 columnas de igual tamaño
+    gap: 10px; // Espacio entre los filtros
+    align-items: center; // Alinea verticalmente los filtros
+
+    select {
+      background-color: #ffffff; /* Color de fondo claro */
+      border-radius: 10px; /* Bordes redondeados */
+      box-shadow: 0 2px 4px rgb(0, 238, 255); /* Sombra suave */
+      border-radius: 12px;
+      padding: 5px 10px;
+      font-size: x-small;
+      transition: border-color 0.3s;
+
+      &:hover,
+      &:focus {
+        border-color: #00fbff;
+        outline: none;
+      }
+    }
+  }
+}
+
+/* Estilos para la barra de búsqueda */
+.search-bar {
+  padding: 0px;
+  background-color: #218a81; /* Color de fondo claro */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgb(0, 238, 255); /* Sombra suave */
+}
+
+.search-bar input {
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  padding: 0.5rem; /* Espaciado interno */
+  border: 1px solid #ced4da; /* Borde de color gris claro */
+  border-radius: 10px; /* Bordes redondeados */
+  font-size: x-small; /* Tamaño de fuente */
+  outline: none; /* Elimina el contorno predeterminado */
+  transition: border-color 0.3s ease; /* Transición suave para el borde */
+}
+
+.search-bar input:focus {
+  border-color: #80bdff; /* Color del borde cuando está en foco */
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Sombra de enfoque */
 }

@@ -3,27 +3,106 @@ import '../assets/scss/_03-Componentes/_DataInfoCuentas.scss';
 
 const DataInfoCuentas = () => {
   const [data, setData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('TODOS');
+  const [selectedName, setSelectedName] = useState('');
 
   useEffect(() => {
-    // Cargar los datos del archivo JSON
     fetch('/infocuentas.json')
       .then(response => response.json())
-      .then(data => setData(data))
+      .then(data => {
+        setData(data);
+        console.log('Datos cargados:', data); // Verifica que los datos se cargan correctamente
+      })
       .catch(error => console.error('Error al cargar los datos:', error));
   }, []);
 
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+    setSelectedName('');
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  // Filtra los datos
+  const filteredData = data.filter(item => {
+    const matchesName = selectedName === '' || item.Nombre === selectedName;
+    const matchesCategory = selectedCategory === 'TODOS' || item.Categoria === selectedCategory;
+    const matchesSearchTerm = searchTerm === '' || Object.values(item).some(value => 
+      value.toString().toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    return matchesName && matchesCategory && matchesSearchTerm;
+  });
+
+  // Extrae categorías
+  const categories = [...new Set(data.map(item => item.Categoria))];
+
+  // Filtra los nombres según la categoría seleccionada
+  const names = selectedCategory === 'TODOS'
+    ? ['Todos', ...new Set(data.map(item => item.Nombre))]
+    : [...new Set(data.filter(item => item.Categoria === selectedCategory).map(item => item.Nombre))];
+
   return (
     <div className="data">
-      <h2>Mis Datos</h2>
-      {data.length === 0 ? (
-        <h1>Cargando datos...</h1>
+      <div className="search-filter-container">
+        <div className="filters">
+          <div className="category-buttons">
+            <button
+              className={selectedCategory === 'TODOS' ? 'selected' : ''}
+              onClick={() => handleCategoryChange('TODOS')}
+            >
+              TODOS
+            </button>
+            {categories.map(category => (
+              category !== 'TODOS' && (
+                <button
+                  key={category}
+                  className={selectedCategory === category ? 'selected' : ''}
+                  onClick={() => handleCategoryChange(category)}
+                >
+                  {category}
+                </button>
+              )
+            ))}
+            <select name="name" value={selectedName} onChange={e => setSelectedName(e.target.value)}>
+              <option value="">Seleccionar Nombre</option>
+              {names.map(name => (
+                <option key={name} value={name === 'Todos' ? '' : name}>{name}</option>
+              ))}
+            </select>
+       
+
+          <div className="search-bar">
+            <input
+              type="text"
+              placeholder="Buscar en los datos..."
+              value={searchTerm}
+              onChange={handleSearchChange}
+            />
+          </div>
+          </div>
+        </div>
+      </div>
+      {filteredData.length === 0 ? (
+        <h4>No se encontraron datos en la búsqueda. Verifique su selección.</h4>
       ) : (
         <div className="data-container">
-          {data.map(item => (
+          {filteredData.map(item => (
             <div key={item.id} className="data-item">
               <h3>{item.Nombre}</h3>
               <table>
                 <tbody>
+                  <tr>
+                    <td><strong>Categoria:</strong></td>
+                    <td>{item.Categoria}</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Tipo:</strong></td>
+                    <td>{item.Tipo}</td>
+                  </tr>
                   <tr>
                     <td><strong>Servicio:</strong></td>
                     <td>{item.Servicio}</td>
@@ -99,6 +178,6 @@ const DataInfoCuentas = () => {
       )}
     </div>
   );
-}
+};
 
 export default DataInfoCuentas;
