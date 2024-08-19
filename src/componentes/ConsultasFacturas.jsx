@@ -8,7 +8,7 @@ const ConsultasFacturas = () => {
       <h2>Consulta de Facturas</h2>
       {/* Aquí puedes agregar más contenido o formularios según sea necesario */}
       <form>
-        {/* Campos del formulario */}
+        {/* Campos del formulario. */}
       </form>
     </div>
   );
