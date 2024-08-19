@@ -12,11 +12,20 @@
 
 .header-grid {
   display: grid;
-  grid-template-columns: 20% 20% 10% 15% 5% 5% 5% 5%; 
+  grid-template-columns: 20% 20% 10% 15% 5% 5% 5% 5%;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+  }
 }
+
 
 //---------contenedor fecha--------------------//
 
@@ -85,12 +94,17 @@
   }
 }
 
+
 //---------navbar header--------------------//
 
 .navbarHeader {
   display: flex;
   justify-content: center;
   width: 100%;
+
+  @media (max-width: 768px) {
+    display: none; // Ocultar la barra de navegación en pantallas pequeñas
+  }
 }
 
 .navbar-navHeader {
@@ -98,24 +112,8 @@
   align-items: center;
   font-size: large;
   gap: 30px;
-
-  // Estilos para el menú en dispositivos móviles
-  @media (max-width: 768px) {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.9); // Fondo oscuro para el menú desplegable
-    padding: 20px;
-    z-index: 10;
-
-    &.open {
-      display: flex;
-    }
-  }
 }
+
 
 //---------home--------------------//
 
@@ -229,6 +227,9 @@
 .navbar-togglerHeader {
   border: none;
   background-color: transparent;
+  color: white; 
+  font-size: 24px; 
+  cursor: pointer;
 
   @media (min-width: 769px) {
     display: none;
@@ -247,10 +248,16 @@
   }
 
   .logoHeader {
-    width: 100px; /* Ajusta el tamaño según tus necesidades */
+    width: 100px; 
+  }
+
+  .date-container,
+  .contenedor-dolarappi,
+  .theme-switcher-container,
+  .auth-buttons-container {
+    display: none;
   }
 }
-
 //---------DOLAR API--------------------//
 
 .dollar-container {
@@ -313,4 +320,40 @@
 .separadorR {
   // border-left: 1px solid #00f7ff;
   // border-right: 1px solid #00f7ff;
+}
+
+
+
+//---------menu hamburguesa--------------------//
+
+.menuCompleto {
+  @media (max-width: 768px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000e3; // O el color que prefieras
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+  }
+}
+
+.menuCompleto.open {
+  display: flex; // Mostrar el menú cuando se abre
+}
+
+.navbar-togglerHeader {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
 }

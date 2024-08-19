@@ -5,7 +5,7 @@ const DataInfoCuentas = () => {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('TODOS');
-  const [selectedName, setSelectedName] = useState('');
+
 
   useEffect(() => {
     fetch('/infocuentas.json')
@@ -28,13 +28,13 @@ const DataInfoCuentas = () => {
 
   // Filtra los datos
   const filteredData = data.filter(item => {
-    const matchesName = selectedName === '' || item.Nombre === selectedName;
+
     const matchesCategory = selectedCategory === 'TODOS' || item.Categoria === selectedCategory;
     const matchesSearchTerm = searchTerm === '' || Object.values(item).some(value => 
       value.toString().toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    return matchesName && matchesCategory && matchesSearchTerm;
+    return matchesCategory && matchesSearchTerm;
   });
 
   // Extrae categorías
@@ -67,12 +67,7 @@ const DataInfoCuentas = () => {
                 </button>
               )
             ))}
-            <select name="name" value={selectedName} onChange={e => setSelectedName(e.target.value)}>
-              <option value="">Seleccionar Nombre</option>
-              {names.map(name => (
-                <option key={name} value={name === 'Todos' ? '' : name}>{name}</option>
-              ))}
-            </select>
+          
        
 
           <div className="search-bar">

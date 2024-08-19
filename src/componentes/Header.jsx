@@ -1,7 +1,3 @@
-
-
-
-
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "./SesionAuthContext";
@@ -14,6 +10,7 @@ import {
   BsFillPersonPlusFill,
   BsBoxArrowRight,
   BsSearch,
+  BsList,
 } from "react-icons/bs";
 
 const Header = ({ isDarkMode, toggleDarkMode }) => {
@@ -53,121 +50,132 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
 
   return (
     <header className="header">
-      <div className="header-grid">
-        <div className="logo-column">
-          <Link to="/" onClick={handleCloseMobileMenu}>
-            <img
-              src="/img/02-logos/logomisgastos1.png"
-              alt="Logo"
-              className="logoHeader"
-            />
-          </Link>
-        </div>
-
-        <div className="navbarHeader">
-          <nav className={`navbar-navHeader ${isMobileMenuOpen ? "open" : ""}`}>
-            <Link
-              className="nav-linkHeader home-link"
-              to="/"
-              onClick={handleCloseMobileMenu}
-            >
-              <h2 className="textoMenu">HOME</h2>
-            </Link>
-
-            <Link
-              className="nav-linkHeader"
-              to="/main-notas"
-              onClick={handleCloseMobileMenu}
-            >
-              <h3 className="textoMenuTareas">NOTAS</h3>
-            </Link>
-
-            <Link
-              className="nav-linkHeader"
-              to="/contacto"
-              onClick={handleCloseMobileMenu}
-            >
-              <h2 className="textoMenu1">CONTACTO</h2>
-            </Link>
-          </nav>
-        </div>
-
-        <div className="date-container">
-          <div className="date-text">
-            <span>Hoy es: </span>
-            <span>{weekday},</span>
-            <br />
-            <span>{dayMonthYear}</span>
-          </div>
-        </div>
-
-        <div className="contenedor-dolarappi">
-          <HeaderDolarApi />
-        </div>
-
-        <Link
-          to="/"
-          className="campana nav-linkHeader"
-          onClick={handleCloseMobileMenu}
-        >
-          <HeaderNotificaciones reminderCount={notifications.today} />
-        </Link>
-
-        <Link
-          className="nav-linkHeader"
-          to="/MainTareasEnProceso"
-          onClick={handleCloseMobileMenu}
-        >
-          <h6 className="textoMenuTareas">TAREAS EN PROCESO</h6>
-        </Link>
-
-        <div className="theme-switcher-container separadorR">
-          <div>
-            <Link to="/HeaderSearchBar" className="search-icon-link">
-              <BsSearch className="search-icon" />
+      <div className={`menuCompleto ${isMobileMenuOpen ? "open" : ""}`}>
+        <div className="header-grid">
+          <div className="logo-column">
+            <Link to="/" onClick={handleCloseMobileMenu}>
+              <img
+                src="/img/02-logos/logomisgastos1.png"
+                alt="Logo"
+                className="logoHeader"
+              />
             </Link>
           </div>
-          <div className="separadorL">
-            <AppModoClaroOscuro
-              isDarkMode={isDarkMode}
-              toggleDarkMode={toggleDarkMode}
-            />
-          </div>
-        </div>
 
-        <div className="auth-buttons-container">
-          <div className="auth-buttons-column">
-            {state.isAuthenticated ? (
+          {/* Botón de hamburguesa */}
+          <button
+            className="navbar-togglerHeader"
+            onClick={handleToggleMobileMenu}
+          >
+            <BsList />
+          </button>
+
+          <div className="navbarHeader">
+            <nav className="navbar-navHeader">
+              <Link
+                className="nav-linkHeader home-link"
+                to="/"
+                onClick={handleCloseMobileMenu}
+              >
+                <h2 className="textoMenu">HOME</h2>
+              </Link>
+
               <Link
                 className="nav-linkHeader"
-                to="/logout"
-                onClick={() => {
-                  dispatch({ type: "LOGOUT" });
-                  handleCloseMobileMenu();
-                }}
+                to="/main-notas"
+                onClick={handleCloseMobileMenu}
               >
-                <BsBoxArrowRight className="auth-icon" />
+                <h3 className="textoMenuTareas">NOTAS</h3>
               </Link>
-            ) : (
-              <>
-                <Link
-                  className="nav-linkHeader"
-                  to="/login"
-                  onClick={handleCloseMobileMenu}
-                >
-                  <BsFillPersonPlusFill className="auth-icon" />
-                </Link>
 
-                <hr className="auth-divider" />
+              <Link
+                className="nav-linkHeader"
+                to="/contacto"
+                onClick={handleCloseMobileMenu}
+              >
+                <h2 className="textoMenu1">CONTACTO</h2>
+              </Link>
+            </nav>
+          </div>
+
+          {/* Otras secciones del header */}
+          <div className="date-container">
+            <div className="date-text">
+              <span>Hoy es: </span>
+              <span>{weekday},</span>
+              <br />
+              <span>{dayMonthYear}</span>
+            </div>
+          </div>
+
+          <div className="contenedor-dolarappi">
+            <HeaderDolarApi />
+          </div>
+
+          <Link
+            to="/"
+            className="campana nav-linkHeader"
+            onClick={handleCloseMobileMenu}
+          >
+            <HeaderNotificaciones reminderCount={notifications.today} />
+          </Link>
+
+          <Link
+            className="nav-linkHeader"
+            to="/MainTareasEnProceso"
+            onClick={handleCloseMobileMenu}
+          >
+            <h6 className="textoMenuTareas">TAREAS EN PROCESO</h6>
+          </Link>
+
+          <div className="theme-switcher-container separadorR">
+            <div>
+              <Link to="/HeaderSearchBar" className="search-icon-link">
+                <BsSearch className="search-icon" />
+              </Link>
+            </div>
+            <div className="separadorL">
+              <AppModoClaroOscuro
+                isDarkMode={isDarkMode}
+                toggleDarkMode={toggleDarkMode}
+              />
+            </div>
+          </div>
+
+          <div className="auth-buttons-container">
+            <div className="auth-buttons-column">
+              {state.isAuthenticated ? (
                 <Link
                   className="nav-linkHeader"
-                  to="/register"
-                  onClick={handleCloseMobileMenu}
+                  to="/logout"
+                  onClick={() => {
+                    dispatch({ type: "LOGOUT" });
+                    handleCloseMobileMenu();
+                  }}
                 >
-                  <h3 className="textoMenu2">Regístrate</h3>
+                  <BsBoxArrowRight className="auth-icon" />
                 </Link>
-              </>
-            )}
+              ) : (
+                <>
+                  <Link
+                    className="nav-linkHeader"
+                    to="/login"
+                    onClick={handleCloseMobileMenu}
+                  >
+                    <BsFillPersonPlusFill className="auth-icon" />
+                  </Link>
+
+                  <hr className="auth-divider" />
+                  <Link
+                    className="nav-linkHeader"
+                    to="/register"
+                    onClick={handleCloseMobileMenu}
+                  >
+                    <h3 className="textoMenu2">Regístrate</h3>
+                  </Link>
+                </>
+              )}
+            </div>
           </div>
         </div>
       </div>

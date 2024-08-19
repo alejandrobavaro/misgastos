@@ -1,3 +1,4 @@
+// Estilos generales para DataInfoCuentas
 .data {
   display: flex;
   flex-direction: column;
@@ -28,14 +29,14 @@
     color: #fff;
     border-radius: 5px;
     padding: 5px;
-    box-shadow: 0 2px 4px rgb(0, 238, 255); /* Sombra suave */
+    box-shadow: 0 2px 4px rgb(0, 238, 255);
     display: flex;
     flex-direction: column;
     min-width: 0;
     font-size: 10px;
 
     h3 {
-      font-size: 12px;
+      font-size: small;
       color: #00fbff;
       margin-bottom: 5px;
     }
@@ -67,79 +68,85 @@
       border-radius: 3px;
       text-align: center;
       transition: background-color 0.3s, color 0.3s;
-    }
 
-    a:hover {
-      background-color: #00fbff;
-      color: #333;
+      &:hover {
+        background-color: #00fbff;
+        color: #333;
+      }
     }
   }
 }
 
-
-//-------------SEARCHBAR EN DATAINFO CUENTAS------//
-// src/assets/scss/_03-Componentes/_DataInfoCuentasSearchBar.scss
-
-// src/assets/scss/_03-Componentes/_DataInfoCuentasSearchBar.scss
-
+// Estilos para la barra de búsqueda y filtros
 .search-filter-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); // 4 columnas de igual tamaño
-  grid-template-rows: auto auto; // 2 filas automáticas
-  gap: 5px; // Espacio entre los elementos
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+  gap: 5px;
   padding: 10px 50px;
-  background-color: #22bcb75f; // Fondo oscuro para el contenedor del buscador y filtros
+  background-color: transparent;
   border-radius: 20px;
   margin-bottom: 10px;
   align-items: center;
-
+  
   // Fila superior: botones de categoría
   .category-buttons {
-    grid-column: span 4; // Ocupa toda la fila
+    grid-column: span 4;
     display: flex;
     gap: 10px;
-    justify-content: center; // Centra los botones
+    justify-content: center;
     margin-bottom: 0px;
+    flex-wrap: wrap; // Permite que los botones se envuelvan en pantallas pequeñas
 
     button {
-      background-color: #82fff5; /* Color de fondo claro */
-      border-radius: 10px; /* Bordes redondeados */
-      box-shadow: 0 2px 4px rgb(0, 238, 255); /* Sombra suave */
-      border-radius: 4px;
-      padding: 3px 10px;
-      font-size: x-small;
+      background-color: #395353;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: small;
       cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+      color: white;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      margin: 2px; // Añadir margen para evitar desbordamiento
+
+      span {
+        position: relative;
+        z-index: 1;
+      }
 
       &.selected {
-        background-color: #0e5757;
+        background-color: #137565;
         color: #fff;
-        // border-color: #007bff;
       }
 
       &:hover {
-        background-color: #315750;
+        background-color: #0e8286;
+        color: #fff;
       }
 
       &:focus {
         outline: none;
-        box-shadow: 0 0 5px 5px rgba(6, 255, 243, 0.534);
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+      }
+
+      &:hover::before {
+        transform: translate(-50%, -50%) scale(1);
       }
     }
   }
 
   // Fila inferior: filtros
   .filters {
-    grid-column: span 4; // Ocupa toda la fila
+    grid-column: span 4;
     display: grid;
-    grid-template-columns: repeat(4, 1fr); // 4 columnas de igual tamaño
-    gap: 10px; // Espacio entre los filtros
-    align-items: center; // Alinea verticalmente los filtros
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    align-items: center;
 
     select {
-      background-color: #ffffff; /* Color de fondo claro */
-      border-radius: 10px; /* Bordes redondeados */
-      box-shadow: 0 2px 4px rgb(0, 238, 255); /* Sombra suave */
+      background-color: #ffffff;
       border-radius: 12px;
       padding: 5px 10px;
       font-size: x-small;
@@ -154,25 +161,38 @@
   }
 }
 
-/* Estilos para la barra de búsqueda */
+// Estilos para la barra de búsqueda
 .search-bar {
   padding: 0px;
-  background-color: #218a81; /* Color de fondo claro */
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 2px 4px rgb(0, 238, 255); /* Sombra suave */
+  background-color: #218a81;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgb(0, 238, 255);
+
+  input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    font-size: small;
+    outline: none;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      border-color: #80bdff;
+      box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+    }
+  }
 }
 
-.search-bar input {
-  width: 100%; /* Ocupa todo el ancho del contenedor */
-  padding: 0.5rem; /* Espaciado interno */
-  border: 1px solid #ced4da; /* Borde de color gris claro */
-  border-radius: 10px; /* Bordes redondeados */
-  font-size: x-small; /* Tamaño de fuente */
-  outline: none; /* Elimina el contorno predeterminado */
-  transition: border-color 0.3s ease; /* Transición suave para el borde */
+// Media Queries para dispositivos tablet y móviles
+@media (max-width: 768px) {
+  .data-container {
+    grid-template-columns: 1fr; // Una tabla por fila en tabletas
+  }
 }
 
-.search-bar input:focus {
-  border-color: #80bdff; /* Color del borde cuando está en foco */
-  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Sombra de enfoque */
+@media (max-width: 480px) {
+  .data-container {
+    grid-template-columns: 1fr; // Una tabla por fila en móviles
+  }
 }
