@@ -1,0 +1,55 @@
+
+//---------Dolar API Container--------------------//
+
+.contenedor-dolarappi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    transition: transform 0.3s ease;
+  
+    &:hover {
+      color: #52cce7;
+    }
+  
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  
+  .dollar-container {
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
+  }
+  
+  .dollar-column {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #00f7ff7c; 
+    padding-right: 10px;
+  }
+  
+  .dollar-column:last-child {
+    border-right: none; 
+  }
+  
+  .dollar-column div {
+    font-family: Arial, sans-serif;
+    font-size: x-small;
+    color: white;
+    margin-bottom: 2px;
+  }
+  
+  .dollar-name {
+    font-weight: bold;
+    color: #52cce7;
+  }
+
+  //---------Separadores--------------------//
+
+.separadorL {
+    border-left: 1px dotted #ffffff;
+    margin: 5px;
+  }
+  

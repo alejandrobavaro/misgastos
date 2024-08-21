@@ -20,6 +20,15 @@
   }
 }
 
+@media (max-width: 480px) {
+  .gridPadreContacto1 {
+    padding: 5px; // Reducir padding para móviles
+    gap: 5px; // Reducir el espacio entre elementos
+    margin: 0; // Eliminar margen para una mejor adaptación en móviles
+  }
+}
+
+
 //---------logo header--------------------//
 
 .contact-logo-rede-container {
@@ -30,6 +39,20 @@
   padding: 20px;
   border-radius: 10px;
   background: transparent;
+}
+
+@media (max-width: 768px) {
+  .contact-logo-rede-container {
+    gap: 5%; // Ajustar el espacio entre elementos en tabletas
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-logo-rede-container {
+    gap: 5px; // Reducir el espacio entre elementos en móviles
+    padding: 10px;
+  }
 }
 
 //---------logo main--------------------//
@@ -43,6 +66,19 @@
   width: 100%; // Asegura que el contenedor ocupe todo el ancho disponible
   max-width: 600px; // Aumenta el ancho máximo para permitir una mejor visualización
   background: transparent; // Asegura un fondo blanco para un mejor contraste
+}
+
+@media (max-width: 768px) {
+  .logo-column {
+    max-width: 300px; // Ajustar el ancho máximo en tabletas
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-column {
+    max-width: 100%; // Asegura que el contenedor se ajuste al ancho del dispositivo
+    padding: 10px; // Reducir el padding en móviles
+  }
 }
 
 .logo-main {
@@ -74,18 +110,34 @@
   z-index: 10; // Asegura que la imagen principal esté en el frente
 }
 
-.logoPuchulita:hover {
-  transform: scale(1.2) rotate(5deg); // Agrega una rotación y escalado para un efecto más llamativo
+@media (max-width: 768px) {
+  .logoPuchulita {
+    width: 120px; // Ajustar el tamaño de la imagen principal en tabletas
+  }
+}
+
+@media (max-width: 480px) {
+  .logoPuchulita {
+    width: 100px; // Ajustar el tamaño de la imagen principal en móviles
+  }
 }
 
 .logo-secondary {
-  width: 100px; // Ajusta el tamaño de las imágenes secundarias
+  width: 80px; // Ajusta el tamaño de las imágenes secundarias
   height: auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.logo-secondary:hover {
-  transform: scale(1.1);
+@media (max-width: 768px) {
+  .logo-secondary {
+    width: 70px; // Ajustar el tamaño de las imágenes secundarias en tabletas
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-secondary {
+    width: 60px; // Ajustar el tamaño de las imágenes secundarias en móviles
+  }
 }
 
 //---------contact icons--------------------//
@@ -122,14 +174,69 @@
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.356);
 }
 
+  
+@media (max-width: 768px) {
+  .contact-icons {
+    padding: 15px; // Ajustar el padding en tabletas
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-icons {
+    padding: 10px; // Reducir el padding en móviles
+  }
+}
+
+.contact-item {
+  border-radius: 20px;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  border: #ffffff40 solid 1px;
+  color: #ffffff;
+  font-size: 14px; // Reducir el tamaño de fuente en móviles
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; // Reducir el espacio entre icono y texto en móviles
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .contact-item {
+    font-size: 16px; // Ajustar el tamaño de fuente en tabletas
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-item {
+    font-size: 14px; // Reducir aún más el tamaño de fuente en móviles
+    gap: 8px; // Reducir el espacio entre icono y texto en móviles
+  }
+}
+
 .contact-item a {
   color: #ffffff;
   text-decoration: none;
 }
 
 .contact-item i {
-  font-size: 20px;
+  font-size: 18px; // Ajustar el tamaño del ícono
 }
+
+@media (max-width: 768px) {
+  .contact-item i {
+    font-size: 20px; // Ajustar el tamaño del ícono en tabletas
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-item i {
+    font-size: 18px; // Ajustar el tamaño del ícono en móviles
+  }
+}
+
 
 //---------transparent hr--------------------//
 

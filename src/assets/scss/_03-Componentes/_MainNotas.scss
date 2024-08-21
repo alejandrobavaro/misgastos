@@ -1,7 +1,6 @@
 .mainNotas-container {
- width: 100%;
- height: 100%;
-
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
 }
 
@@ -14,12 +13,26 @@
   padding: 25px;
   border-radius: 20px;
   box-shadow: 0 0px 20px rgb(255, 255, 255);
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 15px;
+    border-radius: 10px;
+  }
 }
 
 .mainNotas h2 {
   margin: 0;
   font-size: small;
   color: #f9f9f9;
+
+  @media (max-width: 480px) {
+    font-size: x-small;
+  }
 }
 
 .mainNotas__input {
@@ -28,6 +41,11 @@
   color: #188289;
   padding: 5px;
   gap: 10px;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 5px;
+  }
 }
 
 .mainNotas__input input {
@@ -36,8 +54,13 @@
   border: 1px solid #00eaff80;
   border-radius: 4px;
   background-color: #ffffff;
-  color: #000000; /* Color del texto claro */
+  color: #000000;
   font-size: small;
+
+  @media (max-width: 480px) {
+    padding: 6px;
+    font-size: x-small;
+  }
 }
 
 .mainNotas__input button {
@@ -49,63 +72,62 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
 
-.mainNotas__input button:hover {
-  background-color: #0e4e5d;
+  @media (max-width: 480px) {
+    padding: 6px 12px;
+    font-size: x-small;
+  }
 }
 
 .mainNotas__list {
   list-style: decimal;
   padding: 5px;
   margin: 0;
+
+  @media (max-width: 480px) {
+    padding: 0;
+  }
 }
 
 .mainNotas__listItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #4e5b59; /* Fondo oscuro para los elementos de la lista */
+  background-color: #4e5b59;
   padding: 8px;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgb(19, 87, 117);
   margin-bottom: 2px;
   font-size: small;
-}
 
-.mainNotas__listItem-input {
-  flex: 1;
-  padding: 4px;
-  border: 1px solid #8383835b; /* Color gris para el fondo del input */
-  border-radius: 4px;
-  background-color: rgb(161, 161, 161);
-  color: #ffffff; /* Color del texto claro */
-  font-size: small;
+  @media (max-width: 480px) {
+    padding: 6px;
+    font-size: x-small;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .mainNotas__listItem-edit {
   display: flex;
   align-items: center;
-  width: 420px;
-  height: auto;
+  width: 100%;
   gap: 10px;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 5px;
+  }
 }
 
 .mainNotas__listItem-buttons {
   display: flex;
   gap: 10px;
-}
 
-.mainNotas__listItem button {
-  border: none;
-  background-color: transparent; /* Fondo transparente para el botón del ícono */
-  color: #ffffff; /* Color del ícono */
-  cursor: pointer;
-  font-size: small;
-}
-
-.mainNotas__listItem button:hover {
-  color: #bbd0cd; /* Color del ícono en hover */
+  @media (max-width: 480px) {
+    gap: 5px;
+    align-self: flex-end;
+  }
 }
 
 .mainNotas__actions {
@@ -114,6 +136,11 @@
   justify-content: center;
   gap: 10px;
   margin-top: 0px;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 5px;
+  }
 }
 
 .mainNotas__actions button {
@@ -125,8 +152,9 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: small;
-}
 
-.mainNotas__actions button:hover {
-  background-color: #0e4e5d;
+  @media (max-width: 480px) {
+    padding: 0.3rem 0.8rem;
+    font-size: x-small;
+  }
 }

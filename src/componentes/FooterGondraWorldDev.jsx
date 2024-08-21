@@ -150,9 +150,11 @@ function FooterGondraWorldDev() {
               />
             </div>
             <hr />
+            <div className="textoFooterGondraWorld">
             {/* <hr className="transparent-hr" /> */}
             <i className="bi bi-brilliance" />- Gondra World Dev -
             <i className="bi bi-brilliance" />
+            </div>
           </a>
         </h3>
     

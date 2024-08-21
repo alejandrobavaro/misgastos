@@ -1,6 +1,7 @@
 import React, { createContext, useState, useContext, useCallback } from 'react';
+import '../assets/scss/_03-Componentes/_HeaderNotificaciones.scss'; // Importa los estilos
 
-// contexto
+// Contexto
 const HeaderNotificationsContext = createContext();
 
 // Proveedor del contexto
@@ -21,9 +22,11 @@ export const HeaderNotificationsProvider = ({ children }) => {
   }, []);
 
   return (
-    <HeaderNotificationsContext.Provider value={{ notifications, addNotification, removeNotification }}>
-      {children}
-    </HeaderNotificationsContext.Provider>
+    <div className="nav-linkHeader">
+      <HeaderNotificationsContext.Provider value={{ notifications, addNotification, removeNotification }}>
+        {children}
+      </HeaderNotificationsContext.Provider>
+    </div>
   );
 };
 

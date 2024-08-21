@@ -109,7 +109,7 @@ const ContactoFormularioSlider = () => {
             <i className="bi bi-person-arms-up" /> ADMINISTRA TU DINERO{" "}
             <i className="bi bi-person-arms-up" />
           </h2>
-         <img src="../../public/img/05-gif/dinero-animado.gif" alt="" />
+         <img className="gifTamaño" src="../../public/img/05-gif/dinero-animado.gif" alt="" />
         </div>
       </div>
     </div>

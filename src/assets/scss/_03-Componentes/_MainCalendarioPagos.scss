@@ -5,14 +5,30 @@
   width: 100%;
   padding: 10px;
   background: transparent;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .calendar-container {
-  width: auto; /* Tamaño fijo para el calendario */
+  width: auto;
   padding: 20px;
   background: transparent;
   border-radius: 20px;
   box-shadow: 0 0px 20px rgb(255, 255, 255);
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px;
+    border-radius: 10px;
+  }
 }
 
 .calendar-header {
@@ -24,20 +40,36 @@
   button {
     background-color: #188289;
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1.5rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 
     &:hover {
       background-color: #0e4e5d;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      padding: 2px 8px;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 2px 8px;
+      font-size: xx-small;
+      border-radius: 6px;
     }
   }
 
   h2 {
     margin: 0;
     color: #00fff2;
+
+    @media (max-width: 480px) {
+      font-size: small;
+    }
   }
 }
 
@@ -45,21 +77,42 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 0.5rem;
-  margin-top: 1rem; /* Espacio entre el header y la cuadrícula */
+  margin-top: 1rem;
+
+  @media (max-width: 768px) {
+    gap: 0.4rem;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.3rem;
+  }
 
   .day {
     background: white;
     padding: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     cursor: pointer;
     position: relative; 
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    height: 60px; /* Asegura que los días tengan un tamaño uniforme */
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 768px) {
+      padding: 0.8rem;
+      height: 60px;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0.6rem;
+      height: 50px;
+      border-radius: 6px;
+    }
 
     &:hover {
       transform: scale(1.05);
@@ -70,6 +123,10 @@
       display: block;
       font-weight: bold;
       color: #333;
+
+      @media (max-width: 480px) {
+        font-size: 0.8rem;
+      }
     }
 
     .reminder-icon {
@@ -78,6 +135,14 @@
       right: 5px;
       font-size: 0.75rem;
       color: #ff0000;
+
+      @media (max-width: 768px) {
+        font-size: 0.7rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 0.6rem;
+      }
     }
   }
 
@@ -85,11 +150,19 @@
     color: white;
     border-radius: 50%;
     border: rgb(30, 195, 187) solid 3px;
+
+    @media (max-width: 768px) {
+      border-width: 2.5px;
+    }
+
+    @media (max-width: 480px) {
+      border-width: 2px;
+    }
   }
 }
 
 .reminders-container {
-  flex-grow: 1; /* Permite que los recordatorios se adapten al resto de la pantalla */
+  flex-grow: 1;
   margin-top: 0px;
   margin-left: 20px;
   background: transparent;
@@ -98,11 +171,31 @@
   box-shadow: 0 2px 40px rgba(255, 255, 255, 0.74);
   width: auto;
 
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px;
+    border-radius: 6px;
+  }
 
   h3 {
     margin-left: 10px;
     color: #00ffee;
     font-size: medium;
+
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1rem;
+    }
   }
 
   ul {
@@ -111,12 +204,29 @@
     color: #ffffff;
     margin: 0;
     list-style-position: inside;
+
+    @media (max-width: 768px) {
+      padding-left: 18px;
+    }
+
+    @media (max-width: 480px) {
+      padding-left: 15px;
+    }
   }
 
   li {
     margin-bottom: 10px;
     font-size: small;
     color: #ffffff;
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.8rem;
+      margin-bottom: 5px;
+    }
   }
 
   p {

@@ -26,7 +26,7 @@ function Footer() {
           <div className="columnaFooter">
             {/* Contenedor de enlaces a redes sociales y logo central */}
             <div className="linksFooter">
-              <div className="textoMovimientoFooter tituloImportanteFooter4">
+              <div className="textoMovimientoFooter ">
                 <a
                   href="https://www.instagram.com"
                   target="_blank"
@@ -35,7 +35,7 @@ function Footer() {
                   <i className="bi bi-instagram" /> Instagram
                 </a>
               </div>
-              <div className="textoMovimientoFooter tituloImportanteFooter4">
+              <div className="textoMovimientoFooter">
                 <a
                   href="https://www.youtube.com"
                   target="_blank"
@@ -44,7 +44,7 @@ function Footer() {
                   <i className="bi bi-youtube" /> Youtube
                 </a>
               </div>
-              <div className="textoMovimientoFooter tituloImportanteFooter4">
+              <div className="textoMovimientoFooter">
                 <a
                   href="https://www.facebook.com"
                   target="_blank"
@@ -53,7 +53,7 @@ function Footer() {
                   <i className="bi bi-facebook" /> Facebook
                 </a>
               </div>
-              <div className="textoMovimientoFooter tituloImportanteFooter4">
+              <div className="textoMovimientoFooter">
                 <a
                   href="https://www.twitter.com"
                   target="_blank"

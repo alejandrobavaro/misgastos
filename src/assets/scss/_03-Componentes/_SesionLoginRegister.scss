@@ -140,3 +140,38 @@
     100% { transform: rotate(360deg); }
   }
 }
+
+
+
+//---------Inicio Sesion--------------------//
+
+.auth-buttons-column {
+  padding: 0px;
+  background-color: transparent;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    margin: 10px 0;
+  }
+}
+
+.auth-divider {
+  width: 80%;
+  border: none;
+  border-top: 1px solid #00f7ff7c;
+  margin: 0px;
+
+  @media (max-width: 768px) {
+    display: none; // Ocultar en pantallas pequeñas
+  }
+}
+
+.textoMenu2 {
+  font-size: small;
+  color: white;
+  text-transform: uppercase;
+
+  &:hover {
+    color: #c3dde2;
+  }
+}

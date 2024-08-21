@@ -1,101 +1,105 @@
-//---------contenedores header--------------------//
+//---------Header Container--------------------//
 
 .header {
+  display: grid;
+  grid-template-columns: (1fr);
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
+  font-size: small;
   border-bottom: 2px solid #00f7ff7c;
   border-radius: 30px;
   padding: 0;
   margin: 0;
-}
-
-//---------grid layout del header--------------------//
-
-.header-grid {
-  display: grid;
-  grid-template-columns: 20% 20% 10% 15% 5% 5% 5% 5%;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
 
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center; // Centrar contenido
     width: 100%;
-    gap: 10px;
+    gap: 0px;
+    text-align: center;
   }
 }
 
-
-//---------contenedor fecha--------------------//
+//---------Date Container--------------------//
 
 .date-container {
   display: flex;
   align-items: center;
-  justify-content: center;
   margin: 0px;
-  border-left: 1px solid #00f7ff37;
-  border-right: 1px solid #00f7ff37;
-  padding: 0px;
-  border-radius: 30px;
   transition: transform 0.3s ease;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .date-text {
+  white-space: nowrap; // Evita el salto de línea dentro del contenedor
   font-size: x-small;
   color: white;
   text-align: center;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 
   &:hover {
     color: rgb(196, 244, 231);
   }
+
+  span {
+  }
 }
 
-//---------auth-buttons--------------------//
+//---------Auth Buttons--------------------//
 
 .auth-icon {
-  font-size: 24px; // Ajusta el tamaño según sea necesario
-  color: #ffffff; // Ajusta el color según el tema
+  font-size: 24px;
+  color: #ffffff;
   transition: color 0.3s ease;
-  margin: 0px;
+  margin: 0;
 
   &:hover {
-    color: #00ddff; // Cambia el color al pasar el ratón sobre el icono
+    color: #00ddff;
   }
 }
 
-.auth-buttons-column {
-  display: flex;
-  align-items: center;
-}
-
-.auth-divider {
-  margin: 0px;
-  border: none;
-  height: 24px;
-  width: 1px;
-}
-
-//---------logo header--------------------//
-
-.logo-column {
-  display: flex;
-  justify-content: start;
-}
+//---------Logo Header--------------------//
 
 .logoHeader {
-  width: 90%; /* Ajusta el tamaño según tus necesidades */
-  transition: transform 0.3s ease;
+  width: 100%;
+  transition: transform 0.3s ease, filter 0.3s ease; // Agrega transición para otras propiedades si es necesario
+
+  @media (max-width: 768px) {
+    width: 200px;
+  }
 
   &:hover {
-    // transform: scale(1.1);
+    transform: scale(1.1);
   }
 }
 
+//---------Navbar Header--------------------//
 
-//---------navbar header--------------------//
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+// Estilos para .navbar-nav
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  font-size: small;
+  gap: 38px; // Gap por defecto para pantallas grandes
+
+  // Media queries para dispositivos móviles y tablets
+  @media (max-width: 768px) {
+    gap: 3px; // Gap para pantallas de tablet y móviles
+  }
+}
+
 
 .navbarHeader {
   display: flex;
@@ -103,19 +107,22 @@
   width: 100%;
 
   @media (max-width: 768px) {
-    display: none; // Ocultar la barra de navegación en pantallas pequeñas
+    display: none;
   }
 }
 
 .navbar-navHeader {
   display: flex;
   align-items: center;
-  font-size: large;
+  font-size: small;
   gap: 30px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
-
-//---------home--------------------//
+//---------home y BOTONES--------------------//
 
 .nav-linkHeader.home-link {
   text-align: center;
@@ -128,7 +135,7 @@
 }
 
 .textoMenu1 {
-  font-size: medium;
+  font-size: small;
   color: #c8fcffe9;
 
   &:hover {
@@ -136,7 +143,53 @@
   }
 }
 
-//---------contacto--------------------//
+// Estilos generales para los enlaces de navegación
+.nav-link {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: #ffffff; // Color del texto de los enlaces
+
+  &:hover {
+    color: #00f7ff; // Color del texto en hover
+  }
+}
+
+// Estilos específicos para el botón HOME
+.home-link {
+  color: #1abc9c; // Color turquesa
+
+  &:hover {
+    color: #00ff88; // Color del texto en hover
+  }
+}
+
+// Estilos específicos para el botón NOTAS
+.notas-link {
+  color: #1abc9c; // Color turquesa
+  font-size: small;
+
+  &:hover {
+    color: #00ff88; // Color del texto en hover
+  }
+}
+
+// Estilos específicos para el botón CONTACTO
+.contacto-link {
+  // Puedes agregar estilos específicos para el botón CONTACTO aquí
+}
+
+// Estilos específicos para el botón TAREAS EN PROCESO
+.tareas-link {
+  color: #1abc9c; // Color turquesa
+  font-size: small;
+
+  &:hover {
+    color: #00ff88; // Color del texto en hover
+  }
+}
+
+//---------Contacto--------------------//
 
 .nav-linkHeader {
   text-align: center;
@@ -165,71 +218,123 @@
 }
 
 .textoMenu2 {
-  font-size: medium;
+  font-size: small;
   color: #ffffff;
 }
 
-//---------Dolar api--------------------//
-
-.contenedor-dolarappi {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 20px;
-  transition: transform 0.3s ease;
+//---------Navbar Toggler (Hamburguesa)--------------------//
+.navbar-togglerHeader {
+  border: none;
+  background-color: white;
+  color: white;
+  font-size: xx-large;
+  cursor: pointer;
   
-  &:hover {
-    color: #52cce7;
+  
+
+  @media (min-width: 769px) {
+    display: none;
+    
+  }
+
+  @media (max-width: 768px) {
+    display: block;
   }
 }
 
-//---------notificaciones--------------------//
+.menu-icon {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  
+
+  @media (min-width: 769px) {
+    display: none;
+  }
+}
+
+//---------Menu Hamburguesa--------------------//
+
+.menuCompleto {
+  display: none;
+  
+
+  @media (max-width: 768px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    display: flex;
+  }
+
+  &.open {
+    display: flex;
+    
+  }
+}
+
+.mobile-menu {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    
+  }
+
+  &.open {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+//---------Notificaciones--------------------//
 
 .headerNotificaciones {
   background: transparent;
   border: none;
   cursor: pointer;
-  color: #ffffff; /* Color del ícono */
+  color: #ffffff;
   font-size: small;
   transition: color 0.3s ease;
 
   &:hover {
-    color: #bbd0cd; /* Color del ícono en hover */
+    color: #bbd0cd;
   }
 }
 
-//---------Inicio Sesion--------------------//
 
-.auth-buttons-column {
-  padding: 0px;
-  background-color: transparent;
-}
+.notifications-item {
+  padding: 0;
+  margin: 0;
 
-.auth-divider {
-  width: 80%;
-  border: none;
-  border-top: 1px solid #00f7ff7c;
-  margin: 0px;
-}
+  @media (max-width: 768px) {
 
-.textoMenu2 {
-  font-size: xx-small;
-  color: white;
-  text-transform: uppercase;
-
-  &:hover {
-    color: #c3dde2;
   }
 }
 
-//---------navbar-toggler--------------------//
+
+
+//---------Elementos de NavBar--------------------//
 
 .navbar-togglerHeader {
   border: none;
-  background-color: transparent;
-  color: white; 
-  font-size: 24px; 
+  background-color: white;
+  color: white;
   cursor: pointer;
+  
 
   @media (min-width: 769px) {
     display: none;
@@ -240,120 +345,30 @@
   }
 }
 
-//---------media queries--------------------//
+.menu-icon {
+  color: #fff;
+  font-size: xx-large;
+  cursor: pointer;
+  
 
-@media (max-width: 768px) {
-  .header-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .logoHeader {
-    width: 100px; 
-  }
-
-  .date-container,
-  .contenedor-dolarappi,
-  .theme-switcher-container,
-  .auth-buttons-container {
+  @media (min-width: 769px) {
     display: none;
   }
 }
-//---------DOLAR API--------------------//
 
-.dollar-container {
-  display: flex;
-  gap: 10px; /* Espacio entre columnas */
-  margin-left: 20px; /* Margen a la izquierda para alejarse de los botones */
+// Estilos para el botón de modo claro/oscuro
+.dark-mode-toggle {
+  padding: 0;
+  margin: 0;
+
+
+  // Mostrar solo en pantallas grandes
+  @media (max-width: 768px) {
+    display: none; // Oculta en tabletas y móviles
+  }
 }
 
-.dollar-column {
-  display: flex;
-  flex-direction: column;
-  border-right: 1px solid #00f7ff7c; 
-  padding-right: 10px;
-}
-
-.dollar-column:last-child {
-  border-right: none; 
-}
-
-.dollar-column div {
-  font-family: Arial, sans-serif;
-  font-size: x-small;
-  color: white;
-  margin-bottom: 2px; /* Espacio entre filas */
-}
-
-.dollar-name {
-  font-weight: bold;
-  color: #52cce7;
-}
-
-//---------Modo Oscuro/Claro--------------------//
-
-.theme-switcher-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.theme-switcher-button {
-  background: transparent;
-  border: none;
-  color: #ffffff; /* Color del ícono */
+// Puedes agregar estilos específicos para el botón en modo de escritorio aquí
+.dark-mode-toggle {
   font-size: large;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    color: #00ddff;
-  }
-}
-
-
-.separadorL {
-  border-left: 1px dotted #ffffff;
-  // border-right: 1px solid #00f7ff;
-  margin: 5px;
-}
-
-.separadorR {
-  // border-left: 1px solid #00f7ff;
-  // border-right: 1px solid #00f7ff;
-}
-
-
-
-//---------menu hamburguesa--------------------//
-
-.menuCompleto {
-  @media (max-width: 768px) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000000e3; // O el color que prefieras
-    z-index: 1000;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    padding: 20px;
-  }
-}
-
-.menuCompleto.open {
-  display: flex; // Mostrar el menú cuando se abre
-}
-
-.navbar-togglerHeader {
-  display: none;
-
-  @media (max-width: 768px) {
-    display: block;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-  }
 }

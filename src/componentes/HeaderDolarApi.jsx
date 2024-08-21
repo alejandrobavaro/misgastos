@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../assets/scss/_03-Componentes/_Header.scss"; // Asegúrate de que el path sea correcto
+import "../assets/scss/_03-Componentes/_HeaderDolarApi.scss"; // Asegúrate de que el path sea correcto
 
 const HeaderDolarApi = () => {
   const [dollarData, setDollarData] = useState([]);

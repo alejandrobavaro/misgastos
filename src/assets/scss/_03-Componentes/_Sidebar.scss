@@ -1,13 +1,45 @@
 //---------contenedor del sidebar--------------------//
 
 .sidebar {
-  width: 200px; // Ancho fijo para el sidebar
+  width: auto; // Ancho fijo para el sidebar
   background-color: transparent;
-  border-right: 4px solid #00f7ff7c;
-  border-radius: 30px;
-  padding: 0px 20px; 
+  // border-right: 1px dotted #00fff250;
+  border-radius: 50%;
+  padding: 10px; 
   margin: 0px;
   flex-shrink: 0;
+  position: relative; // Para posicionar el botón de alternar
+  transition: width 0.3s ease-in-out; // Transición rápida para colapsar/desplegar
+
+  //--------- Botón para alternar el estado del sidebar --------------------//
+
+  .sidebar-toggle {
+    display: block;
+    background-color: transparent;
+    border: none;
+    color: #00f7ffc6;
+    font-size: x-large; // Tamaño más grande para mayor visibilidad
+    cursor: pointer;
+    position: absolute;
+    top: 2px;
+    right: -20px; // Posición junto al sidebar
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out; // Animación suave
+
+    &:focus {
+      outline: none;
+    }
+
+    //--------- Animación constante --------------------//
+
+    &:hover {
+      transform: scale(1.2); // Escala en hover para destacar el botón
+    }
+
+    &.pulse {
+      animation: pulse 2s infinite; // Animación de pulso
+    }
+  }
 
   //---------títulos h2--------------------//
 
@@ -15,6 +47,8 @@
     font-size: small;
     color: #00f7ffc6;
     margin-bottom: 5px;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out; // Animación de opacidad
   }
 
   //---------lista sin estilos--------------------//
@@ -45,6 +79,44 @@
 
     hr {
       margin: 10px 0;
+      border: 0;
+      border-top: 1px solid #00f7ff7c;
+      opacity: 0.5;
+      transition: opacity 0.3s ease-in-out; // Animación de opacidad
     }
+  }
+
+  //--------- Ajustes cuando el sidebar está colapsado --------------------//
+
+  &.collapsed {
+    width: 30px; // Reducir el ancho al mínimo
+    padding: 0px 10px; // Ajustar el padding
+
+    //--------- Ocultar el contenido del sidebar en modo colapsado --------------------//
+
+    .sidebar-content {
+      display: none; // Ocultar el contenido
+    }
+
+    //--------- Posicionar el botón en el centro cuando el sidebar está colapsado --------------------//
+
+    .sidebar-toggle {
+      right: 10px; // Mover el botón más cerca del borde
+      transform: rotate(180deg); // Rotar el ícono para indicar colapsado
+    }
+  }
+}
+
+//--------- Animación de pulso para el botón --------------------//
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
   }
 }

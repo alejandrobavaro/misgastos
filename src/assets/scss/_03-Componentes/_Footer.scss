@@ -1,17 +1,17 @@
 footer {
-  border-radius: 30px;
+  // border-radius: 30px;
   color: rgb(255, 222, 253);
-  width: 100%; 
+  width: 100%;
   padding: 10px;
-  border-top: 2px solid rgba(0, 247, 255, 0.49); 
+  border-top: 1px solid rgba(255, 255, 255, 0.281);
 }
 
 .gridPadreFooter {
   display: flex;
-justify-content: center;
+  justify-content: center;
   align-items: center;
   max-width: 1080px; // Limita el ancho máximo del contenedor del footer
-  padding: 0px;
+  padding: 20px;
   margin: 0 auto;
 }
 
@@ -20,12 +20,15 @@ justify-content: center;
   flex-direction: column;
   align-items: center;
   max-width: 100%; // Asegura que el contenido ocupe todo el ancho del contenedor
+  text-align: center; // Centra el texto para pantallas pequeñas
 }
 
 .ElementsFooter {
- display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap; // Permite que los elementos se envuelvan en pantallas pequeñas
+  width: 100%;
 }
 
 .columnaFooter {
@@ -33,17 +36,26 @@ justify-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 10px; // Espacio entre columnas para pantallas pequeñas
 
+  @media (max-width: 768px) {
+    margin-bottom: 15px;
+  }
 }
 
 .imagenPublicidadFooter2 {
   transition: transform 0.3s ease;
   border-radius: 50px;
   padding: 0px;
+  max-width: 150px;
+
+  @media (max-width: 480px) {
+    max-width: 100px; // Ajuste de tamaño para móviles
+  }
 }
 
 .imagenFooter1 {
-  width: 100%;
+  width: 80%;
   transition: transform 0.3s ease;
 
   &:hover {
@@ -51,11 +63,26 @@ justify-content: center;
   }
 }
 
-
 .linksFooter {
   display: flex;
   flex-direction: column; // Cambiar a columna para pantallas pequeñas
-  font-size: small;
+  font-size: x-small;
+  color: aqua;
+  align-items: center; // Centra los enlaces en pantallas pequeñas
+  gap: 20px; // Espacio entre enlaces
+
+.textoMovimientoFooter{
+  color: aqua;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+  @media (max-width: 480px) {
+    font-size: xx-small; // Tamaño de fuente más pequeño para móviles
+  }
 }
 
 @keyframes shake {
@@ -72,5 +99,21 @@ justify-content: center;
   }
 }
 
+@media (max-width: 480px) {
+  .footerContentFooter {
+    padding: 0px;
+  }
 
+  .columnaFooter {
+    margin-bottom: 0px; // Aumenta el margen inferior para móviles
+  }
 
+  .imagenFooter1 {
+    // max-width: 80px; // Ajuste de tamaño para móviles
+  }
+
+  .linksFooter {
+    gap: 0px; // Reduce el espacio entre enlaces en móviles
+    
+  }
+}

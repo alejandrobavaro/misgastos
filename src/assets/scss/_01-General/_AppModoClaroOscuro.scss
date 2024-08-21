@@ -25,20 +25,21 @@ body {
     }
   }
 
-  // Añadir aquí más estilos específicos para el modo claro
-}
 
-// Puedes agregar más reglas para componentes específicos, como Sidebar, Header, etc.
-// .sidebar.light-mode {
-//   background-color: #fff;
-//   color: #000;
-// }
+  //---------Modo Oscuro/Claro Container--------------------//
 
-// .header.light-mode {
-//   background-color: #ffffff;
-//   color: #000;
-// }
+.theme-switcher-button {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: large;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 
+  &:hover {
+    color: #00ddff;
+  }
+}}
 
 
 
