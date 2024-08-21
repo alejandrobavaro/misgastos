@@ -3,9 +3,9 @@
 .sidebar {
   width: auto; // Ancho fijo para el sidebar
   background-color: transparent;
-  // border-right: 1px dotted #00fff250;
   border-radius: 50%;
-  padding: 10px; 
+  border-right: 2px solid #00fff250;
+  padding: 20px; 
   margin: 0px;
   flex-shrink: 0;
   position: relative; // Para posicionar el botón de alternar
@@ -21,8 +21,8 @@
     font-size: x-large; // Tamaño más grande para mayor visibilidad
     cursor: pointer;
     position: absolute;
-    top: 2px;
-    right: -20px; // Posición junto al sidebar
+    top: 10px;
+    right: -5px; // Posición junto al sidebar
     z-index: 1000;
     transition: transform 0.3s ease-in-out; // Animación suave
 
@@ -48,6 +48,7 @@
     color: #00f7ffc6;
     margin-bottom: 5px;
     opacity: 1;
+    text-align: left; // Alinear el texto hacia la izquierda
     transition: opacity 0.3s ease-in-out; // Animación de opacidad
   }
 
@@ -55,6 +56,7 @@
 
   ul {
     padding: 0px;
+    text-align: left; // Alinear el texto hacia la izquierda
 
     //---------elementos de la lista (li)--------------------//
 
@@ -62,12 +64,14 @@
       font-size: x-small;
       margin: 0px;
       color: #ffffff;
+      text-align: left; // Alinear el texto hacia la izquierda
 
       //---------enlaces (a)--------------------//
 
       a {
         text-decoration: none;
         color: #ffffff;
+        text-align: left; // Alinear el texto hacia la izquierda
 
         &:hover {
           color: rgb(0, 255, 204);

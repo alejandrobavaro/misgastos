@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../assets/scss/_03-Componentes/_Sidebar.scss";
-import { FiArrowRightCircle } from "react-icons/fi"; // Ícono moderno para el botón
+import { FiArrowLeftCircle } from "react-icons/fi"; // Ícono moderno para el botón
 
 const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -13,7 +13,7 @@ const Sidebar = () => {
   return (
     <div className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
       <button className="sidebar-toggle" onClick={toggleSidebar}>
-        <FiArrowRightCircle />
+        <FiArrowLeftCircle />
       </button>
       <div className="sidebar-content">
         <h2>Gastos</h2>
