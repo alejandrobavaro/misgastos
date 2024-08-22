@@ -78,9 +78,15 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
                 CONTACTO
               </Nav.Link>
 
-              <li><Link to="/main-calculadora">   <h2 className="iconoCalculadora"> <BsCalculator /></h2></Link></li>
-
-
+              <li>
+              <Link to="/MainCalculadora">
+                  {" "}
+                  <h2 className="iconoCalculadora">
+                    {" "}
+                    <BsCalculator />
+                  </h2>
+                </Link>
+              </li>
 
               <Nav.Link
                 className="nav-link notas-link"
@@ -104,7 +110,6 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
               <Nav.Item>
                 <HeaderDolarApi />
               </Nav.Item>
-
 
               <Nav.Item className="notifications-item">
                 <Link to="/">

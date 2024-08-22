@@ -173,13 +173,11 @@ function App() {
                   path="/HeaderSearchBar"
                   element={<ProtectedRoute element={<HeaderSearchBar />} />}
                 />
-              
 
                 <Route
                   path="/MainCalculadora"
                   element={<ProtectedRoute element={<MainCalculadora />} />}
                 />
-
               </Routes>
             </div>
           </div>
