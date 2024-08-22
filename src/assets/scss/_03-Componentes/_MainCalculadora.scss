@@ -1,0 +1,120 @@
+.calculator-outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+  
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  .calculator-container {
+    width: auto;
+    padding: 20px;
+    background: transparent;
+    border-radius: 20px;
+    box-shadow: 0 0px 20px rgb(255, 255, 255);
+  
+    @media (max-width: 768px) {
+      width: 100%;
+      padding: 15px;
+      border-radius: 15px;
+    }
+  
+    @media (max-width: 480px) {
+      padding: 10px;
+      border-radius: 10px;
+    }
+  
+    .display {
+      width: 100%;
+      height: 40px;
+      background-color: #222;
+      color: #fff;
+      text-align: right;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 1.5em;
+      border-radius: 5px;
+    }
+  
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+  
+      button {
+        padding: 20px;
+        font-size: 1.2em;
+        background-color: #eee;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+  
+        &:hover {
+          background-color: #ddd;
+          transform: scale(1.05);
+        }
+  
+        @media (max-width: 768px) {
+          padding: 2px 8px;
+          font-size: small;
+          border-radius: 8px;
+        }
+  
+        @media (max-width: 480px) {
+          padding: 2px 8px;
+          font-size: x-small;
+          border-radius: 6px;
+        }
+      }
+    }
+  
+    .calculator-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+  
+      button {
+        background-color: #188289;
+        color: white;
+        padding: 0.7rem 1.5rem;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+  
+        &:hover {
+          background-color: #0e4e5d;
+          transform: scale(1.05);
+        }
+  
+        @media (max-width: 768px) {
+          padding: 2px 8px;
+          border-radius: 8px;
+        }
+  
+        @media (max-width: 480px) {
+          padding: 2px 8px;
+          font-size: xx-small;
+          border-radius: 6px;
+        }
+      }
+  
+      h2 {
+        margin: 0;
+        color: #00fff2;
+  
+        @media (max-width: 480px) {
+          font-size: small;
+        }
+      }
+    }
+  }
+  

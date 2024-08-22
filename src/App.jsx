@@ -22,6 +22,8 @@ import MainWhatsappIcon from "./componentes/MainWhatsappIcon";
 import MainPublicidadSlider from "./componentes/MainPublicidadSlider";
 import MainTareasEnProceso from "./componentes/MainTareasEnProceso";
 import MainNotas from "./componentes/MainNotas";
+import MainCalculadora from "./componentes/MainCalculadora";
+
 //--------------FOOTER----------------//
 import Footer from "./componentes/Footer";
 //-----------CONTACTO-----------------//
@@ -170,6 +172,12 @@ function App() {
                 <Route
                   path="/HeaderSearchBar"
                   element={<ProtectedRoute element={<HeaderSearchBar />} />}
+                />
+              
+
+                <Route
+                  path="/MainCalculadora"
+                  element={<ProtectedRoute element={<MainCalculadora />} />}
                 />
 
               </Routes>

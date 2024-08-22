@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: auto;
+  width: 100%; // Ajustado para tomar el 100% del ancho disponible
   background-color: transparent;
   padding: 10px;
   border-radius: 20px;
@@ -18,22 +18,27 @@
 
   .data-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: 1fr; // Ajuste inicial para apilar columnas
     gap: 10px;
-    width: 100%;
+    width: 100%; // Se ajusta al 100% del contenedor padre
     max-width: 1200px;
+
+    // Para pantallas más grandes, se mantiene la distribución original
+    @media (min-width: 769px) {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
   }
 
   .data-item {
-    background-color: #333;
+    // background-color: #333;
     color: #fff;
     border-radius: 5px;
     padding: 5px;
     box-shadow: 0 2px 4px rgb(0, 238, 255);
     display: flex;
     flex-direction: column;
-    min-width: 0;
     font-size: 10px;
+    width: 100%; // Se asegura que las tablas ocupen todo el ancho disponible
 
     h3 {
       font-size: small;
@@ -45,10 +50,11 @@
       width: 100%;
       border-collapse: collapse;
       font-size: 8px;
+      overflow-x: auto; // Permite scroll si la tabla es muy ancha
 
       td {
         padding: 2px 4px;
-        border: 1px solid #444;
+        border: 1px solid #1c4747;
         color: #fff;
       }
 
@@ -88,56 +94,25 @@
   border-radius: 20px;
   margin-bottom: 10px;
   align-items: center;
-  
-  // Fila superior: botones de categoría
-  .category-buttons {
-    grid-column: span 4;
-    display: flex;
+  width: 100%;
+  max-width: 1200px;
+
+  @media screen and (max-width: 1024px) {
+    padding: 10px 20px;
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    justify-content: center;
-    margin-bottom: 0px;
-    flex-wrap: wrap; // Permite que los botones se envuelvan en pantallas pequeñas
-
-    button {
-      background-color: #395353;
-      border: 1px solid transparent;
-      border-radius: 8px;
-      padding: 6px 14px;
-      font-size: small;
-      cursor: pointer;
-      color: white;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      margin: 2px; // Añadir margen para evitar desbordamiento
-
-      span {
-        position: relative;
-        z-index: 1;
-      }
-
-      &.selected {
-        background-color: #137565;
-        color: #fff;
-      }
-
-      &:hover {
-        background-color: #0e8286;
-        color: #fff;
-      }
-
-      &:focus {
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
-      }
-
-      &:hover::before {
-        transform: translate(-50%, -50%) scale(1);
-      }
-    }
   }
 
+  @media screen and (max-width: 768px) {
+    padding: 10px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  // Fila superior: botones de categoría
+
   // Fila inferior: filtros
+
   .filters {
     grid-column: span 4;
     display: grid;
@@ -147,9 +122,10 @@
 
     select {
       background-color: #ffffff;
-      border-radius: 12px;
+      border-radius: 5px;
       padding: 5px 10px;
       font-size: x-small;
+      margin-left: 10px;
       transition: border-color 0.3s;
 
       &:hover,
@@ -159,6 +135,13 @@
       }
     }
   }
+}
+
+.filter-field-select {
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 5px 5px;
+  box-shadow: 0 2px 4px rgb(0, 238, 255);
 }
 
 // Estilos para la barra de búsqueda
@@ -184,15 +167,55 @@
   }
 }
 
+.category-buttons {
+  grid-column: span 4;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 0px;
+  flex-wrap: wrap;
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+  border-radius: 20px;
+  padding: 5px;
+
+  button {
+    background-color: #246e6e62;
+    
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 3px 5px;
+    font-size: small;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin: 2px; // Añadir margen para evitar desbordamiento
+
+    
+
+    &:hover,
+    &.selected {
+      background-color: #00fbff;
+      color: #333;
+    }
+  }
+}
+
 // Media Queries para dispositivos tablet y móviles
 @media (max-width: 768px) {
   .data-container {
-    grid-template-columns: 1fr; // Una tabla por fila en tabletas
+    grid-template-columns: 1fr; // Una tarjeta por fila en tabletas
   }
 }
 
 @media (max-width: 480px) {
   .data-container {
-    grid-template-columns: 1fr; // Una tabla por fila en móviles
+    grid-template-columns: 1fr; // Una tarjeta por fila en móviles
   }
 }
+
+
+
+
+

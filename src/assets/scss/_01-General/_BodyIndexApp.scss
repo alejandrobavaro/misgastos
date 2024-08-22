@@ -116,11 +116,13 @@ h6 {
 
 li {
   // list-style-type: none;
-  list-style-type: circle;  // Tipo de lista con círculos.
+  // list-style-type: circle;
+  list-style-type: none;  
 }
 
 ol {
   list-style-type: circle; // Tipo de lista ordenada con círculos.
+    // list-style-type: none;
 }
 
 td {

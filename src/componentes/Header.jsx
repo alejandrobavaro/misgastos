@@ -6,6 +6,7 @@ import HeaderNotificaciones from "./HeaderNotificaciones";
 import { useHeaderNotifications } from "./HeaderNotificacionesContext";
 import AppModoClaroOscuro from "./AppModoClaroOscuro";
 import { BsFillPersonPlusFill, BsBoxArrowRight, BsList } from "react-icons/bs";
+import { BsCalculator } from "react-icons/bs";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import "../assets/scss/_03-Componentes/_Header.scss";
 
@@ -48,7 +49,6 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
                   className="logoHeader"
                 />
               </Navbar.Brand>
-              {/* Aquí van otros elementos del Navbar */}
             </Container>
           </Navbar>
 
@@ -78,11 +78,9 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
                 CONTACTO
               </Nav.Link>
 
-              <Nav.Item className="notifications-item">
-                <Link to="/">
-                  <HeaderNotificaciones reminderCount={notifications.today} />
-                </Link>
-              </Nav.Item>
+              <li><Link to="/main-calculadora">   <h2 className="iconoCalculadora"> <BsCalculator /></h2></Link></li>
+
+
 
               <Nav.Link
                 className="nav-link notas-link"
@@ -105,6 +103,13 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
             <Nav className="">
               <Nav.Item>
                 <HeaderDolarApi />
+              </Nav.Item>
+
+
+              <Nav.Item className="notifications-item">
+                <Link to="/">
+                  <HeaderNotificaciones reminderCount={notifications.today} />
+                </Link>
               </Nav.Item>
 
               <Nav.Item className="dark-mode-toggle">

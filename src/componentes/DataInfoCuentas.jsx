@@ -5,30 +5,36 @@ const DataInfoCuentas = () => {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("TODOS");
+  const [filterField, setFilterField] = useState("Categoria"); // Estado para el campo de filtro seleccionado
 
   useEffect(() => {
     fetch("/infocuentas.json")
       .then((response) => response.json())
       .then((data) => {
         setData(data);
-        console.log("Datos cargados:", data); // Verifica que los datos se cargan correctamente
+        console.log("Datos cargados:", data);
       })
       .catch((error) => console.error("Error al cargar los datos:", error));
   }, []);
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
-    setSelectedName("");
+    setSearchTerm("");
   };
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
-  // Filtra los datos
+  const handleFilterFieldChange = (e) => {
+    setFilterField(e.target.value);
+    // Al cambiar el campo de filtro, selecciona automáticamente "TODOS"
+    setSelectedCategory("TODOS");
+  };
+
   const filteredData = data.filter((item) => {
     const matchesCategory =
-      selectedCategory === "TODOS" || item.Categoria === selectedCategory;
+      selectedCategory === "TODOS" || item[filterField] === selectedCategory;
     const matchesSearchTerm =
       searchTerm === "" ||
       Object.values(item).some((value) =>
@@ -38,20 +44,7 @@ const DataInfoCuentas = () => {
     return matchesCategory && matchesSearchTerm;
   });
 
-  // Extrae categorías
-  const categories = [...new Set(data.map((item) => item.Categoria))];
-
-  // Filtra los nombres según la categoría seleccionada
-  const names =
-    selectedCategory === "TODOS"
-      ? ["Todos", ...new Set(data.map((item) => item.Nombre))]
-      : [
-          ...new Set(
-            data
-              .filter((item) => item.Categoria === selectedCategory)
-              .map((item) => item.Nombre)
-          ),
-        ];
+  const categories = [...new Set(data.map((item) => item[filterField]))];
 
   return (
     <div className="data">
@@ -64,7 +57,31 @@ const DataInfoCuentas = () => {
             >
               TODOS
             </button>
-            
+
+            <div className="filter-field-select">
+              <label htmlFor="filterField">
+                {" "}
+                <h3>Filtrar por:</h3>
+              </label>
+              <select
+                id="filterField"
+                value={filterField}
+                onChange={handleFilterFieldChange}
+              >
+                <option value="Categoria">Categoría</option>
+                <option value="Tipo">Tipo</option>
+                <option value="Servicio">Servicio</option>
+                <option value="Impuesto">Impuesto</option>
+                <option value="Empresa">Empresa</option>
+                <option value="Nombre">Nombre</option>
+                <option value="Sección">Sección</option>
+                <option value="Titular">Titular</option>
+                <option value="Consumo Mes">Consumo Mes</option>
+                <option value="Factura Pagada">Factura Pagada</option>
+                <option value="Pagado con">Pagado con</option>
+              </select>
+            </div>
+
             {categories.map(
               (category) =>
                 category !== "TODOS" && (
@@ -86,10 +103,10 @@ const DataInfoCuentas = () => {
                 onChange={handleSearchChange}
               />
             </div>
-
           </div>
         </div>
       </div>
+
       {filteredData.length === 0 ? (
         <h4>No se encontraron datos en la búsqueda. Verifique su selección.</h4>
       ) : (
