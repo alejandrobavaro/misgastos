@@ -23,7 +23,7 @@ import MainPublicidadSlider from "./componentes/MainPublicidadSlider";
 import MainTareasEnProceso from "./componentes/MainTareasEnProceso";
 import MainNotas from "./componentes/MainNotas";
 import MainCalculadora from "./componentes/MainCalculadora";
-
+import MainTemporizadorTareas from "./componentes/MainTemporizadorTareas"; 
 //--------------FOOTER----------------//
 import Footer from "./componentes/Footer";
 //-----------CONTACTO-----------------//
@@ -168,15 +168,17 @@ function App() {
                   path="/main-notas"
                   element={<ProtectedRoute element={<MainNotas />} />}
                 />
-
                 <Route
                   path="/HeaderSearchBar"
                   element={<ProtectedRoute element={<HeaderSearchBar />} />}
                 />
-
                 <Route
                   path="/MainCalculadora"
                   element={<ProtectedRoute element={<MainCalculadora />} />}
+                />
+                <Route
+                  path="/MainTemporizadorTareas"
+                  element={<ProtectedRoute element={<MainTemporizadorTareas />} />}
                 />
               </Routes>
             </div>

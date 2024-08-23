@@ -45,10 +45,6 @@ const MainCalculadora = () => {
     }
   };
 
-  const handlePower = () => {
-    setDisplay(prev => prev + '**');
-  };
-
   const handleMemoryAdd = () => {
     localStorage.setItem('memory', display);
   };
@@ -90,32 +86,58 @@ const MainCalculadora = () => {
 
   return (
     <div className="calculator-container">
-      <div className="calculator-display">
-        <div className="display">{display}</div>
-        <div className="buttons">
-          <button className="number" onClick={() => handleClick('7')}>7</button>
-          <button className="number" onClick={() => handleClick('8')}>8</button>
-          <button className="number" onClick={() => handleClick('9')}>9</button>
-          <button className="operator" onClick={() => handleClick('/')}>/</button>
-          <button className="number" onClick={() => handleClick('4')}>4</button>
-          <button className="number" onClick={() => handleClick('5')}>5</button>
-          <button className="number" onClick={() => handleClick('6')}>6</button>
-          <button className="operator" onClick={() => handleClick('*')}>*</button>
-          <button className="number" onClick={() => handleClick('1')}>1</button>
-          <button className="number" onClick={() => handleClick('2')}>2</button>
-          <button className="number" onClick={() => handleClick('3')}>3</button>
-          <button className="operator" onClick={() => handleClick('-')}>-</button>
-          <button className="number" onClick={() => handleClick('0')}>0</button>
-          <button className="operator" onClick={() => handleClick('.')}>.</button>
-          <button className="operator" onClick={handleClear}>C</button>
-          <button className="operator" onClick={() => handleClick('+')}>+</button>
-          <button className="operator" onClick={handlePercentage}>%</button>
-          <button className="operator" onClick={handleSquareRoot}>√</button>
-          <button className="operator" onClick={handlePower}>^</button>
-          <button className="operator" onClick={handleMemoryAdd}>M+</button>
-          <button className="operator" onClick={handleMemoryRecall}>MR</button>
-          <button className="operator" onClick={handleMemoryClear}>MC</button>
-          <button className="operator" onClick={handleCalculate}>=</button>
+      <div className="calculator-body">
+        <div className="calculator-display">
+          <div className="outer-display-container">
+            <div className="inner-display-container">
+              <input 
+                type="text" 
+                className="display" 
+                value={display} 
+                onChange={(e) => setDisplay(e.target.value)} 
+                readOnly 
+              />
+            </div>
+          </div>
+        </div>
+        <div className="calculator-buttons">
+          <div className="row">
+            <button className="button logo">Logo</button>
+            <button className="button operator" onClick={handleMemoryClear}>MC</button>
+            <button className="button operator" onClick={handleMemoryRecall}>MR</button>
+            <button className="button operator" onClick={() => handleClick('M-')}>M-</button>
+            <button className="button operator" onClick={() => handleClick('M+')}>M+</button>
+          </div>
+          <div className="row">
+            <button className="button off">OFF</button>
+            <button className="button number" onClick={() => handleClick('7')}>7</button>
+            <button className="button number" onClick={() => handleClick('8')}>8</button>
+            <button className="button number" onClick={() => handleClick('9')}>9</button>
+            <button className="button operator" onClick={handlePercentage}>%</button>
+            <button className="button operator" onClick={handleSquareRoot}>√</button>
+          </div>
+          <div className="row">
+            <button className="button special">♪</button>
+            <button className="button number" onClick={() => handleClick('4')}>4</button>
+            <button className="button number" onClick={() => handleClick('5')}>5</button>
+            <button className="button number" onClick={() => handleClick('6')}>6</button>
+            <button className="button operator" onClick={() => handleClick('*')}>X</button>
+            <button className="button operator" onClick={() => handleClick('/')}>÷</button>
+          </div>
+          <div className="row">
+            <button className="button clear" onClick={handleClear}>CE</button>
+            <button className="button number" onClick={() => handleClick('1')}>1</button>
+            <button className="button number" onClick={() => handleClick('2')}>2</button>
+            <button className="button number" onClick={() => handleClick('3')}>3</button>
+            <button className="button operator plus" onClick={() => handleClick('+')}>+</button>
+          </div>
+          <div className="row">
+            <button className="button on">ON/C</button>
+            <button className="button number" onClick={() => handleClick('0')}>0</button>
+            <button className="button special" onClick={() => handleClick('.')}>.</button>
+            <button className="button special" onClick={() => handleClick('+/-')}>±</button>
+            <button className="button operator equal" onClick={handleCalculate}>=</button>
+          </div>
         </div>
       </div>
       <div className="calculator-history">

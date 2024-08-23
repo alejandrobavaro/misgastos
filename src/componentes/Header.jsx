@@ -1,3 +1,5 @@
+// src/componentes/Header.jsx
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "./SesionAuthContext";
@@ -5,7 +7,12 @@ import HeaderDolarApi from "./HeaderDolarApi";
 import HeaderNotificaciones from "./HeaderNotificaciones";
 import { useHeaderNotifications } from "./HeaderNotificacionesContext";
 import AppModoClaroOscuro from "./AppModoClaroOscuro";
-import { BsFillPersonPlusFill, BsBoxArrowRight, BsList } from "react-icons/bs";
+import {
+  BsFillPersonPlusFill,
+  BsBoxArrowRight,
+  BsList,
+  BsClock,
+} from "react-icons/bs"; // Importa el ícono del reloj
 import { BsCalculator } from "react-icons/bs";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import "../assets/scss/_03-Componentes/_Header.scss";
@@ -79,10 +86,8 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
               </Nav.Link>
 
               <li>
-              <Link to="/MainCalculadora">
-                  {" "}
+                <Link to="/MainCalculadora">
                   <h2 className="iconoCalculadora">
-                    {" "}
                     <BsCalculator />
                   </h2>
                 </Link>
@@ -106,6 +111,15 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
               </Nav.Link>
             </Nav>
 
+            <Nav.Link
+              className="nav-link temporizador-link"
+              as={Link}
+              to="/MainTemporizadorTareas"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <BsClock className="iconoTemporizador" />
+              <span></span>
+            </Nav.Link>
             <Nav className="">
               <Nav.Item>
                 <HeaderDolarApi />
