@@ -13,19 +13,19 @@
   background-color: #6b6b6b;
   padding: 20px;
   border-radius: 10px;
-  width: 350px;
+  width: auto;
 }
 
 .calculator-display {
   width: 100%;
   background-color: black;
-  padding: 10px;
+  padding: 20px;
   border-radius: 5px;
 
   .outer-display-container {
     background-color: #333;
     border-radius: 5px;
-    padding: 5px;
+    padding: 10px;
   }
 
   .inner-display-container {
@@ -35,7 +35,7 @@
 
     .display {
       width: 100%;
-      height: 40px;
+      height: 70px;
       background-color: #2c3e50;
       color: #ecf0f1;
       font-size: 20px;
@@ -46,57 +46,102 @@
   }
 }
 
+.buttonlogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(56, 56, 56);
+  // border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0;
+  width: 100%;  /* Ocupa todo el espacio disponible del grid */
+  height: auto; 
+  overflow: hidden; /* Esconde cualquier parte de la imagen que sobresalga del botón */
+
+  img {
+    max-width: 60%;  /* Ajusta la imagen al 80% del ancho del botón */
+    max-height: 50%; /* Ajusta la imagen al 80% de la altura del botón */
+    object-fit: contain; /* Mantiene la proporción de la imagen */
+  }
+}
+
 .calculator-buttons {
   margin-top: 20px;
+  padding: 5px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr); // 6 columnas
+  grid-template-rows: repeat(5, 1fr); // 5 filas
   gap: 5px;
 
-  .row {
-    display: contents; /* Hacer que los elementos hijos de la fila se comporten como si fueran parte del grid padre */
+  .button {
+    padding: 10px;
+    font-size: 25px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
 
-    .button {
-      padding: 15px;
-      font-size: 20px;
-      border-radius: 5px;
-      text-align: center;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    &.number {
+      background-color: black;
+      color: white;
+    }
 
-      &.number {
-        background-color: black;
-        color: white;
-      }
+    &.operator {
+      background-color: rgb(245, 245, 245);
+      color: black;
+    }
 
-      &.operator {
-        background-color: white;
-        color: black;
-      }
+    &.special {
+      background-color: #b1c5c7;
+      color: black;
+    }
 
-      &.special {
-        background-color: orange;
-        color: black;
-      }
+    &.specialComa {
+      background-color: #ffffff;
+      color: black;
+    }
+  
+    &.simbolocombinado {
+      background-color: #ffffff;
+      grid-row: span 2; // Hace que el botón ocupe el espacio de dos columnas
+      color: black;
+    }
+   
 
-      &.clear,
-      &.on,
-      &.off {
-        background-color: orange;
-        color: black;
-      }
-
-      &.plus {
-        grid-row: span 2;
-      }
-
-      &.equal {
-        grid-column: span 2;
-      }
+    &.clear,
+    &.on,
+    &.off {
+      background-color: orange;
+      color: black;
     }
   }
 }
+
+.turnoffsound {
+  background-color: #b1c5c7;
+  position: relative; /* Necesario para posicionar el pseudo-elemento */
+  font-size: 24px; /* Ajusta el tamaño del ícono según sea necesario */
+  color: #000; /* Color del ícono */
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%; /* Posiciona la línea en el centro vertical */
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1px; /* Grosor de la línea */
+    background-color: red; /* Color de la línea de tachado */
+    transform: rotate(45deg) translateY(-50%); /* Rota y centra la línea */
+  }
+}
+
 
 .calculator-history {
   width: auto; /* Ancho mayor para el historial */
@@ -111,23 +156,22 @@
   font-size: 0.9rem; /* Ajuste del tamaño de la fuente */
 
   h3 {
-    text-align: left;
-    margin-top: 0;
-    color: #00ffff;
+    text-align: center;
+    color: rgb(0, 247, 255);
     text-decoration: underline;
+    margin-left: 20px;
   }
 
   .history-list {
     list-style-type: circle;
-    color: #00ffff;
-    padding: 0;
+    padding-left: 0;
+    color: #ffffff;
 
     .history-item {
-      text-align: left;
-      padding: 5px;
-      margin-bottom: 0px;
-      background: transparent;
-      border-radius: 4px;
+      margin-left: 5px;
+      border-bottom: 1px solid #acacac;
+        padding: 5px;
+
     }
   }
 }

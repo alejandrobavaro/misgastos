@@ -15,7 +15,7 @@ const MainCalculadora = () => {
 
   const handleCalculate = () => {
     try {
-      const result = Function(`'use strict'; return (${display})`)();
+      const result = Function('"use strict"; return (' + display + ')')();
       if (result !== undefined && !isNaN(result)) {
         setHistory(prev => [...prev, `${display} = ${result}`]);
         setDisplay(result.toString());
@@ -101,43 +101,40 @@ const MainCalculadora = () => {
           </div>
         </div>
         <div className="calculator-buttons">
-          <div className="row">
-            <button className="button logo">Logo</button>
-            <button className="button operator" onClick={handleMemoryClear}>MC</button>
-            <button className="button operator" onClick={handleMemoryRecall}>MR</button>
-            <button className="button operator" onClick={() => handleClick('M-')}>M-</button>
-            <button className="button operator" onClick={() => handleClick('M+')}>M+</button>
-          </div>
-          <div className="row">
-            <button className="button off">OFF</button>
-            <button className="button number" onClick={() => handleClick('7')}>7</button>
-            <button className="button number" onClick={() => handleClick('8')}>8</button>
-            <button className="button number" onClick={() => handleClick('9')}>9</button>
-            <button className="button operator" onClick={handlePercentage}>%</button>
-            <button className="button operator" onClick={handleSquareRoot}>√</button>
-          </div>
-          <div className="row">
-            <button className="button special">♪</button>
-            <button className="button number" onClick={() => handleClick('4')}>4</button>
-            <button className="button number" onClick={() => handleClick('5')}>5</button>
-            <button className="button number" onClick={() => handleClick('6')}>6</button>
-            <button className="button operator" onClick={() => handleClick('*')}>X</button>
-            <button className="button operator" onClick={() => handleClick('/')}>÷</button>
-          </div>
-          <div className="row">
-            <button className="button clear" onClick={handleClear}>CE</button>
-            <button className="button number" onClick={() => handleClick('1')}>1</button>
-            <button className="button number" onClick={() => handleClick('2')}>2</button>
-            <button className="button number" onClick={() => handleClick('3')}>3</button>
-            <button className="button operator plus" onClick={() => handleClick('+')}>+</button>
-          </div>
-          <div className="row">
-            <button className="button on">ON/C</button>
-            <button className="button number" onClick={() => handleClick('0')}>0</button>
-            <button className="button special" onClick={() => handleClick('.')}>.</button>
-            <button className="button special" onClick={() => handleClick('+/-')}>±</button>
-            <button className="button operator equal" onClick={handleCalculate}>=</button>
-          </div>
+          <button className="buttonlogo"><img src="../../public/img/01-favicon/logo1.ico" alt="logochancho1" /></button>
+          <button className="button operator" onClick={handleSquareRoot}>√</button>
+          <button className="button operator" onClick={() => handleClick('/')}>÷</button>
+          <button className="button operator" onClick={() => handleClick('*')}>x</button>
+          <button className="button operator" onClick={() => handleClick('-')}>-</button>
+          <button className="button operator" onClick={handlePercentage}>%</button>
+
+          <button className="button special simbolocombinado turnoffsound">♪</button>
+          <button className="button number" onClick={() => handleClick('7')}>7</button>
+          <button className="button number" onClick={() => handleClick('8')}>8</button>
+          <button className="button number" onClick={() => handleClick('9')}>9</button>
+          <button className="button simbolocombinado" onClick={() => handleClick('+')}>+</button>
+          <button className="button operator" onClick={handleMemoryClear}>MC</button>
+
+          
+          <button className="button number" onClick={() => handleClick('4')}>4</button>
+          <button className="button number" onClick={() => handleClick('5')}>5</button>
+          <button className="button number" onClick={() => handleClick('6')}>6</button>
+    
+          <button className="button operator" onClick={handleMemoryRecall}>MR</button>
+
+          <button className="button clear simbolocombinado" onClick={handleClear}>CE</button>
+          <button className="button number" onClick={() => handleClick('1')}>1</button>
+          <button className="button number" onClick={() => handleClick('2')}>2</button>
+          <button className="button number" onClick={() => handleClick('3')}>3</button>
+          <button className="button operator equal simbolocombinado" onClick={handleCalculate}>=</button>
+          <button className="button operator" onClick={() => handleClick('M-')}>M-</button>
+
+         
+          <button className="button number" onClick={() => handleClick('0')}>0</button>
+          <button className="button number" onClick={() => handleClick('0')}>0</button>
+          <button className="button specialComa" onClick={() => handleClick(',')}>,</button>
+         
+          <button className="button operator" onClick={() => handleClick('M+')}>M+</button>
         </div>
       </div>
       <div className="calculator-history">
