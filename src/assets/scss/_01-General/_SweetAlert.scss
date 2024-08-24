@@ -45,3 +45,35 @@
     }
   }
   
+
+  //--------------------------------//
+
+  // _SweetAlert.scss
+
+@import '~sweetalert2/dist/sweetalert2.min.css';
+
+.swal2-popup {
+  font-family: 'Arial', sans-serif !important;
+  color: #333;
+}
+
+.swal2-title {
+  color: #ff6b6b;
+}
+
+.swal2-content {
+  color: #444;
+}
+
+.swal2-confirm {
+  background-color: #0b6458;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.swal2-confirm:hover {
+  background-color: #25767c;
+}

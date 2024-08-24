@@ -1,5 +1,7 @@
 .calculator-container {
-  display: flex;
+  display: inline-flex; /* Cambia de flex a inline-flex */
+  justify-content: center;
+  align-items: center;
   background-color: transparent;
   box-shadow: 0 0px 20px rgb(255, 255, 255);
   padding: 20px;
@@ -37,8 +39,10 @@
       width: 100%;
       height: 70px;
       background-color: #2c3e50;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
       color: #ecf0f1;
-      font-size: 20px;
+      font-size: xx-large;
       text-align: right;
       border: none;
       border-radius: 5px;
@@ -51,18 +55,17 @@
   justify-content: center;
   align-items: center;
   background-color: rgb(56, 56, 56);
-  // border: none;
   border-radius: 5px;
   cursor: pointer;
   padding: 0;
-  width: 100%;  /* Ocupa todo el espacio disponible del grid */
-  height: auto; 
-  overflow: hidden; /* Esconde cualquier parte de la imagen que sobresalga del botón */
+  width: 100%;
+  height: auto;
+  overflow: hidden;
 
   img {
-    max-width: 60%;  /* Ajusta la imagen al 80% del ancho del botón */
-    max-height: 50%; /* Ajusta la imagen al 80% de la altura del botón */
-    object-fit: contain; /* Mantiene la proporción de la imagen */
+    max-width: 60%;
+    max-height: 50%;
+    object-fit: contain;
   }
 }
 
@@ -70,8 +73,8 @@
   margin-top: 20px;
   padding: 5px;
   display: grid;
-  grid-template-columns: repeat(6, 1fr); // 6 columnas
-  grid-template-rows: repeat(5, 1fr); // 5 filas
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   gap: 5px;
 
   .button {
@@ -106,13 +109,16 @@
       background-color: #ffffff;
       color: black;
     }
-  
+
     &.simbolocombinado {
       background-color: #ffffff;
-      grid-row: span 2; // Hace que el botón ocupe el espacio de dos columnas
+      grid-row: span 2;
       color: black;
     }
-   
+
+    &.simbolocombinado2 {
+      grid-column: span 2;
+    }
 
     &.clear,
     &.on,
@@ -120,43 +126,33 @@
       background-color: orange;
       color: black;
     }
+
+    &:hover,
+    &.active {
+      background-color: #555;
+      box-shadow: 0 0 10px #aaa;
+    }
   }
 }
-
-.turnoffsound {
-  background-color: #b1c5c7;
-  position: relative; /* Necesario para posicionar el pseudo-elemento */
-  font-size: 24px; /* Ajusta el tamaño del ícono según sea necesario */
-  color: #000; /* Color del ícono */
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 50%; /* Posiciona la línea en el centro vertical */
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 1px; /* Grosor de la línea */
-    background-color: red; /* Color de la línea de tachado */
-    transform: rotate(45deg) translateY(-50%); /* Rota y centra la línea */
-  }
-}
-
 
 .calculator-history {
-  width: auto; /* Ancho mayor para el historial */
+  width: auto;
   background: transparent;
+  text-align: justify;
   color: #ffffff;
   padding: 15px;
-  border-left: 10px solid #818181;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
   margin-left: 10px;
-  border-radius: 20px;
-  overflow-y: auto;
-  height: auto;
-  font-size: 0.9rem; /* Ajuste del tamaño de la fuente */
+  margin-right: 10px;
+  overflow: auto; /* Permite el desplazamiento del contenido */
+  max-height: 670px; /* Ajusta el alto máximo como prefieras */
+  font-size: 0.9rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajusta el ancho de las columnas y el número de columnas */
+  gap: 10px; /* Espacio entre columnas */
 
   h3 {
-    text-align: center;
     color: rgb(0, 247, 255);
     text-decoration: underline;
     margin-left: 20px;
@@ -166,12 +162,44 @@
     list-style-type: circle;
     padding-left: 0;
     color: #ffffff;
+    font-size: x-small;
 
     .history-item {
       margin-left: 5px;
       border-bottom: 1px solid #acacac;
-        padding: 5px;
+      padding: 5px;
+    }
+  }
+}
 
+
+
+
+.textoAtajosTeclado {
+  width: 500px;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: transparent;
+  font-size: xx-small;
+  color: #c5c5c5;
+  text-align: justify; 
+  
+  p {
+      margin-bottom: 10px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    
+    li {
+      margin-bottom: 5px;
+    }
+    
+    strong {
+      color: #555;
     }
   }
 }

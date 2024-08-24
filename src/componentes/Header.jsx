@@ -1,5 +1,3 @@
-// src/componentes/Header.jsx
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "./SesionAuthContext";
@@ -12,7 +10,7 @@ import {
   BsBoxArrowRight,
   BsList,
   BsClock,
-} from "react-icons/bs"; // Importa el ícono del reloj
+} from "react-icons/bs";
 import { BsCalculator } from "react-icons/bs";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import "../assets/scss/_03-Componentes/_Header.scss";
@@ -21,10 +19,18 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
   const { state, dispatch } = useAuth();
   const { notifications } = useHeaderNotifications();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
     document.body.classList.toggle("dark-mode", isDarkMode);
   }, [isDarkMode]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleToggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
@@ -47,17 +53,13 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
     <header className="header">
       <Navbar expand="lg" className="navbar">
         <Container>
-          <Navbar expand="lg" className="navbar">
-            <Container>
-              <Navbar.Brand as={Link} to="/" className="logo-container">
-                <img
-                  src="/img/02-logos/logomisgastos1.png"
-                  alt="Logo"
-                  className="logoHeader"
-                />
-              </Navbar.Brand>
-            </Container>
-          </Navbar>
+          <Navbar.Brand as={Link} to="/" className="logo-container">
+            <img
+              src="/img/02-logos/logomisgastos1.png"
+              alt="Logo"
+              className="logoHeader"
+            />
+          </Navbar.Brand>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <BsList className="menu-icon" onClick={handleToggleMobileMenu} />
@@ -140,10 +142,20 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
 
               <Nav.Item className="date-container">
                 <div className="date-text">
-                  <span>Hoy es: </span>
-                  <span>{weekday},</span>
-                  <br />
-                  <span>{dayMonthYear}</span>
+                  <div className="time-row">
+                    <span>
+                      Son las{" "}
+                      <span className="current-time">
+                        {currentTime.toLocaleTimeString()}
+                      </span>
+                    </span>
+                  </div>
+                  <div className="weekday-row">
+                    <span> del día <span className="dia">{weekday},</span></span>
+                  </div>
+                  <div className="date-row">
+                    <span  className="numeroFecha">{dayMonthYear}</span>
+                  </div>
                 </div>
               </Nav.Item>
 

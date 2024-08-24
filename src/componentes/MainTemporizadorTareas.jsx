@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import '../assets/scss/_03-Componentes/_MainTemporizadorTareas.scss';
-import { FaTrash } from 'react-icons/fa'; // Importar el ícono de eliminar
-import MainTemporizadorTimePicker from './MainTemporizadorTimePicker'; // Importar el nuevo componente
+import { FaTrash } from 'react-icons/fa';
+import MainTemporizadorTimePicker from './MainTemporizadorTimePicker';
+import Swal from 'sweetalert2'; // Importa SweetAlert2
 
 const MainTemporizadorTareas = () => {
   const [hours, setHours] = useState(0);
@@ -14,7 +15,6 @@ const MainTemporizadorTareas = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [intervalId, setIntervalId] = useState(null);
   const [progress, setProgress] = useState(100);
-  const [currentTime, setCurrentTime] = useState(new Date());
   const [history, setHistory] = useState([]);
 
   useEffect(() => {
@@ -38,24 +38,26 @@ const MainTemporizadorTareas = () => {
           setProgress(newProgress);
           return prevTime - 10;
         });
-      }, 10); // Actualiza cada 10 milisegundos
+      }, 10);
       setIntervalId(id);
       return () => clearInterval(id);
     }
   }, [isActive, isPaused, totalTime]);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
-
   const startTimer = () => {
     if (timeLeft > 0 && !isActive) {
+      if (!taskName) {
+        Swal.fire({
+          title: '¡Atención!',
+          text: 'Recuerde que primero debe ingresar el tiempo para la cuenta regresiva y un nombre a la tarea para iniciar el temporizador.',
+          icon: 'warning',
+          confirmButtonText: 'Aceptar'
+        });
+        return;
+      }
       setIsActive(true);
       setIsPaused(false);
-      addToHistory(); // Agregar al historial al iniciar
+      addToHistory();
     }
   };
 
@@ -96,28 +98,29 @@ const MainTemporizadorTareas = () => {
   };
 
   const playAlarm = () => {
-    const audio = new Audio('/path/to/alarm-sound.mp3'); // Ruta al archivo de sonido
+    const audio = new Audio('../../public/audio/temporizador/sonidoTemporizador1.mp3');
     audio.play();
   };
 
   return (
     <div className="main-temporizador-tareas">
-        
       <div className="timer-container">
-        <div className="circle-container">
-          <div
-            className="circle"
-            style={{ 
-              background: `conic-gradient(#FF6B6B ${progress}%, #333 ${progress}%)`
-            }}
-          >
-            <div className="time-display">
-              {`${Math.floor(timeLeft / 3600000).toString().padStart(2, '0')}:
-                ${Math.floor((timeLeft % 3600000) / 60000).toString().padStart(2, '0')}:
-                ${Math.floor((timeLeft % 60000) / 1000).toString().padStart(2, '0')}`}
-            </div>
-          </div>
+
+ <div className="circle-container">
+      <div
+        className={`circle color-red`} 
+        style={{ 
+          background: `conic-gradient(#21b6a9 ${progress}%, #333 ${progress}%)`
+        }}
+      >
+        <div className="time-display">
+          {`${Math.floor(timeLeft / 3600000).toString().padStart(2, '0')}:
+            ${Math.floor((timeLeft % 3600000) / 60000).toString().padStart(2, '0')}:
+            ${Math.floor((timeLeft % 60000) / 1000).toString().padStart(2, '0')}`}
         </div>
+      </div>
+    </div>
+
         <MainTemporizadorTimePicker 
           hours={hours}
           minutes={minutes}
@@ -152,13 +155,7 @@ const MainTemporizadorTareas = () => {
             <button onClick={resetTimer}>Reiniciar</button>
           )}
         </div>
-
-        <div className="current-time">
-        {currentTime.toLocaleTimeString()}
       </div>
-
-      </div>
-    
     
       <div className="history">
         <h3>Historial de Tareas</h3>

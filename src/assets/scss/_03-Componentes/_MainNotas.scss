@@ -27,7 +27,9 @@
 
 .mainNotas h2 {
   margin: 0;
-  font-size: small;
+  font-size: medium;
+  text-transform: uppercase;
+  text-decoration: underline;
   color: #f9f9f9;
 
   @media (max-width: 480px) {
@@ -122,13 +124,25 @@
 
 .mainNotas__listItem-buttons {
   display: flex;
-  gap: 10px;
+  gap: 10px; // Espacio entre los íconos
+
+  button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px; // Tamaño del ícono
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #00f5d4; // Color de hover
+    }
 
   @media (max-width: 480px) {
     gap: 5px;
     align-self: flex-end;
   }
-}
+}}
 
 .mainNotas__actions {
   display: flex;

@@ -1,10 +1,12 @@
 .calendar-outer-container {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-  padding: 10px;
-  background: transparent;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  box-shadow: 0 0px 20px rgba(255, 255, 255, 0.274);
+  padding: 20px;
+  border-radius: 20px;
+  width: auto; 
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -17,7 +19,7 @@
   padding: 20px;
   background: transparent;
   border-radius: 20px;
-  box-shadow: 0 0px 20px rgb(255, 255, 255);
+  box-shadow: 0 0px 20px rgba(255, 255, 255, 0.644);
 
   @media (max-width: 768px) {
     width: 100%;

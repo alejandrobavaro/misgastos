@@ -41,10 +41,6 @@ const MainNotas = () => {
     localStorage.setItem('notes', JSON.stringify(updatedNotes));
   };
 
-  const handleSaveList = () => {
-    localStorage.setItem('notes', JSON.stringify(notes));
-  };
-
   const handleClearList = () => {
     setNotes([]);
     localStorage.removeItem('notes');
@@ -97,7 +93,6 @@ const MainNotas = () => {
           ))}
         </ul>
         <div className="mainNotas__actions">
-          <button onClick={handleSaveList}>Guardar Notas</button>
           <button onClick={handleClearList}>Borrar Lista Completa</button>
         </div>
       </div>

@@ -1,25 +1,37 @@
 //---------Header Container--------------------//
 
 .header {
-  display: grid;
-  grid-template-columns: (1fr);
-  align-items: center;
+  display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
+  padding: 10px 20px; // Ajusta el padding para mayor espacio
   font-size: small;
   border-bottom: 2px solid #00f7ff7c;
   border-radius: 30px;
-  padding: 0;
-  margin: 0;
+  box-sizing: border-box; // Asegura que el padding no afecte el ancho total
 
   @media (max-width: 768px) {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center; // Centrar contenido
-    width: 100%;
-    gap: 0px;
+    align-items: center;
     text-align: center;
+    padding: 10px; // Ajusta el padding en móviles
+  }
+}
+
+//---------Logo Header--------------------//
+
+.logoHeader {
+  max-width: 150px; // Ajusta el tamaño máximo del logo
+  height: auto; // Mantiene la proporción del logo
+  transition: transform 0.3s ease;
+
+  @media (max-width: 768px) {
+    max-width: 100px; // Tamaño del logo en pantallas pequeñas
+  }
+
+  &:hover {
+    transform: scale(1.1);
   }
 }
 
@@ -28,29 +40,39 @@
 .date-container {
   display: flex;
   align-items: center;
-  margin: 0px;
-  transition: transform 0.3s ease;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
+  margin: 0;
+  font-size: x-small;
+  color: white;
+  white-space: nowrap; // Evita el salto de línea dentro del contenedor
+  text-align: center;
 }
 
 .date-text {
-  white-space: nowrap; // Evita el salto de línea dentro del contenedor
-  font-size: x-small;
-  color: white;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-
-  &:hover {
-    color: rgb(196, 244, 231);
-  }
-
-  span {
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Centra el contenido horizontalmente
+  gap: 5px; // Espacio entre filas
 }
+
+.time-row, .weekday-row, .date-row {
+  display: block; // Asegura que cada fila esté en una línea separada
+}
+
+.current-time {
+  font-size: x-small;
+  color: #00fff2;
+}
+
+.dia{
+  color: #00ddff;
+}
+
+.numeroFecha {
+  font-size: xx-small;
+  text-transform: uppercase;
+  color: #00ffcc;
+}
+
 
 //---------Auth Buttons--------------------//
 
@@ -77,20 +99,7 @@
   font-size: large;
 }
 
-//---------Logo Header--------------------//
 
-.logoHeader {
-  width: 100%;
-  transition: transform 0.3s ease, filter 0.3s ease; // Agrega transición para otras propiedades si es necesario
-
-  @media (max-width: 768px) {
-    width: 200px;
-  }
-
-  &:hover {
-    transform: scale(1.1);
-  }
-}
 
 //---------Navbar Header--------------------//
 
@@ -380,7 +389,7 @@
   }
 }
 
-// Puedes agregar estilos específicos para el botón en modo de escritorio aquí
+
 .dark-mode-toggle {
   font-size: large;
 }
