@@ -115,22 +115,22 @@
 
 //-------------------------//
 .iconoCalculadora{
-  color: rgba(255, 217, 0, 0.692);
+  color: rgba(255, 255, 255, 0.692);
   font-size: x-large;
   transition: color 0.3s ease;
 
   &:hover {
-    color: #ffd000;
+    color: #00ffb3;
   }
 }
 
 .iconoTemporizador {
-  color: rgba(255, 217, 0, 0.692);
+  color: rgba(255, 255, 255, 0.692);
   font-size: x-large;
   transition: color 0.3s ease;
 
   &:hover {
-    color: #ffbb00;
+    color: #00ffb3;
   }
 }
 
@@ -232,7 +232,7 @@
 
 // Estilos específicos para el botón CONTACTO
 .contacto-link {
-  // Puedes agregar estilos específicos para el botón CONTACTO aquí
+
 }
 
 // Estilos específicos para el botón TAREAS EN PROCESO
@@ -373,7 +373,7 @@
 
 
 .notifications-item {
-  color: red;
+  color: rgb(255, 255, 255);
   padding: 0;
   margin: 0;
 

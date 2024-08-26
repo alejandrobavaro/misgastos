@@ -54,3 +54,21 @@
     font-size: medium;
   }
 }
+
+//----------------------------------------//
+.filter-field-select {
+  select {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: x-small;
+    margin-left: 10px;
+    transition: border-color 0.3s;
+    
+    &:hover,
+    &:focus {
+      border-color: #00fbff;
+      outline: none;
+    }
+  }
+}

@@ -1,32 +1,55 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import "../assets/scss/_03-Componentes/_CPEEmpresasListado.scss";
 
-const servicios = [
-  { name: 'Tarjetas de Credito', count: 3, icon: 'credit-card' },
-  { name: 'Gas', count: 1, icon: 'fire' },
-
-  { name: 'Agua', count: 1, icon: 'tint' },
-
-  { name: 'Electricidad', count: 1, icon: 'lightbulb' },
-  { name: 'Medicina Prepaga', count: 1, icon: 'stethoscope' },
-  { name: 'Telefonía', count: 2, icon: 'phone' },
-
-  { name: 'Consorcios', count: 1, icon: 'building' },
-  { name: 'Otros Servicios', count: 1, icon: 'cogs' },
-
-];
-
 const CPEEmpresasListado = () => {
+  const [data, setData] = useState([]);
+  const [selectedService, setSelectedService] = useState("TODOS");
+
+  useEffect(() => {
+    fetch("/infocuentas.json")
+      .then(response => response.json())
+      .then(data => {
+        setData(data);
+      })
+      .catch(error => console.error("Error al cargar los datos:", error));
+  }, []);
+
+  const handleServiceChange = (e) => {
+    setSelectedService(e.target.value);
+  };
+
+  const groupedData = data.reduce((acc, item) => {
+    const service = item.Servicio || "Sin Servicio";
+    if (!acc[service]) {
+      acc[service] = [];
+    }
+    acc[service].push(item);
+    return acc;
+  }, {});
+
+  const displayedServices = selectedService === "TODOS" 
+    ? Object.keys(groupedData)
+    : [selectedService];
+
   return (
     <div className="main-empresas-listado">
-      {servicios.map((servicio, index) => (
-        <div key={index} className="empresa-card">
+       <div className="filter-field-select">
+      <select value={selectedService} onChange={handleServiceChange}>
+        <option value="TODOS">TODOS</option>
+        {Object.keys(groupedData).map(service => (
+          <option key={service} value={service}>{service}</option>
+        ))}
+      </select>
+      </div>
+
+      {displayedServices.map(service => (
+        <div key={service} className="empresa-card">
           <div className="empresa-icon">
-            <i className={`bi bi-${servicio.icon}`}></i>
+            <i className={`bi bi-lightbulb`}></i>
           </div>
           <div className="empresa-info">
-            <span>{servicio.name}</span>
-            <span className="empresa-count">{servicio.count}</span>
+            <span>{service}</span>
+            <span className="empresa-count">{groupedData[service].length}</span>
           </div>
         </div>
       ))}
