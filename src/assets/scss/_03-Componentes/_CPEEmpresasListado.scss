@@ -1,6 +1,6 @@
 //---------contenedor principal--------------------//
 
-.main-empresas-listado {
+.cpe-empresas-listado {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -12,7 +12,7 @@
 
 //---------tarjeta de empresa--------------------//
 
-.empresa-card {
+.cpe-empresa-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,15 +22,33 @@
   border-right: 2px solid #00f7ff7c;
   border-radius: 30px;
   transition: transform 0.2s;
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.05);
   }
 }
 
+.separador {
+  margin-left: 40px;
+}
+
+.titulosDetallesServicio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-transform: uppercase;
+  background-color: transparent;
+  border-bottom: 2px solid #00f7ff7c;
+  border-right: 2px solid #00f7ff7c;
+  border-radius: 30px;
+
+}
+
 //---------ícono de empresa--------------------//
 
-.empresa-icon {
+.cpe-empresa-icon {
   font-size: 24px;
   color: rgb(255, 247, 233);
   margin-left: 40px;
@@ -38,7 +56,7 @@
 
 //---------información de empresa--------------------//
 
-.empresa-info {
+.cpe-empresa-info {
   color: rgb(255, 247, 233);
   display: flex;
   flex-direction: column;
@@ -47,7 +65,7 @@
 
   //---------conteo de empresa--------------------//
 
-  .empresa-count {
+  .cpe-empresa-count {
     color: #ffffff;
     border-radius: 50px;
     padding: 20px;
@@ -55,20 +73,44 @@
   }
 }
 
-//----------------------------------------//
-.filter-field-select {
-  select {
-    background-color: #ffffff;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-size: x-small;
-    margin-left: 10px;
-    transition: border-color 0.3s;
-    
-    &:hover,
-    &:focus {
-      border-color: #00fbff;
-      outline: none;
-    }
+//---------botón de volver--------------------//
+
+.cpe-back-button {
+  background-color: #1b7f83;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: small;
+  cursor: pointer;
+  margin-bottom: 20px;
+
+  &:hover {
+    background-color: #3e6869;
+  }
+}
+
+//---------tabla de detalle del servicio--------------------//
+
+.cpe-detalle-servicio-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2px;
+  font-size: xx-small;
+
+  th, td {
+    border: 1px solid #00f7ff7c;
+    padding: 5px;
+    text-align: center;
+  }
+
+  th {
+    background-color: #410101fb;
+    color: #ffffff;
+  }
+
+  td {
+    background-color: #00153f;
+    color: #ffffff;
   }
 }
