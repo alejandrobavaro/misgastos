@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Route,
-  Routes,
+  Routes, 
   Navigate,
 } from "react-router-dom";
 
@@ -63,20 +63,26 @@ const ProtectedRoute = ({ element, ...rest }) => {
 };
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  // Establece isDarkMode a true por defecto para iniciar en modo oscuro
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
   };
 
+  useEffect(() => {
+    // Aplica la clase correspondiente al <body>
+    document.body.className = isDarkMode ? "dark-mode" : "light-mode";
+  }, [isDarkMode]);
+
   return (
     <AuthProvider>
       <HeaderNotificationsProvider>
         <Router>
-          <Header isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />{" "}
-          {/* Pasa props al Header */}
+          {/* Pasa las props de modo oscuro/claro al Header */}
+          <Header isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
           <hr className="border border-0 opacity-20" />
-          <div className={`main-content ${isDarkMode ? "dark-mode" : ""}`}>
+          <div className="main-content">
             <Sidebar />
             <div className="content">
               <Routes>

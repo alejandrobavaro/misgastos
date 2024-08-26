@@ -135,7 +135,7 @@ const MainCalculadora = () => {
         </div>
         <div> 
         <div className="calculator-buttons">
-          <button className={`buttonlogo ${activeKey === 'logo' ? 'active' : ''}`}><img src="../../public/img/01-favicon/logo1.ico" alt="logochancho1" /></button>
+          <button className={`buttonlogo ${activeKey === 'logo' ? 'active' : ''}`}><img src="/img/01-favicon/logo1.ico" alt="logochancho1" /></button>
           <button className={`button operator ${activeKey === '√' ? 'active' : ''}`} onClick={handleSquareRoot}>√</button>
           <button className={`button operator ${activeKey === '/' ? 'active' : ''}`} onClick={() => handleClick('/')}>÷</button>
           <button className={`button operator ${activeKey === '*' ? 'active' : ''}`} onClick={() => handleClick('*')}>x</button>
@@ -193,7 +193,7 @@ const MainCalculadora = () => {
       </div>
 
       <div className="calculator-history">
-  <h3>Historial Calculadora</h3>
+  <p className='tituloCalculadora'>Historial Calculadora</p>
   <ul className="history-list">
     {history.map((item, index) => (
       <li key={index} className="history-item">{item}</li>

@@ -1,6 +1,3 @@
-
-
-/* Añadir un reset CSS básico */
 * {
   margin: 0;
   padding: 0;
@@ -21,50 +18,34 @@ html {
 /*--------------Estilos Body--------------*/
 
 body {
-  // background-color: rgb(110, 109, 109);
-  background: linear-gradient(#033640, #580202f4);
-  // background-repeat: repeat;
-  // background-position: center;
-  // background-size: cover;
-  // background-attachment: fixed;
-  // overflow-x: hidden; 
-  // font-family: "Bona Nova SC", serif;
   font-family: "Chelsea Market", system-ui;
-  // text-transform: uppercase;
-  //  font-family: "Gupter", serif;
-}
 
-// Modo claro
-body {
-  background-color: #ffffff;
-  color: #c23939;
-}
+  &.dark-mode {
+    color: #ffffff;
+    background: linear-gradient(#033640, #580202f4);
+  }
 
-// Modo oscuro
-body.dark-mode {
-  background-color: #333333;
-  color: #ffffff;
+  &.light-mode {
+    background: linear-gradient(#2c88ff, #e43bc8);
+    color: #333; // Texto en color oscuro para el modo claro.
+  }
 }
-
 
 /*--------------Estilos para el Contenedor Principal--------------*/
 
 .app {
-  font-family: 'Arial, sans-serif';
-  // background-color: #f5f5f5;
-  padding: 2em;
-}
 
-.app {
+  padding: 2em;
   transition: background-color 0.3s;
 
   &.dark-mode {
-    background-color: #121212;
     color: #fff;
   }
+
+  &.light-mode {
+    color: #333; // Texto en color oscuro para el contenedor principal en modo claro.
+  }
 }
-
-
 
 .main-content {
   display: flex;
@@ -78,68 +59,103 @@ body.dark-mode {
 /*--------------Estilos para los Encabezados y Texto--------------*/
 
 p {
-  color: rgb(0, 0, 0); // Color del texto de los párrafos.
   font-size: medium; // Tamaño de fuente mediano.
   padding: 20px;
+  color: rgb(0, 0, 0); // Color del texto de los párrafos.
+
+  body.dark-mode & {
+    color: #ffffff; // Color de texto en modo oscuro.
+  }
+
+  body.light-mode & {
+    color: #000000; // Color de texto en modo claro.
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 1em;
 }
 
 h1 {
-  color: rgb(255, 255, 255); // Color del texto de los encabezados de nivel 1.
   font-size: xx-large; // Tamaño de fuente extra grande.
+
+  body.dark-mode & {
+    color: #ffffff; // Color de texto en modo oscuro.
+  }
+
+  body.light-mode & {
+    color: #000000; // Color de texto en modo claro.
+  }
 }
 
 h2 {
-  color: rgb(116, 30, 52); // Color del texto de los encabezados de nivel 2.
   font-size: large; // Tamaño de fuente grande.
+
+  body.dark-mode & {
+    color: rgb(255, 255, 255); // Color de texto en modo oscuro.
+  }
+
+  body.light-mode & {
+    color: #000000; // Color de texto en modo claro.
+  }
 }
 
-h3 {
-  color: rgb(224, 205, 190); // Color del texto de los encabezados de nivel 3.
-  font-size: medium; // Tamaño de fuente mediano.
-}
-
-h4 {
-  color: rgb(224, 205, 190); // Color del texto de los encabezados de nivel 4.
-  font-size: small; // Tamaño de fuente pequeño.
-}
-
+h3,
+h4,
 h5 {
-  color: rgb(224, 205, 190); // Color del texto de los encabezados de nivel 5.
-  font-size: x-small; // Tamaño de fuente extra pequeño.
+  body.dark-mode & {
+    color: rgb(224, 205, 190); // Color de texto en modo oscuro.
+  }
+
+  body.light-mode & {
+    color: #4a4a4a; // Color de texto en modo claro.
+  }
 }
 
 h6 {
   font-size: xx-small; // Tamaño de fuente extra extra pequeño.
+  color: rgb(252, 252, 252); // Color de texto en modo oscuro.
 }
 
 /*--------------Estilos para Listas--------------*/
 
 li {
-  // list-style-type: none;
-  // list-style-type: circle;
-  list-style-type: none;  
+  list-style-type: none;
 }
 
 ol {
   list-style-type: circle; // Tipo de lista ordenada con círculos.
-    // list-style-type: none;
 }
 
 td {
-  color: rgb(86, 50, 50); // Color del texto en las celdas de tabla.
+  body.dark-mode & {
+    color: rgb(55, 165, 156); // Color del texto en las celdas de tabla en modo oscuro.
+  }
+
+  body.light-mode & {
+    color: #000000; // Color del texto en las celdas de tabla en modo claro.
+  }
 }
 
 /*--------------Estilos para Enlaces--------------*/
 
 a {
-  &:link {
-    color: rgb(0, 255, 221);
-    text-decoration: none; // Sin subrayado para los enlaces.
-  }
-
+  &:link,
   &:visited {
-    color: rgba(112, 255, 219, 0.842);
-    text-decoration: none; // Sin subrayado para los enlaces visitados.
+    text-decoration: none; // Sin subrayado para los enlaces.
+
+    // body.dark-mode & {
+    //   color: rgb(0, 255, 221); // Color de los enlaces en modo oscuro.
+    // }
+
+    body.light-mode & {
+      color: #000000; // Color de los enlaces en modo claro.
+    }
   }
 
   &:hover {
@@ -149,7 +165,13 @@ a {
 
 /* Animación de sacudida */
 @keyframes shake {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }

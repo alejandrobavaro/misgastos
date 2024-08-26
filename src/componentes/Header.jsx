@@ -20,6 +20,7 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
   const { notifications } = useHeaderNotifications();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
     document.body.classList.toggle("dark-mode", isDarkMode);
@@ -87,13 +88,11 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
                 CONTACTO
               </Nav.Link>
 
-              <li>
-                <Link to="/MainCalculadora">
-                  <h2 className="iconoCalculadora">
-                    <BsCalculator />
-                  </h2>
-                </Link>
-              </li>
+              <Link to="/MainCalculadora">
+                <span className="iconoCalculadora">
+                  <BsCalculator />
+                </span>
+              </Link>
 
               <Nav.Link
                 className="nav-link notas-link"
@@ -151,26 +150,35 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
                     </span>
                   </div>
                   <div className="weekday-row">
-                    <span> del día <span className="dia">{weekday},</span></span>
+                    <span>
+                      {" "}
+                      del día <span className="dia">{weekday},</span>
+                    </span>
                   </div>
                   <div className="date-row">
-                    <span  className="numeroFecha">{dayMonthYear}</span>
+                    <span className="numeroFecha">{dayMonthYear}</span>
                   </div>
                 </div>
               </Nav.Item>
 
               <Nav.Item className="auth-buttons-container">
                 {state.isAuthenticated ? (
-                  <Link
-                    className="nav-linkHeader auth-link"
-                    to="/logout"
-                    onClick={() => {
-                      dispatch({ type: "LOGOUT" });
-                      setIsMobileMenuOpen(false);
-                    }}
-                  >
-                    <BsBoxArrowRight className="auth-icon" />
-                  </Link>
+                  <div className="auth-welcome-container">
+                    <div className="auth-welcome">
+                      <span>Hola,</span>{" "}
+                      <span>{state.user.email.split("@")[0]}</span>
+                    </div>
+                    <Link
+                      className="nav-linkHeader auth-link logout-link"
+                      to="/logout"
+                      onClick={() => {
+                        dispatch({ type: "LOGOUT" });
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
+                      <BsBoxArrowRight className="auth-icon" />
+                    </Link>
+                  </div>
                 ) : (
                   <>
                     <Link className="nav-linkHeader auth-link" to="/login">

@@ -77,26 +77,61 @@
 //---------Auth Buttons--------------------//
 
 .auth-icon {
-  font-size: 24px;
-  color: #ffffff;
+  font-size: x-large;
+  color: #00ffea;
   transition: color 0.3s ease;
   margin: 0;
 
   &:hover {
-    color: #00ddff;
+    color: #ff5e00;
+  }
+}
+
+.auth-welcome {
+  display: flex;
+  align-items: center;
+  font-size: x-small;
+  color: #ffffff;
+  margin-bottom: 5px;
+
+
+  span {
+    margin-right: 5px; // Espacio entre "Hola" y el nombre de usuario
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    margin-right: 10px;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 0.9rem;
+    margin-right: 8px;
   }
 }
 
 
+
+
 //-------------------------//
 .iconoCalculadora{
-  color: rgb(157, 189, 190);
-  font-size: large;
+  color: rgba(255, 217, 0, 0.692);
+  font-size: x-large;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #ffd000;
+  }
 }
 
 .iconoTemporizador {
-  color: rgb(157, 189, 190);
-  font-size: large;
+  color: rgba(255, 217, 0, 0.692);
+  font-size: x-large;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #ffbb00;
+  }
 }
 
 
@@ -338,6 +373,7 @@
 
 
 .notifications-item {
+  color: red;
   padding: 0;
   margin: 0;
 

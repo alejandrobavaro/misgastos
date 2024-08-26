@@ -1,80 +1,66 @@
-//---------contenedor del sidebar--------------------//
-
 .sidebar {
-  width: auto; // Ancho fijo para el sidebar
+  width: auto;
   background-color: transparent;
   border-radius: 35%;
   border-right: 2px solid #00fff250;
   padding: 20px;
   margin: 0px;
   flex-shrink: 0;
-  position: relative; // Para posicionar el botón de alternar
-  transition: width 0.3s ease-in-out; // Transición rápida para colapsar/desplegar
-
-  //--------- Botón para alternar el estado del sidebar --------------------//
+  position: relative;
+  transition: width 0.3s ease-in-out;
 
   .sidebar-toggle {
     display: block;
     background-color: transparent;
     border: none;
     color: #00f7ffc6;
-    font-size: x-large; // Tamaño más grande para mayor visibilidad
+    font-size: x-large;
     cursor: pointer;
     position: absolute;
     top: 10px;
-    right: -5px; // Posición junto al sidebar
+    right: -5px;
     z-index: 1000;
-    transition: transform 0.3s ease-in-out; // Animación suave
+    transition: transform 0.3s ease-in-out;
 
     &:focus {
       outline: none;
     }
 
-    //--------- Animación constante --------------------//
-
     &:hover {
-      transform: scale(1.2); // Escala en hover para destacar el botón
+      transform: scale(1.2);
     }
 
     &.pulse {
-      animation: pulse 2s infinite; // Animación de pulso
+      animation: pulse 2s infinite;
     }
   }
-
-  //---------títulos h2--------------------//
 
   h2 {
     font-size: small;
     color: #00f7ffc6;
-    margin: 5px 0; // Ajusta el margen superior e inferior
-    padding-right: 10px; // Ajusta el padding izquierdo para alinear el texto con el ícono
+    margin: 5px 0;
+    padding-right: 10px;
     opacity: 1;
-    text-align: left; // Alinear el texto hacia la izquierda
-    transition: opacity 0.3s ease-in-out; // Animación de opacidad
-    position: relative; // Necesario para el posicionamiento del ícono
+    text-align: left;
+    transition: opacity 0.3s ease-in-out;
+    position: relative;
   }
-
-  //---------lista sin estilos--------------------//
 
   ul {
     padding: 0px;
-    margin-left: 20px; // Añadir sangría a la izquierda de las listas
-    text-align: left; // Alinear el texto hacia la izquierda
-
-    //---------elementos de la lista (li)--------------------//
+    margin-left: 20px;
+    text-align: left;
 
     li {
       font-size: x-small;
       margin: 0px;
       color: #ffffff;
-      text-align: left; // Alinear el texto hacia la izquierda
-
-      //---------enlaces (a)--------------------//
+      text-align: left;
 
       a {
         text-decoration: none;
         color: #ffffff;
-        text-align: left; // Alinear el texto hacia la izquierda
+        text-align: left;
 
         &:hover {
           color: rgb(0, 255, 204);
@@ -82,38 +68,28 @@
       }
     }
 
-    //---------líneas horizontales (hr)--------------------//
-
     hr {
       margin: 10px 0;
       border-top: 1px solid #00f7ff7c;
       opacity: 0.5;
-      transition: opacity 0.3s ease-in-out; // Animación de opacidad
+      transition: opacity 0.3s ease-in-out;
     }
   }
 
-  //--------- Ajustes cuando el sidebar está colapsado --------------------//
-
   &.collapsed {
-    width: 30px; // Reducir el ancho al mínimo
-    padding: 0px 10px; // Ajustar el padding
-
-    //--------- Ocultar el contenido del sidebar en modo colapsado --------------------//
+    width: 30px;
+    padding: 0px 10px;
 
     .sidebar-content {
-      display: none; // Ocultar el contenido
+      display: none;
     }
 
-    //--------- Posicionar el botón en el centro cuando el sidebar está colapsado --------------------//
-
     .sidebar-toggle {
-      right: 10px; // Mover el botón más cerca del borde
-      transform: rotate(180deg); // Rotar el ícono para indicar colapsado
+      right: 10px;
+      transform: rotate(180deg);
     }
   }
 }
-
-//--------- Animación de pulso para el botón --------------------//
 
 @keyframes pulse {
   0% {

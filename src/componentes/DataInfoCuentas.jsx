@@ -61,7 +61,7 @@ const DataInfoCuentas = () => {
             <div className="filter-field-select">
               <label htmlFor="filterField">
                 {" "}
-                <h3>Filtrar por:</h3>
+                <h6>Filtrar por:</h6>
               </label>
               <select
                 id="filterField"

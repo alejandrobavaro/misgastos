@@ -27,7 +27,7 @@ const MainTemporizadorTareas = () => {
   useEffect(() => {
     if (isActive && !isPaused) {
       const id = setInterval(() => {
-        setTimeLeft(prevTime => {
+        setTimeLeft((prevTime) => {
           if (prevTime <= 0) {
             clearInterval(id);
             setIsActive(false);
@@ -51,7 +51,7 @@ const MainTemporizadorTareas = () => {
           title: '¡Atención!',
           text: 'Recuerde que primero debe ingresar el tiempo para la cuenta regresiva y un nombre a la tarea para iniciar el temporizador.',
           icon: 'warning',
-          confirmButtonText: 'Aceptar'
+          confirmButtonText: 'Aceptar',
         });
         return;
       }
@@ -63,15 +63,15 @@ const MainTemporizadorTareas = () => {
 
   const addToHistory = () => {
     if (taskName) {
-      setHistory(prevHistory => [
+      setHistory((prevHistory) => [
         ...prevHistory,
         {
           taskName,
           hours,
           minutes,
           seconds,
-          totalTime: (hours * 3600 + minutes * 60 + seconds)
-        }
+          totalTime: hours * 3600 + minutes * 60 + seconds,
+        },
       ]);
     }
   };
@@ -98,30 +98,37 @@ const MainTemporizadorTareas = () => {
   };
 
   const playAlarm = () => {
-    const audio = new Audio('../../public/audio/temporizador/sonidoTemporizador1.mp3');
+    const audio = new Audio('/audio/temporizador/sonidoTemporizador1.mp3');
     audio.play();
   };
 
   return (
     <div className="main-temporizador-tareas">
+    
       <div className="timer-container">
-
- <div className="circle-container">
-      <div
-        className={`circle color-red`} 
-        style={{ 
-          background: `conic-gradient(#21b6a9 ${progress}%, #333 ${progress}%)`
-        }}
-      >
-        <div className="time-display">
-          {`${Math.floor(timeLeft / 3600000).toString().padStart(2, '0')}:
-            ${Math.floor((timeLeft % 3600000) / 60000).toString().padStart(2, '0')}:
-            ${Math.floor((timeLeft % 60000) / 1000).toString().padStart(2, '0')}`}
+      <h2 className="titulo-temporizador">Temporizador de Tareas</h2>
+        <div className="circle-container">
+          <div
+            className={`circle color-red`}
+            style={{
+              background: `conic-gradient(#21b6a9 ${progress}%, #333 ${progress}%)`,
+            }}
+          >
+            <div className="time-display">
+              {`${Math.floor(timeLeft / 3600000)
+                .toString()
+                .padStart(2, '0')}:${Math.floor(
+                (timeLeft % 3600000) / 60000
+              )
+                .toString()
+                .padStart(2, '0')}:${Math.floor((timeLeft % 60000) / 1000)
+                .toString()
+                .padStart(2, '0')}`}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-        <MainTemporizadorTimePicker 
+        <MainTemporizadorTimePicker
           hours={hours}
           minutes={minutes}
           seconds={seconds}
@@ -151,12 +158,12 @@ const MainTemporizadorTareas = () => {
           {isPaused && (
             <button onClick={() => setIsActive(true)}>Reanudar</button>
           )}
-          {(!isActive && totalTime > 0) && (
+          {!isActive && totalTime > 0 && (
             <button onClick={resetTimer}>Reiniciar</button>
           )}
         </div>
       </div>
-    
+
       <div className="history">
         <h3>Historial de Tareas</h3>
         <ul>
@@ -164,7 +171,11 @@ const MainTemporizadorTareas = () => {
             <li key={index}>
               <span>{item.taskName}</span>
               <span>{`${item.hours}h ${item.minutes}m ${item.seconds}s`}</span>
-              <button onClick={() => setHistory(history.filter((_, i) => i !== index))}>
+              <button
+                onClick={() =>
+                  setHistory(history.filter((_, i) => i !== index))
+                }
+              >
                 <FaTrash />
               </button>
             </li>

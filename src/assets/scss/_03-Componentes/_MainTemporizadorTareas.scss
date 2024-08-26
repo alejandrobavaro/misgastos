@@ -42,11 +42,20 @@
       .time-display {
         position: absolute;
         font-size: 22px;
-        font-weight: bold;
+ 
       }
     }
   }
 
+
+  .titulo-temporizador {
+    text-align: center;
+    font-size: medium;
+    color: #ffd900;
+    margin-bottom: 20px;
+   
+    }
+  
 
 
   .task-input {
@@ -97,9 +106,9 @@
     h3 {
       margin-bottom: 10px;
       color: #00ffd5;
+      font-size: small;
       text-align: center;
-      font-weight: bold;
-    }
+       }
 
     ul {
       list-style: circle; /* Asegúrate de que esta propiedad esté bien escrita */
