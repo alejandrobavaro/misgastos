@@ -34,7 +34,7 @@ import GastosPagados from "./componentes/GastosPagados";
 import GastosPorPagar from "./componentes/GastosPorPagar";
 import GastosTotales from "./componentes/GastosTotales";
 //-----------CPE ADHERIDOS--------------//
-import CPEEmpresasListado from "./componentes/CPEEmpresasListado";
+import CPEServiciosListado from "./componentes/CPEServiciosListado";
 import CPEImpuestosListado from "./componentes/CPEImpuestosListado";
 import CPECargarNuevoCPE from "./componentes/CPECargarNuevoCPE";
 //-----------CONSULTAS--------------//
@@ -127,8 +127,8 @@ function App() {
                   element={<ProtectedRoute element={<GastosPagados />} />}
                 />
                 <Route
-                  path="/empresas"
-                  element={<ProtectedRoute element={<CPEEmpresasListado />} />}
+                  path="/servicios"
+                  element={<ProtectedRoute element={<CPEServiciosListado />} />}
                 />
                 <Route
                   path="/impuestos"

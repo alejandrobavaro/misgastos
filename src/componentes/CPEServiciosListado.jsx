@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import "../assets/scss/_03-Componentes/_CPEEmpresasListado.scss";
+import "../assets/scss/_03-Componentes/_CPEServiciosListado.scss";
 
 const serviceIcons = {
   'Tarjetas de Credito': 'credit-card',
@@ -20,7 +20,7 @@ const meses = [
   // Obtener el mes corriente
   const mesCorriente = new Date().getMonth(); 
 
-const CPEEmpresasListado = () => {
+const CPEServiciosListado = () => {
   const [data, setData] = useState([]);
   const [selectedService, setSelectedService] = useState(null);
 
@@ -177,4 +177,4 @@ const CPEEmpresasListado = () => {
   );
 };
 
-export default CPEEmpresasListado;
+export default CPEServiciosListado;

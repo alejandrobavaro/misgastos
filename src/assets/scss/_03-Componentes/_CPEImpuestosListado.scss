@@ -1,56 +1,254 @@
 //---------contenedor principal--------------------//
 
-.main-empresas-listado {
+.cpe-impuestos-listado {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 10px;
   border-top: 2px solid #00f7ff1d;
   border-bottom: 2px solid #00f7ff2c;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgb(252, 252, 252);
   border-radius: 30px;
 }
 
-//---------tarjeta de empresa--------------------//
+//---------tarjeta de impuesto--------------------//
 
-.empresa-card {
+.cpe-impuesto-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  background-color: transparent;
   border-bottom: 2px solid #00f7ff7c;
   border-right: 2px solid #00f7ff7c;
   border-radius: 30px;
   transition: transform 0.2s;
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.05);
   }
 }
 
-//---------ícono de empresa--------------------//
+.separador {
+  margin-left: 40px;
+}
 
-.empresa-icon {
+.titulosDetallesImpuesto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-transform: uppercase;
+  background-color: transparent;
+  border-bottom: 2px solid #00f7ff7c;
+  border-right: 2px solid #00f7ff7c;
+  border-radius: 30px;
+  color: #ffffff;
+}
+
+//---------ícono de impuesto--------------------//
+
+.cpe-impuesto-icon {
   font-size: 24px;
   color: rgb(255, 247, 233);
   margin-left: 40px;
 }
 
-//---------información de empresa--------------------//
+//---------información de impuesto--------------------//
 
-.empresa-info {
+.cpe-impuesto-info {
   color: rgb(255, 247, 233);
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   margin-right: 40px;
 
-  //---------conteo de empresa--------------------//
-
-  .empresa-count {
+  .cpe-impuesto-count {
     color: #ffffff;
     border-radius: 50px;
     padding: 20px;
     font-size: medium;
+  }
+}
+
+//---------botón de volver--------------------//
+
+.cpe-back-button {
+  background-color: #1b7f83;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: small;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #3e6869;
+  }
+}
+
+//---------tabla de detalle del impuesto--------------------//
+
+.cpe-detalle-impuesto-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2px;
+  font-size: xx-small;
+
+  th,
+  td {
+    border: 1px solid #00f7ff7c;
+    padding: 5px;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  th {
+    background-color: #410101fb;
+    color: #ffffff;
+  }
+
+  td {
+    background-color: transparent;
+    color: #ffffff;
+
+    &:first-child {
+      background-color: #021e20;
+      color: #ffffff;
+    }
+  }
+}
+
+//---------opciones de pago--------------------//
+//---------contenedor de factura pagada--------------------//
+
+.factura-pagada {
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    background-color: transparent;
+    color: #ffffff;
+  }
+
+  &.pagada {
+    color: #4caf50;
+  }
+
+  &.no-pagada {
+    color: #f44336;
+  }
+}
+
+//---------selección de mes--------------------//
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  .dropbtn {
+    background-color: #021e2027;
+    color: #ffffff;
+    border: none;
+    padding: 2px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #061135;
+    color: #ffffff;
+    font-weight: bold;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+    a {
+      color: #ffffff;
+      padding: 2px 6px;
+      text-decoration: none;
+      display: block;
+      border-radius: 20px;
+
+      &:hover {
+        background-color: #00f7ff7c;
+      }
+    }
+  }
+
+  &:hover .dropdown-content {
+    display: block;
+  }
+}
+
+//---------opciones de recibo digital--------------------//
+
+.digital-recibida {
+  cursor: pointer;
+  font-size: xx-small;
+  transition: transform 0.2s ease, color 0.2s ease;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+
+  &.Llega-al-mail {
+    background-color: #4caf50;
+    color: #ffffff;
+  }
+
+  &.Llega-al-domicilio {
+    background-color: #ff9800;
+    color: #ffffff;
+  }
+
+  &.No-llega {
+    background-color: #f44336;
+    color: #ffffff;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    background-color: transparent;
+    color: #ffffff;
+  }
+}
+
+//---------opciones de información extra--------------------//
+
+.informacion-extra {
+  cursor: pointer;
+  font-size: xx-small;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+
+  &.Servicio-Habilitado {
+    background-color: #4caf50;
+    color: #ffffff;
+  }
+
+  &.Servicio-Cortado {
+    background-color: #ff9800;
+    color: #ffffff;
+  }
+
+  &.Servicio-Deshabilitado {
+    background-color: #f44336;
+    color: #ffffff;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    background-color: transparent;
+    color: #ffffff;
   }
 }

@@ -78,7 +78,7 @@ const Sidebar = () => {
         </h2>
         <ul>
           <li>
-            <Link to="/empresas">Empresas</Link>
+            <Link to="/servicios">Servicios</Link>
           </li>
           <li>
             <Link to="/impuestos">Impuestos</Link>
