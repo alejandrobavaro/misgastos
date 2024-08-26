@@ -7,6 +7,8 @@
   padding: 10px;
   border-top: 2px solid #00f7ff1d;
   border-bottom: 2px solid #00f7ff2c;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgb(252, 252, 252);
   border-radius: 30px;
 }
 
@@ -17,8 +19,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  background-color: transparent;
-  border-bottom: 2px solid #00f7ff7c;
+   border-bottom: 2px solid #00f7ff7c;
   border-right: 2px solid #00f7ff7c;
   border-radius: 30px;
   transition: transform 0.2s;
@@ -43,7 +44,7 @@
   border-bottom: 2px solid #00f7ff7c;
   border-right: 2px solid #00f7ff7c;
   border-radius: 30px;
-
+  color: #ffffff; // Asegúrate de que el texto sea blanco
 }
 
 //---------ícono de empresa--------------------//
@@ -84,6 +85,7 @@
   font-size: small;
   cursor: pointer;
   margin-bottom: 20px;
+  transition: background-color 0.3s ease;
 
   &:hover {
     background-color: #3e6869;
@@ -93,24 +95,165 @@
 //---------tabla de detalle del servicio--------------------//
 
 .cpe-detalle-servicio-table {
+  // background-color: rgb(3, 27, 46);
   width: 100%;
   border-collapse: collapse;
   margin-top: 2px;
   font-size: xx-small;
 
-  th, td {
+  th,
+  td {
     border: 1px solid #00f7ff7c;
     padding: 5px;
     text-align: center;
+    color: #ffffff; // Asegúrate de que el texto sea blanco
   }
 
   th {
     background-color: #410101fb;
-    color: #ffffff;
+    color: #ffffff; // Asegúrate de que el texto del encabezado sea blanco
   }
 
   td {
-    background-color: #00153f;
+    background-color: transparent;
     color: #ffffff;
+
+    &:first-child {
+      background-color: #021e20; // Cambia este color según tus preferencias
+      color: #ffffff; // Asegúrate de que el texto de la primera columna sea blanco
+    }
+  }
+}
+
+//---------opciones de pago--------------------//
+//---------contenedor de factura pagada--------------------//
+
+.factura-pagada {
+  cursor: pointer;
+  font-size: 1.5rem; // Ajusta el tamaño del ícono
+  transition: transform 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    background-color: transparent;
+    color: #ffffff; // Cambia el color al hacer hover
+  }
+
+  &.pagada {
+    color: #4caf50; // Verde para pagada
+  }
+
+  &.no-pagada {
+    color: #f44336; // Rojo para no pagada
+  }
+}
+
+//---------selección de mes--------------------//
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  .dropbtn {
+    background-color: #021e2027;
+    color: #ffffff; // Asegúrate de que el texto sea blanco
+    border: none;
+    padding: 2px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #061135;
+    color: #ffffff; // Asegúrate de que el texto dentro del dropdown sea blanco
+    font-weight: bold;
+
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+    a {
+      color: #ffffff; // Asegúrate de que el texto dentro del dropdown sea blanco
+      padding: 2px 6px;
+      text-decoration: none;
+      display: block;
+      border-radius: 20px;
+
+      &:hover {
+        background-color: #00f7ff7c;
+      }
+    }
+  }
+
+  &:hover .dropdown-content {
+    display: block;
+  }
+}
+
+//---------opciones de recibo digital--------------------//
+
+.digital-recibida {
+  cursor: pointer;
+  font-size: xx-small; // Ajusta el tamaño del ícono
+  transition: transform 0.2s ease, color 0.2s ease;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+
+  &.Llega-al-mail {
+    background-color: #4caf50; // Verde para llega al mail
+    color: #ffffff;
+  }
+
+  &.Llega-al-domicilio {
+    background-color: #ff9800; // Naranja para llega al domicilio
+    color: #ffffff;
+  }
+
+  &.No-llega {
+    background-color: #f44336; // Rojo para no llega
+    color: #ffffff;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    background-color: transparent;
+    color: #ffffff; // Cambia el color al hacer hover
+  }
+}
+
+//---------opciones de información extra--------------------//
+
+.informacion-extra {
+
+  cursor: pointer;
+  font-size: xx-small; // Ajusta el tamaño del texto
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+
+  &.Servicio-Habilitado {
+    background-color: #4caf50; // Verde para habilitado
+    color: #ffffff;
+  }
+
+  &.Servicio-Cortado {
+    background-color: #ff9800; // Naranja para cortado
+    color: #ffffff;
+  }
+
+  &.Servicio-Deshabilitado {
+    background-color: #f44336; // Rojo para deshabilitado
+    color: #ffffff;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    background-color: transparent;
+    color: #ffffff; // Cambia el color al hacer hover
   }
 }

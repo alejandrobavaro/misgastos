@@ -12,6 +12,14 @@ const serviceIcons = {
   'Otros Servicios': 'cogs',
 };
 
+const meses = [
+  'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+  'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+];
+
+  // Obtener el mes corriente
+  const mesCorriente = new Date().getMonth(); 
+
 const CPEEmpresasListado = () => {
   const [data, setData] = useState([]);
   const [selectedService, setSelectedService] = useState(null);
@@ -20,7 +28,17 @@ const CPEEmpresasListado = () => {
     fetch("/infocuentas.json")
       .then(response => response.json())
       .then(data => {
-        setData(data);
+      
+        const updatedData = data.map(item => ({
+          ...item,
+          pagada: false,
+          digitalRecibida: "No llega", // Valor por defecto
+          informacionExtra: "Servicio Habilitado", // Valor por defecto
+
+                   mesConsumo: meses[mesCorriente]  // Asigna el mes corriente por defecto
+
+        }));
+        setData(updatedData);
       })
       .catch(error => console.error("Error al cargar los datos:", error));
   }, []);
@@ -40,6 +58,38 @@ const CPEEmpresasListado = () => {
 
   const handleBackClick = () => {
     setSelectedService(null);
+  };
+
+  const toggleFacturaPagada = (itemId) => {
+    setData(prevData =>
+      prevData.map(item =>
+        item.id === itemId ? { ...item, pagada: !item.pagada } : item
+      )
+    );
+  };
+
+  const handleDigitalRecibidaChange = (itemId, status) => {
+    setData(prevData =>
+      prevData.map(item =>
+        item.id === itemId ? { ...item, digitalRecibida: status } : item
+      )
+    );
+  };
+
+  const handleInformacionExtraChange = (itemId, status) => {
+    setData(prevData =>
+      prevData.map(item =>
+        item.id === itemId ? { ...item, informacionExtra: status } : item
+      )
+    );
+  };
+
+  const handleMesChange = (itemId, mes) => {
+    setData(prevData =>
+      prevData.map(item =>
+        item.id === itemId ? { ...item, mesConsumo: mes } : item
+      )
+    );
   };
 
   return (
@@ -77,6 +127,7 @@ const CPEEmpresasListado = () => {
                 <th>Factura Imagen</th>
                 <th>Factura Digital Recibida</th>
                 <th>Factura Digital al mail</th>
+                <th>Factura Digital al mail</th>
                 <th>Información Extra</th>
               </tr>
             </thead>
@@ -91,13 +142,31 @@ const CPEEmpresasListado = () => {
                   <td>{item["CPE (Codigo Pago Electronico)"]}</td>
                   <td>{item.Titular}</td>
                   <td>{item.Vencimiento}</td>
-                  <td>{item["Consumo Mes"]}</td>
-                  <td>{item["Factura Pagada"]}</td>
+                  
+                  <td>
+                    <div className="dropdown">
+                      <button className="dropbtn">{item.mesConsumo}</button>
+                      <div className="dropdown-content">
+                        {meses.map((mes) => (
+                          <a key={mes} onClick={() => handleMesChange(item.id, mes)}>{mes}</a>
+                        ))}
+                      </div>
+                    </div>
+                  </td>
+
+                  <td className={`factura-pagada ${item.pagada ? 'pagada' : 'no-pagada'}`} onClick={() => toggleFacturaPagada(item.id)}>
+                    {item.pagada ? '✔️' : '❌'}
+                  </td>
                   <td>{item["Importe Pagado"]}</td>
                   <td>{item["Factura Imagen"]}</td>
+                  <td className={`digital-recibida ${item.digitalRecibida}`} onClick={() => handleDigitalRecibidaChange(item.id, item.digitalRecibida === "Llega al mail" ? "Llega al domicilio" : item.digitalRecibida === "Llega al domicilio" ? "No llega" : "Llega al mail")}>
+                    {item.digitalRecibida}
+                  </td>
+                  <td className={`informacion-extra ${item.informacionExtra}`} onClick={() => handleInformacionExtraChange(item.id, item.informacionExtra === "Servicio Habilitado" ? "Servicio Cortado" : item.informacionExtra === "Servicio Cortado" ? "Servicio Deshabilitado" : "Servicio Habilitado")}>
+                    {item.informacionExtra}
+                  </td>
                   <td>{item["Factura Digital Recibida"]}</td>
                   <td>{item["Factura Digital al mail"]}</td>
-                  <td>{item["Información Extra"]}</td>
                 </tr>
               ))}
             </tbody>
