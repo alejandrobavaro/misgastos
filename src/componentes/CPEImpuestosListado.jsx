@@ -2,13 +2,18 @@ import React, { useState, useEffect } from 'react';
 import "../assets/scss/_03-Componentes/_CPEImpuestosListado.scss";
 
 const impuestoIcons = {
-  'IVA': 'percentage',
-  'Ganancias': 'file-earmark-bar-graph',
-  'Bienes Personales': 'file-earmark-spreadsheet',
-  'Monotributo': 'cash-stack',
-  'Ingresos Brutos': 'currency-exchange',
-  'Sellos': 'pen',
-  'Otros Impuestos': 'bank2',
+  'IVA': 'bi bi-percentage',
+  'Ganancias': 'bi bi-file-earmark-bar-graph',
+  'Bienes Personales': 'bi bi-file-earmark-spreadsheet',
+  'Monotributo': 'bi bi-cash-stack',
+  'Ingresos Brutos': 'bi bi-currency-exchange',
+  'Sellos': 'bi bi-pen',
+  'Otros Impuestos': 'bi bi-bank2',
+  'Aportes': 'bi bi-clipboard-check',
+  'Propiedades': 'bi bi-house-door',
+  'Servicios Públicos': 'bi bi-receipt',
+  'Seguridad Social': 'bi bi-shield-lock',
+  'Automotores': 'bi bi-car-front',
 };
 
 const meses = [
@@ -93,7 +98,7 @@ const CPEImpuestosListado = () => {
         Object.keys(groupedData).map(impuesto => (
           <div key={impuesto} className="cpe-impuesto-card" onClick={() => handleImpuestoClick(impuesto)}>
             <div className="cpe-impuesto-icon">
-              <i className={`bi bi-${impuestoIcons[impuesto] || 'question-circle'}`}></i>
+              <i className={impuestoIcons[impuesto] || 'bi bi-question-circle'}></i>
             </div>
             <div className="cpe-impuesto-info">
               <span>{impuesto}</span>
