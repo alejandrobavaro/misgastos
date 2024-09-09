@@ -1,29 +1,44 @@
+// _GastosPagados.scss
 .pagados {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 10px;
-    border-bottom: 2px solid #00f7ff2c;
-    border-radius: 30px;
-  
-    h2 {
-      font-size: medium;
-      color: #00fbff; // Color del texto
-      padding: 20px; // Ajustado para evitar un espaciado excesivo
-    }
-  
-    form {
-      display: flex;
-      flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  gap: 5px; // Espacio compacto entre ítems
+  padding: 10px;
+  border-bottom: 2px solid #00f7ff2c;
+  border-radius: 30px;
+  background-color: #1e1e1e;
+
+  h2 {
+    font-size: medium;
+    color: #00fbff; // Color del texto
+    padding: 20px; // Ajustado para evitar un espaciado excesivo
+  }
+
+  .lista-cuentas {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; // Espacio compacto entre ítems
+
+    .cuenta-item {
+      display: grid;
+      grid-template-columns: repeat(7, auto);
+      gap: 5px; // Espacio reducido entre columnas
       align-items: center;
-      width: 100%;
-    }
-  
-    h1 {
-      font-size: large;
-      color: #ffffff;
-      text-align: center;
-      margin-top: 0; // No es necesario poner "px" si es 0
+      background-color: #1e1e1e;
+      padding: 5px; // Menos padding para compactar
+      border-radius: 5px;
+      border: 1px solid #00f7ff;
+
+      span {
+        color: #fff;
+        font-size: 12px;
+        white-space: nowrap; // Mantener los textos en una sola línea
+      }
+
+      .factura-pagada {
+        font-size: 16px; // Tamaño ajustado para los íconos
+        color: #00ff00;
+      }
     }
   }
-  
+}

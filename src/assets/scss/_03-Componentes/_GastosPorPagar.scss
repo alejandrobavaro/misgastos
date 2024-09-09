@@ -1,29 +1,82 @@
 .por-pagar {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 10px;
-    border-bottom: 2px solid #00f7ff2c;
-    border-radius: 30px;
-  
-    h2 {
-      font-size: medium;
-      color: #00fbff; // Color del texto
-      padding: 20px; // Ajustado para un espaciado adecuado
-    }
-  
-    form {
-      display: flex;
-      flex-direction: column;
+  padding: 20px;
+
+  h2 {
+    color: #00fbff;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .lista-cuentas {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; // Espacio compacto entre ítems
+
+    .cuenta-item {
+      display: grid;
+      grid-template-columns: repeat(7, auto);
+      gap: 5px; // Espacio reducido entre columnas
       align-items: center;
-      width: 100%;
-    }
-  
-    h1 {
-      font-size: large;
-      color: #ffffff;
-      text-align: center;
-      margin-top: 0; // No es necesario poner "px" si es 0
+      background-color: #1e1e1e;
+      padding: 5px; // Menos padding para compactar
+      border-radius: 5px;
+      border: 1px solid #00f7ff;
+
+      span {
+        color: #fff;
+        font-size: 12px;
+        white-space: nowrap; // Mantener los textos en una sola línea
+      }
+
+      input {
+        width: 80px;
+        padding: 0px; // Compactar los inputs
+        font-size: 12px;
+        color: #000;
+        border: 1px solid #00f7ff;
+        border-radius: 4px;
+      }
+
+      .importe-label {
+        font-size: 10px;
+        color: #ccc;
+        margin-bottom: 2px;
+        display: block;
+      }
+
+      .guardar-boton {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 12px;
+        color: #007bff;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #0056b3;
+        }
+      }
+
+      .factura-pagada {
+        cursor: pointer;
+        font-size: 16px; // Tamaño ajustado para los íconos
+        display: inline-block;
+        padding: 2px;
+        border-radius: 5px;
+        transition: transform 0.2s ease;
+
+        &.pagada {
+          color: #00ff00;
+        }
+
+        &.no-pagada {
+          color: #ff0000;
+        }
+
+        &:hover {
+          transform: scale(1.1); // Efecto sutil al pasar el mouse
+        }
+      }
     }
   }
-  
+}
