@@ -10,71 +10,81 @@
   .lista-cuentas {
     display: flex;
     flex-direction: column;
-    gap: 5px; // Espacio compacto entre ítems
+    gap: 5px;
 
     .cuenta-item {
       display: grid;
-      grid-template-columns: repeat(7, auto);
-      gap: 5px; // Espacio reducido entre columnas
+      grid-template-columns: repeat(8, auto); // Ajuste para 8 columnas
+      gap: 5px;
       align-items: center;
       background-color: #1e1e1e;
-      padding: 5px; // Menos padding para compactar
+      padding: 5px;
       border-radius: 5px;
       border: 1px solid #00f7ff;
 
       span {
         color: #fff;
         font-size: 12px;
-        white-space: nowrap; // Mantener los textos en una sola línea
+        white-space: nowrap;
       }
 
       input {
         width: 80px;
-        padding: 0px; // Compactar los inputs
+        padding: 0px;
         font-size: 12px;
         color: #000;
         border: 1px solid #00f7ff;
         border-radius: 4px;
       }
 
-      .importe-label {
-        font-size: 10px;
-        color: #ccc;
-        margin-bottom: 2px;
-        display: block;
+      .factura-pagada {
+        cursor: pointer;
+        font-size: 16px;
+
+        &.pagada {
+          color: #00ff00; // Verde para pagadas
+        }
+
+        &.no-pagada {
+          color: #ff0000; // Rojo para no pagadas
+        }
+
+        &:hover {
+          transform: scale(1.1);
+          transition: 0.2s ease-in-out;
+        }
       }
 
-      .guardar-boton {
-        background: transparent;
-        border: none;
+      .bloqueado {
+        background-color: #555; // Fondo gris para cuentas bloqueadas
+        opacity: 0.6;
+        pointer-events: none; // Deshabilitar la interacción
+      }
+
+      button {
         cursor: pointer;
         font-size: 12px;
         color: #007bff;
-        transition: color 0.3s;
 
         &:hover {
           color: #0056b3;
         }
       }
 
-      .factura-pagada {
-        cursor: pointer;
-        font-size: 16px; // Tamaño ajustado para los íconos
+      label {
+        cursor: default;
         display: inline-block;
-        padding: 2px;
-        border-radius: 5px;
-        transition: transform 0.2s ease;
+        margin-right: 5px;
+        font-size: 12px;
+        color: #fff; // Ajusta según el diseño
+      }
 
-        &.pagada {
-          color: #00ff00;
-        }
-
-        &.no-pagada {
-          color: #ff0000;
-        }
-
-        &:hover {
-          transform: scale(1.1); // Efecto sutil al pasar el mouse
+      .input-container {
+        display: flex;
+        align-items: center;
+        
+        span {
+          margin-right: 5px;
         }
       }
     }
