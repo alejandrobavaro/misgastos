@@ -1,3 +1,4 @@
+// Estilos generales del componente GastosPorPagar
 .por-pagar {
   padding: 20px;
 
@@ -5,88 +6,116 @@
     color: #00fbff;
     font-size: 24px;
     margin-bottom: 20px;
+
+    .mes-corriente {
+      color: #ffffff;  // Color blanco para el mes
+      text-transform: uppercase;  // Texto en mayúsculas
+      border-bottom: 1px solid #00f7ff;  // Recuadro en la parte inferior
+      border-right: 1px solid #00f7ff;  // Recuadro en el lado derecho
+      border-radius: 50%;  // Bordes redondeados
+      padding: 10px;  // Espaciado dentro del recuadro
+    }
   }
 
   .lista-cuentas {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 3px;
 
-    .cuenta-item {
+    .cuenta-header, .cuenta-item {
       display: grid;
-      grid-template-columns: repeat(8, auto); // Ajuste para 8 columnas
-      gap: 5px;
+      grid-template-columns: 60px repeat(7, 1fr);  // Columna ID fija y otras columnas flexibles
+      gap: 2px;
       align-items: center;
-      background-color: #1e1e1e;
-      padding: 5px;
+      background-color: #1e1e1e31;
+      padding: 2px;
       border-radius: 5px;
       border: 1px solid #00f7ff;
+    }
+
+    .cuenta-header {
+      background-color: #032027;  // Fondo para la fila de encabezado
+      color: #cffffd;  // Texto blanco
+      text-transform: uppercase;
+      padding: 10px;
+      font-size: 12px;
+      grid-template-columns: 60px repeat(7, 1fr);  // Asegura el mismo diseño que la fila de datos
+    }
+
+    .cuenta-item {
+      background-color: #1e1e1e;  // Fondo para las filas de datos
+      color: #fff;  // Texto blanco
+      font-size: 12px;
 
       span {
-        color: #fff;
-        font-size: 12px;
         white-space: nowrap;
+        text-align: center;  // Centrar el texto en cada celda
+        overflow: hidden;  // Ocultar el contenido que exceda el ancho
+        text-overflow: ellipsis;  // Mostrar puntos suspensivos si el texto excede el ancho
       }
 
-      input {
-        width: 80px;
-        padding: 0px;
-        font-size: 12px;
-        color: #000;
-        border: 1px solid #00f7ff;
-        border-radius: 4px;
+      .id-col {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 60px;
+        max-width: 60px;
+        text-align: center;
+        margin-left: 10px;  // Ajusta este valor para mover el contenido hacia la derecha
       }
-
-      .factura-pagada {
-        cursor: pointer;
-        font-size: 16px;
-
-        &.pagada {
-          color: #00ff00; // Verde para pagadas
-        }
-
-        &.no-pagada {
-          color: #ff0000; // Rojo para no pagadas
-        }
-
-        &:hover {
-          transform: scale(1.1);
-          transition: 0.2s ease-in-out;
-        }
-      }
-
-      .bloqueado {
-        background-color: #555; // Fondo gris para cuentas bloqueadas
-        opacity: 0.6;
-        pointer-events: none; // Deshabilitar la interacción
-      }
-
-      button {
-        cursor: pointer;
-        font-size: 12px;
-        color: #007bff;
-
-        &:hover {
-          color: #0056b3;
-        }
-      }
-
-      label {
-        cursor: default;
-        display: inline-block;
-        margin-right: 5px;
-        font-size: 12px;
-        color: #fff; // Ajusta según el diseño
-      }
+      
 
       .input-container {
         display: flex;
         align-items: center;
-        
+        justify-content: center;  // Centrar el contenido dentro de la celda
+
         span {
           margin-right: 5px;
         }
+
+        input {
+          width: 80px;
+          text-align: center;  // Centrar el texto dentro del campo de entrada
+        }
       }
+
+      button {
+        background-color: #00f7ff;  // Color del botón
+        color: #032027;  // Color del texto del botón
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-size: 12px;
+        margin: 0 2px;
+
+        &:hover {
+          background-color: #00c7cc;  // Color del botón al pasar el ratón
+        }
+      }
+
+      .importe-pagado {
+        font-weight: bold;
+      }
+
+      .bloqueado {
+        background-color: #005255;
+      }
+    }
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00f7ff;
+    color: #032027;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #00c7cc;
     }
   }
 }

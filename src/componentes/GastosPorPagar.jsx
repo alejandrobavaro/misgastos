@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import '../assets/scss/_03-Componentes/_GastosPorPagar.scss';
-
+import '../assets/scss/_01-General/_SweetAlert.scss'; // Solo importamos los estilos desde tu archivo SASS personalizado.
 
 const GastosPorPagar = () => {
   const [cuentasPorPagar, setCuentasPorPagar] = useState([]);
+  const [facturaInput, setFacturaInput] = useState({});
 
   const cargarCuentasIniciales = async () => {
     try {
@@ -28,11 +29,22 @@ const GastosPorPagar = () => {
     }
   }, []);
 
-  const marcarComoPagada = (id, importePagado, fechaPagado) => {
+  const marcarComoPagada = (id) => {
+    const importePagado = document.getElementById(`importe-${id}`).value;
+    const numeroFactura = facturaInput[id] || '';
+
     if (!importePagado || isNaN(importePagado) || importePagado.trim() === '') {
       Swal.fire({
         icon: 'warning',
-        title: 'Debe ingresar el importe pagado (solo números) antes de marcar como pagada',
+        title: 'Debe ingresar el importe pagado en números antes de marcar la Factura como pagada',
+      });
+      return;
+    }
+
+    if (!numeroFactura.trim()) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Debe ingresar el número de factura antes de marcarla como pagada',
       });
       return;
     }
@@ -46,7 +58,8 @@ const GastosPorPagar = () => {
             ...cuenta, 
             FacturaPagada: 'Si', 
             ImportePagado: importePagado, 
-            FechaPagado: fechaPagado || new Date().toLocaleDateString(),
+            FechaPagado: new Date().toLocaleDateString(),
+            NumeroFactura: numeroFactura, // Agregar el número de factura actualizado
             bloqueado: true 
           };
         }
@@ -83,16 +96,55 @@ const GastosPorPagar = () => {
     }
   };
 
+  // Obtener el nombre del mes actual
+  const obtenerMesActual = () => {
+    const fecha = new Date();
+    const opciones = { month: 'long' };
+    return fecha.toLocaleDateString('es-ES', opciones).toUpperCase();
+  };
+
   return (
     <div className="por-pagar">
-      <h2>Gastos Por Pagar</h2>
+      <h2>
+        Gastos Por Pagar en el mes de: <span className="mes-corriente">{obtenerMesActual()}</span>
+      </h2>
       <div className="lista-cuentas">
+        {/* Encabezado de la tabla */}
+        <div className="cuenta-header">
+          <span>ID</span>
+          <span>Nombre</span>
+          <span>Servicio o Impuesto</span>
+          <span>Número de Cuenta</span>
+          <span>Número de Factura</span>
+          <span>Vencimiento</span>
+          <span>Importe Pagado</span>
+          <span>Marcar como Pagada</span>
+        </div>
+
+        {/* Lista de cuentas */}
         {cuentasPorPagar.map((cuenta) => (
           <div key={cuenta.id} className={`cuenta-item ${cuenta.bloqueado ? 'bloqueado' : ''}`}>
+            <span className="id-col">{cuenta.id}</span> {/* Nueva columna de ID */}
             <span>{cuenta.Nombre}</span>
             <span>{cuenta.Servicio || cuenta.Impuesto}</span>
             <span>{cuenta["Numero de Cuenta"]}</span>
-            <span>{cuenta["CPE (Codigo Pago Electronico)"]}</span>
+            <span>{cuenta.bloqueado ? cuenta["Numero de Factura"] : (
+              <input
+                type="text"
+                placeholder=" Nº Factura"
+                value={facturaInput[cuenta.id] || ''}
+                onChange={(e) => {
+                  // Solo permitir números en el campo de número de factura
+                  const valor = e.target.value;
+                  if (/^\d*$/.test(valor)) {
+                    setFacturaInput({
+                      ...facturaInput,
+                      [cuenta.id]: valor,
+                    });
+                  }
+                }}
+              />
+            )}</span>
             <span>{cuenta.Vencimiento}</span>
             {cuenta.bloqueado ? (
               <>
@@ -100,10 +152,10 @@ const GastosPorPagar = () => {
                   Importe Pagado: ${cuenta.ImportePagado}
                 </span>
                 <span>Fecha Pagado: {cuenta.FechaPagado}</span>
+                <span>Número de Factura: {cuenta.NumeroFactura}</span>
               </>
             ) : (
               <>
-                <label htmlFor={`importe-${cuenta.id}`}>Importe Pagado:</label>
                 <div className="input-container">
                   <span>$</span>
                   <input
@@ -111,14 +163,17 @@ const GastosPorPagar = () => {
                     type="text"
                     placeholder="0"
                     onChange={(e) => {
-                      if (!isNaN(e.target.value)) {
-                        cuenta.ImportePagado = e.target.value;
+                      // Solo permitir números en el campo de Importe Pagado
+                      const valor = e.target.value;
+                      if (/^\d*\.?\d*$/.test(valor)) { // Permitir números y un punto decimal
+                        // Actualizar el valor del campo sin cambiar el estado global directamente
+                        document.getElementById(`importe-${cuenta.id}`).value = valor;
                       }
                     }}
                   />
                 </div>
-                <button onClick={() => marcarComoPagada(cuenta.id, cuenta.ImportePagado)}>
-                  Marcar como Pagada
+                <button onClick={() => marcarComoPagada(cuenta.id)}>
+                  Pagada
                 </button>
               </>
             )}
