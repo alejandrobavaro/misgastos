@@ -8,7 +8,7 @@
     margin-bottom: 20px;
 
     .mes-corriente {
-      color: #ffffff;  // Color blanco para el mes
+      color: #fff45d;  // Color blanco para el mes
       text-transform: uppercase;  // Texto en mayúsculas
       border-bottom: 1px solid #00f7ff;  // Recuadro en la parte inferior
       border-right: 1px solid #00f7ff;  // Recuadro en el lado derecho
@@ -34,11 +34,12 @@
     }
 
     .cuenta-header {
-      background-color: #032027;  // Fondo para la fila de encabezado
+      background-color: #040c3a;  // Fondo para la fila de encabezado
       color: #cffffd;  // Texto blanco
       text-transform: uppercase;
-      padding: 10px;
+      padding: 15px;
       font-size: 12px;
+      border: 1px solid #00ff6267;
       grid-template-columns: 60px repeat(7, 1fr);  // Asegura el mismo diseño que la fila de datos
     }
 

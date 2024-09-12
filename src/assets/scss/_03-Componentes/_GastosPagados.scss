@@ -5,54 +5,148 @@
     color: #00fbff;
     font-size: 24px;
     margin-bottom: 20px;
+
+    .mes-corriente {
+      color: #fff45d;
+      text-transform: uppercase;
+      border-bottom: 1px solid #00f7ff;
+      border-right: 1px solid #00f7ff;
+      border-radius: 50%;
+      padding: 10px;
+    }
+  }
+
+  /* Estilos para Totales Pagados */
+  .totales-pagados {
+    background-color: #00000059;
+    border-bottom: 1px solid #00f7ff;
+    color: #cffffd;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+
+    h3 {
+      margin: 0;
+      font-size: 18px;
+      padding: 5px;
+
+      span {
+        color: #5dfff7;
+    
+      }
+    }
+
+    .progreso-cuentas {
+      margin-top: 10px;
+      span {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+
+      .barra-progreso {
+        background-color: #0b69a0bb;
+        border-radius: 10px;
+        height: 10px;
+        width: 100%;
+        position: relative;
+
+        .relleno-progreso {
+          background-color: #00fbff;
+          height: 100%;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  /* Ajuste de estilo para el gráfico circular */
+  .grafico-circular {
+    margin-bottom: 20px;
+    text-align: center;
+
+    h3 {
+      font-size: 18px;
+      color: #cffffd;
+    }
+
+    canvas {
+      max-width: 100%;
+      height: auto;
+      max-height: 200px; /* Ajusta la altura máxima según sea necesario */
+      width: auto;
+    }
   }
 
   .lista-cuentas {
     display: flex;
     flex-direction: column;
-    gap: 10px; // Espacio entre ítems de la lista
+    gap: 3px;
 
-    .cuenta-item {
-      display: flex; // Utilizamos flexbox para alinear en una sola fila
-      align-items: center; // Alinea los elementos verticalmente al centro
-      background-color: #1e1e1e;
-      padding: 10px; // Espacio interno alrededor del contenido
+    .cuenta-header, .cuenta-item {
+      display: grid;
+      grid-template-columns: 60px repeat(7, 1fr);
+      gap: 2px;
+      align-items: center;
+      background-color: #1e1e1e31;
+      padding: 2px;
       border-radius: 5px;
       border: 1px solid #00f7ff;
-      overflow: hidden; // Asegura que el contenido no se desborde
-      justify-content: space-between; // Espacio equilibrado entre elementos
+    }
 
-      // Espaciado entre elementos
+    .cuenta-header {
+      background-color: #040c3a;
+      color: #cffffd;
+      text-transform: uppercase;
+      padding: 15px;
+      font-size: 12px;
+      border: 1px solid #00ff6267;
+      grid-template-columns: 60px repeat(7, 1fr);
+    }
+
+    .cuenta-item {
+      background-color: #1e1e1e;
+      color: #fff;
+      font-size: 12px;
+
       span {
-        color: #fff;
-        font-size: 14px; // Ajustamos el tamaño del texto
-        white-space: nowrap; // Evita que el texto se rompa en varias líneas
-        margin-right: 10px; // Espacio entre los elementos
+        white-space: nowrap;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
-      .importe-pagado {
-        color: #46f781;
+      .id-col {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 60px;
+        max-width: 60px;
+        text-align: center;
+        margin-left: 10px;
       }
 
-      .factura-pagada {
-        cursor: default;
-        font-size: 16px;
-        color: #3cff00;
-        display: inline-block;
-        padding: 2px 5px; // Padding para dar espacio alrededor del texto
-        border-radius: 5px;
-      }
-
-      button {
-        background-color: #ff4b4b;
-        color: #fff;
-        border: none;
-        padding: 5px 15px; // Padding mayor para un botón más grande
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 14px; // Tamaño del texto en el botón
-        margin-left: 10px; // Espacio a la izquierda del botón para separación
+      .bloqueado {
+        background-color: #005255;
       }
     }
+  }
+}
+
+
+
+button {
+  background-color: #00f7ff;  // Color del botón
+  color: #032027;  // Color del texto del botón
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  margin: 0 2px;
+
+  &:hover {
+    background-color: #00c7cc;  // Color del botón al pasar el ratón
   }
 }

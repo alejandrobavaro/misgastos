@@ -106,7 +106,7 @@ const GastosPorPagar = () => {
   return (
     <div className="por-pagar">
       <h2>
-        Gastos Por Pagar en el mes de: <span className="mes-corriente">{obtenerMesActual()}</span>
+        Gastos Por Pagar en <span className="mes-corriente">{obtenerMesActual()}</span>
       </h2>
       <div className="lista-cuentas">
         {/* Encabezado de la tabla */}
