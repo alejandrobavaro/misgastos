@@ -20,7 +20,6 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
   const { notifications } = useHeaderNotifications();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [email, setEmail] = useState("");
 
   useEffect(() => {
     document.body.classList.toggle("dark-mode", isDarkMode);
@@ -127,7 +126,7 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
               </Nav.Item>
 
               <Nav.Item className="notifications-item">
-                <Link to="/">
+                <Link to="/calendario-pagos">
                   <HeaderNotificaciones reminderCount={notifications.today} />
                 </Link>
               </Nav.Item>

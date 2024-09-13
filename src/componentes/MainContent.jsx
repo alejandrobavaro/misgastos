@@ -1,5 +1,6 @@
 import React from "react";
-import MainCalendarioPagos from "./MainCalendarioPagos";
+
+import GastosPorPagar from "./GastosPorPagar";
 import "../assets/scss/_03-Componentes/_MainContent.scss";
 
 function MainContent() {
@@ -8,9 +9,12 @@ function MainContent() {
       <div className="gridPadre"></div>
 
       <div className="gridItem">
-        <MainCalendarioPagos />
+      <GastosPorPagar />
+    
       </div>
       
+
+   
     </main>
   );
 }
