@@ -6,7 +6,7 @@ const GastosTotales = () => {
   const [data, setData] = useState([]);
   const [chartType, setChartType] = useState('Categoria');
   const [filters, setFilters] = useState([
-    'Categoria', 'Tipo', 'Servicio', 'Impuesto', 'Empresa', 'Nombre',  'Titular'
+    'Categoria', 'Tipo', 'Servicio', 'Impuesto', 'Empresa', 'Nombre', 'Titular'
   ]);
   const chartRef = useRef(null); // Ref para almacenar la instancia del gráfico
   const canvasRef = useRef(null); // Ref para el canvas en el DOM

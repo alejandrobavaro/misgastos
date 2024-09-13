@@ -63,20 +63,18 @@ const GastosPorPagar = () => {
             FacturaPagada: "Si",
             ImportePagado: importePagado,
             FechaPagado: new Date().toLocaleDateString(),
-            NumeroFactura: numeroFactura, // Agregar el número de factura actualizado
+            NumeroFactura: numeroFactura,
             bloqueado: true,
           };
         }
         return cuenta;
       });
 
-      // Guardar las cuentas actualizadas en localStorage
       localStorage.setItem("cuentas", JSON.stringify(actualizadas));
       setCuentasPorPagar(
         actualizadas.filter((cuenta) => cuenta.FacturaPagada !== "Si")
       );
 
-      // Calcular y guardar los totales en localStorage
       const totales = actualizadas.reduce((acc, cuenta) => {
         if (cuenta.FacturaPagada === "Si") {
           return acc + parseFloat(cuenta.ImportePagado) || 0;
@@ -114,7 +112,6 @@ const GastosPorPagar = () => {
     }
   };
 
-  // Obtener el nombre del mes actual
   const obtenerMesActual = () => {
     const fecha = new Date();
     const opciones = { month: "long" };
@@ -128,15 +125,13 @@ const GastosPorPagar = () => {
           Gastos Por Pagar en{" "}
           <span className="mes-corriente">{obtenerMesActual()}</span>{" "}
           <span>
-            {" "}
             <button onClick={limpiarLocalStorage}>Limpiar LocalStorage</button>
-            <button onClick={descargarJSON}>Descargar JSON</button>{" "}
+            <button onClick={descargarJSON}>Descargar JSON</button>
           </span>
         </h2>
       </div>
 
       <div className="lista-cuentas">
-        {/* Encabezado de la tabla */}
         <div className="cuenta-header">
           <span>ID</span>
           <span>Nombre</span>
@@ -148,14 +143,12 @@ const GastosPorPagar = () => {
           <span>Marcar como Pagada</span>
         </div>
 
-        {/* Lista de cuentas */}
         {cuentasPorPagar.map((cuenta) => (
           <div
             key={cuenta.id}
             className={`cuenta-item ${cuenta.bloqueado ? "bloqueado" : ""}`}
           >
-            <span className="id-col">{cuenta.id}</span>{" "}
-            {/* Nueva columna de ID */}
+            <span className="id-col">{cuenta.id}</span>
             <span>{cuenta.Nombre}</span>
             <span>{cuenta.Servicio || cuenta.Impuesto}</span>
             <span>{cuenta["Numero de Cuenta"]}</span>
@@ -168,7 +161,6 @@ const GastosPorPagar = () => {
                   placeholder=" Nº Factura"
                   value={facturaInput[cuenta.id] || ""}
                   onChange={(e) => {
-                    // Solo permitir números en el campo de número de factura
                     const valor = e.target.value;
                     if (/^\d*$/.test(valor)) {
                       setFacturaInput({
@@ -198,11 +190,8 @@ const GastosPorPagar = () => {
                     type="text"
                     placeholder="0"
                     onChange={(e) => {
-                      // Solo permitir números en el campo de Importe Pagado
                       const valor = e.target.value;
                       if (/^\d*\.?\d*$/.test(valor)) {
-                        // Permitir números y un punto decimal
-                        // Actualizar el valor del campo sin cambiar el estado global directamente
                         document.getElementById(`importe-${cuenta.id}`).value =
                           valor;
                       }

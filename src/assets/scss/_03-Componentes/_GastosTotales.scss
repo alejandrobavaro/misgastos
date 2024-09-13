@@ -83,4 +83,79 @@
       }
     }
   }
+
+  @media (max-width: 768px) {
+    padding: 10px;
+    max-width: 100%;
+
+    h2 {
+      font-size: 20px;
+    }
+
+    .chart-buttons {
+      flex-wrap: wrap;
+      gap: 5px;
+
+      .chart-button {
+        padding: 5px 15px;
+        font-size: 12px;
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .charts {
+      margin-bottom: 15px;
+
+      canvas {
+        width: 100% !important;
+      }
+    }
+
+    .totals-list {
+      h3 {
+        font-size: 16px;
+      }
+
+      ul li {
+        font-size: 12px;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 8px;
+    max-width: 100%;
+
+    h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .chart-buttons {
+      flex-direction: column;
+      gap: 5px;
+
+      .chart-button {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+    }
+
+    .charts {
+      canvas {
+        width: 100% !important;
+      }
+    }
+
+    .totals-list {
+      h3 {
+        font-size: 16px;
+      }
+
+      ul li {
+        font-size: 12px;
+      }
+    }
+  }
 }
