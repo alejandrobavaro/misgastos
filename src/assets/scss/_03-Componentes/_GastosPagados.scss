@@ -16,48 +16,61 @@
     }
   }
 
-  /* Estilos para Totales Pagados */
-  .totales-pagados {
-    background-color: #00000059;
-    border-bottom: 1px solid #00f7ff;
-    color: #cffffd;
-    padding: 15px;
-    border-radius: 10px;
+  /* Sección de Totales Pagados en un diseño de cuadrícula */
+  .totales-pagados-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+
+    .totales-pagados-info {
+      background-color: #00000059;
+      border-bottom: 1px solid #00f7ff;
+      color: #cffffd;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+
+      h3 {
+        margin: 0;
+        font-size: 18px;
+        padding: 5px;
+
+        span {
+          color: #5dfff7;
+        }
+      }
+
+      .progreso-cuentas {
+        margin-top: 10px;
+        span {
+          display: block;
+          margin-bottom: 5px;
+        }
+
+        .barra-progreso {
+          background-color: #0b69a0bb;
+          border-radius: 10px;
+          height: 10px;
+          width: 100%;
+          position: relative;
+
+          .relleno-progreso {
+            background-color: #00fbff;
+            height: 100%;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .grafico-barra {
     margin-bottom: 20px;
     text-align: center;
 
-    h3 {
-      margin: 0;
-      font-size: 18px;
-      padding: 5px;
-
-      span {
-        color: #5dfff7;
-    
-      }
-    }
-
-    .progreso-cuentas {
-      margin-top: 10px;
-      span {
-        display: block;
-        font-size: 14px;
-        margin-bottom: 5px;
-      }
-
-      .barra-progreso {
-        background-color: #0b69a0bb;
-        border-radius: 10px;
-        height: 10px;
-        width: 100%;
-        position: relative;
-
-        .relleno-progreso {
-          background-color: #00fbff;
-          height: 100%;
-          border-radius: 10px;
-        }
-      }
+    canvas {
+      width: 100% !important;
+      height: auto !important;
     }
   }
 
@@ -65,6 +78,11 @@
   .grafico-circular {
     margin-bottom: 20px;
     text-align: center;
+    background-color: #00000059;
+    border-bottom: 1px solid #00f7ff;
+    color: #cffffd;
+    border-radius: 10px;
+    padding: 20px;
 
     h3 {
       font-size: 18px;
@@ -84,7 +102,8 @@
     flex-direction: column;
     gap: 3px;
 
-    .cuenta-header, .cuenta-item {
+    .cuenta-header,
+    .cuenta-item {
       display: grid;
       grid-template-columns: 60px repeat(7, 1fr);
       gap: 2px;
@@ -134,11 +153,9 @@
   }
 }
 
-
-
 button {
-  background-color: #00f7ff;  // Color del botón
-  color: #032027;  // Color del texto del botón
+  background-color: #00f7ff; // Color del botón
+  color: #032027; // Color del texto del botón
   border: none;
   border-radius: 5px;
   padding: 5px 10px;
@@ -147,6 +164,6 @@ button {
   margin: 0 2px;
 
   &:hover {
-    background-color: #00c7cc;  // Color del botón al pasar el ratón
+    background-color: #00c7cc; // Color del botón al pasar el ratón
   }
 }

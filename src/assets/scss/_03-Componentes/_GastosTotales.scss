@@ -1,29 +1,86 @@
-.totales {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  background-color: transparent;
-  border-bottom: 2px solid #00f7ff2c;
-  border-radius: 30px;
-}
+.gastos-totales {
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: 0 auto;
 
-.totales h2 {
-  font-size: medium;
-  color: #00fbff; // Color del texto
-  padding: 20px; // Ajustado para un espaciado adecuado
-}
+  h2 {
+    color: #00fbff;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
 
-.totales form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
+  .chart-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
 
-.totales h1 {
-  font-size: large;
-  color: #ffffff;
-  text-align: center;
-  margin-top: 0; // No es necesario poner "px" si es 0
+    .chart-button {
+      background-color: #00f7ff;
+      color: #032027;
+      border: none;
+      border-radius: 5px;
+      padding: 3px 20px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+
+      &.active {
+        background-color: #00c7cc;
+      }
+
+      &:hover {
+        background-color: #00c7cc;
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .charts {
+    margin-bottom: 20px;
+    text-align: center;
+
+    canvas {
+      width: 100% !important;
+      height: auto !important;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .totals-list {
+    background-color: #00000059;
+    padding: 15px;
+    border-radius: 10px;
+    color: #cffffd;
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+    h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #00fbff;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 12px;
+        font-size: 1.1rem;
+        display: flex;
+        justify-content: space-between;
+
+        strong {
+          color: #00aaff;
+        }
+      }
+    }
+  }
 }

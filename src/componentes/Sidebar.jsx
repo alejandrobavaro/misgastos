@@ -57,7 +57,8 @@ const Sidebar = () => {
           <hr />
           <li>
             <Link to="/totales">
-              <FiPackage size={20} color="gray" /> TOTALES
+            <FiBarChart2 size={20} color="gray" />
+                          TOTALES
             </Link>
           </li>
           <hr />
@@ -89,7 +90,7 @@ const Sidebar = () => {
         </ul>
 
         <h2>
-          <FiBarChart2 size={20} color="gray" /> Consultas
+        <FiPackage size={20} color="gray" /> Consultas
         </h2>
         <ul>
           <li>

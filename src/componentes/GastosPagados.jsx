@@ -1,29 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { Doughnut } from 'react-chartjs-2';
+import { Doughnut, Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   ArcElement,
   Tooltip,
   Legend,
+  BarElement,
+  CategoryScale,
+  LinearScale
 } from 'chart.js';
 import '../assets/scss/_03-Componentes/_GastosPagados.scss';
 
 // Registrar los elementos de Chart.js necesarios
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(ArcElement, Tooltip, Legend, BarElement, CategoryScale, LinearScale);
 
 const GastosPagados = () => {
   const [cuentasPagadas, setCuentasPagadas] = useState([]);
   const [totalPagado, setTotalPagado] = useState(0);
   const [cuentasTotales, setCuentasTotales] = useState(0);
 
-  // Función para obtener el mes actual
   const obtenerMesActual = () => {
     const fecha = new Date();
     const opciones = { month: 'long' };
     return fecha.toLocaleDateString('es-ES', opciones).toUpperCase();
   };
 
-  // Función para obtener la fecha actual
   const obtenerFechaActual = () => {
     const fecha = new Date();
     return fecha.toLocaleDateString('es-ES');
@@ -41,7 +42,6 @@ const GastosPagados = () => {
     }
   }, []);
 
-  // Función para marcar una cuenta como no pagada
   const marcarComoNoPagada = (id) => {
     const cuentasLocalStorage = localStorage.getItem('cuentas');
     if (cuentasLocalStorage) {
@@ -65,31 +65,22 @@ const GastosPagados = () => {
     }
   };
 
-  // Calcular el porcentaje de cuentas pagadas
   const porcentajePagadas = (cuentasPagadas.length / cuentasTotales) * 100;
 
-  // Datos para el gráfico circular
-  const data = {
+  const dataDoughnut = {
     labels: ['Cuentas Pagadas', 'Cuentas No Pagadas'],
     datasets: [
       {
         label: '# de Cuentas',
         data: [cuentasPagadas.length, cuentasTotales - cuentasPagadas.length],
-        backgroundColor: [
-           '#00fbff', // Color del segmento para cuentas pagadas
-          '#00f7ff7c'  // Color del segmento para cuentas no pagadas
-        ],
-        borderColor: [
-         '#00fbff', // Color del borde del segmento para cuentas pagadas
-          '#00f7ff7c'  // Color del borde del segmento para cuentas no pagadas
-        ],
-        borderWidth: 2, // Ancho del borde
+        backgroundColor: ['#00fbff', '#00f7ff7c'],
+        borderColor: ['#00fbff', '#00f7ff7c'],
+        borderWidth: 2,
       },
     ],
   };
 
-  // Opciones del gráfico
-  const options = {
+  const optionsDoughnut = {
     responsive: true,
     plugins: {
       legend: {
@@ -114,33 +105,86 @@ const GastosPagados = () => {
     },
   };
 
+  const dataBar = {
+    labels: ['Total Pagado'],
+    datasets: [
+      {
+        label: 'Dinero Gastado',
+        data: [totalPagado],
+        backgroundColor: '#00fbff',
+        borderColor: '#00f7ff',
+        borderWidth: 2,
+        borderRadius: 10,
+      },
+    ],
+  };
+
+  const optionsBar = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        callbacks: {
+          label: function(tooltipItem) {
+            return `Total: ${tooltipItem.raw}`;
+          }
+        }
+      }
+    },
+    scales: {
+      x: {
+        display: false,
+      },
+      y: {
+        beginAtZero: true,
+        ticks: {
+          callback: function(value) {
+            return `${value} ${value > 1000 ? 'k' : ''}`;
+          }
+        }
+      }
+    },
+  };
+
   return (
     <div className="pagados">
-      <h2>
-        Gastos Pagados en <span className="mes-corriente">{obtenerMesActual()}</span>
-      </h2>
 
-      {/* Sección de Totales Pagados */}
-      <div className="totales-pagados">
-        <h3>
-          TOTALES PAGADOS AL DÍA ({obtenerFechaActual()}): <span>${totalPagado.toFixed(2)}</span>
-        </h3>
-
-        {/* Gráfico circular */}
-        <div className="grafico-circular">
-          <h3>Distribución de Cuentas Pagadas</h3>
-          <Doughnut data={data} options={options} />
+      <div className="totales-pagados-grid">
+        <div className="totales-pagados-info">
+        
+          <div className="grafico-barra">
+            <Bar data={dataBar} options={optionsBar} />
+          </div>
         </div>
 
-        <div className="progreso-cuentas">
-          <span>{cuentasPagadas.length} de {cuentasTotales} cuentas pagadas</span>
-          <div className="barra-progreso">
-            <div className="relleno-progreso" style={{ width: `${porcentajePagadas}%` }}></div>
+        <div className="totales-pagados-info">
+          <div className="progreso-cuentas">
+
+          <h2>
+        Gastos Pagados en <span className="mes-corriente">{obtenerMesActual()}</span>
+      </h2>
+      <hr />
+            <span>{cuentasPagadas.length} de {cuentasTotales} cuentas pagadas</span>
+            <div className="barra-progreso">
+              <div className="relleno-progreso" style={{ width: `${porcentajePagadas}%` }}></div>
+            </div>
+            <hr />
+            <h3>
+            TOTALES PAGADOS AL DÍA ({obtenerFechaActual()}): <span>${totalPagado.toFixed(2)}</span>
+          </h3>
+        
+   
           </div>
+        </div>
+
+        <div className="grafico-circular">
+          <h3>Distribución de Cuentas Pagadas</h3>
+          <Doughnut data={dataDoughnut} options={optionsDoughnut} />
         </div>
       </div>
 
-      {/* Lista de cuentas pagadas */}
       <div className="lista-cuentas">
         <div className="cuenta-header">
           <span>ID</span>
