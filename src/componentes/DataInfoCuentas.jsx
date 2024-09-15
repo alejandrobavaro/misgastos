@@ -227,9 +227,10 @@ const DataInfoCuentas = () => {
                 </tbody>
               </table>
               <a
-                href={`/path-to-invoice-pdfs/${item["Factura Imagen"]}`}
+                href={`/facturas${item["Factura Imagen"]}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                download={item["Factura Imagen"]}
               >
                 Ver Factura
               </a>

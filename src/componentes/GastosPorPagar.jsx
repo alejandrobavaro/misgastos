@@ -112,10 +112,21 @@ const GastosPorPagar = () => {
     }
   };
 
-  const obtenerMesActual = () => {
+  const obtenerFechaVencimiento = (diaVencimiento) => {
+    const fecha = new Date();
+    const mesActual = (fecha.getMonth() + 1).toString().padStart(2, "0"); // Mes en formato numérico (siempre con 2 dígitos)
+    const anioActual = fecha.getFullYear();
+
+    // Si el campo "Vencimiento" en JSON está vacío o mal formado, por defecto se usa el día actual
+    const dia = diaVencimiento && diaVencimiento.trim() !== "" ? diaVencimiento : "01";
+
+    return `${dia.padStart(2, "0")}/${mesActual}/${anioActual}`;
+  };
+
+  const obtenerMesEnPalabras = () => {
     const fecha = new Date();
     const opciones = { month: "long" };
-    return fecha.toLocaleDateString("es-ES", opciones).toUpperCase();
+    return fecha.toLocaleDateString("es-ES", opciones).toUpperCase(); // Mes en palabras
   };
 
   return (
@@ -123,7 +134,7 @@ const GastosPorPagar = () => {
       <div>
         <h2>
           Gastos Por Pagar en{" "}
-          <span className="mes-corriente">{obtenerMesActual()}</span>{" "}
+          <span className="mes-corriente">{obtenerMesEnPalabras()}</span>{" "}
           <span>
             <button onClick={limpiarLocalStorage}>Limpiar LocalStorage</button>
             <button onClick={descargarJSON}>Descargar JSON</button>
@@ -172,7 +183,7 @@ const GastosPorPagar = () => {
                 />
               )}
             </span>
-            <span>{cuenta.Vencimiento}</span>
+            <span>{obtenerFechaVencimiento(cuenta.Vencimiento)}</span>
             {cuenta.bloqueado ? (
               <>
                 <span className="importe-pagado">
