@@ -46,6 +46,24 @@ const DataInfoCuentas = () => {
 
   const categories = [...new Set(data.map((item) => item[filterField]))];
 
+  // Función para obtener el mes corriente en formato numérico (MM)
+  const getCurrentMonthNumeric = () => {
+    const date = new Date();
+    return (date.getMonth() + 1).toString().padStart(2, "0");
+  };
+
+  // Función para obtener el año corriente (YYYY)
+  const getCurrentYear = () => {
+    return new Date().getFullYear();
+  };
+
+  // Función para obtener el mes corriente en palabras
+  const getCurrentMonthInWords = () => {
+    const date = new Date();
+    const options = { month: "long" };
+    return date.toLocaleDateString("es-ES", options).toUpperCase();
+  };
+
   return (
     <div className="data">
       <div className="search-filter-container">
@@ -180,13 +198,13 @@ const DataInfoCuentas = () => {
                     <td>
                       <strong>Vencimiento:</strong>
                     </td>
-                    <td>{item.Vencimiento}</td>
+                    <td>{`${item.Vencimiento}/${getCurrentMonthNumeric()}/${getCurrentYear()}`}</td>
                   </tr>
                   <tr>
                     <td>
                       <strong>Consumo Mes:</strong>
                     </td>
-                    <td>{item["Consumo Mes"]}</td>
+                    <td>{getCurrentMonthInWords()}</td>
                   </tr>
                   <tr>
                     <td>
