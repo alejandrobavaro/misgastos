@@ -44,9 +44,11 @@ import ConsultasComprobantes from "./componentes/ConsultasComprobantes";
 import ConsultasFacturas from "./componentes/ConsultasFacturas";
 //-----------BANCO--------------//
 import BancoSaldos from "./componentes/BancoSaldos";
-import BancoCobranza from "./componentes/BancoCobranza";
 //-----------RENTAS--------------//
 import RentasAlquileres from "./componentes/RentasAlquileres";
+import RentasCobranza from "./componentes/RentasCobranza";
+import RentasInfoExtra from "./componentes/RentasInfoExtra";
+
 //-----------DATA------------//
 import DataInfoCuentas from "./componentes/DataInfoCuentas";
 //-----------LOGIN-LOGOUT-REGISTRO-----------------//
@@ -95,7 +97,7 @@ function App() {
                   element={<ProtectedRoute element={<MainContent />} />}
                 />
 
-                 <Route
+                <Route
                   path="/calendario-pagos"
                   element={<ProtectedRoute element={<MainCalendarioPagos />} />}
                 />
@@ -117,10 +119,7 @@ function App() {
                   path="/totales"
                   element={<ProtectedRoute element={<GastosTotales />} />}
                 />
-                <Route
-                  path="/cobranza"
-                  element={<ProtectedRoute element={<BancoCobranza />} />}
-                />
+
                 <Route
                   path="/data"
                   element={<ProtectedRoute element={<DataInfoCuentas />} />}
@@ -173,6 +172,17 @@ function App() {
                   path="/alquileres"
                   element={<ProtectedRoute element={<RentasAlquileres />} />}
                 />
+
+                <Route
+                  path="/rentas-cobranza"
+                  element={<ProtectedRoute element={<RentasCobranza />} />}
+                />
+
+                <Route
+                  path="/rentas-info-extra"
+                  element={<ProtectedRoute element={<RentasInfoExtra />} />}
+                />
+
                 <Route
                   path="/MainTareasEnProceso"
                   element={<ProtectedRoute element={<MainTareasEnProceso />} />}

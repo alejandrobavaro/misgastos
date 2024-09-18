@@ -116,7 +116,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "/facturas/5-Factura-NIJOCALI-AFIP-CargasSociales-Empleados.pdf",
     "Factura Digital Recibida": " ",
-    "Factura Digital al mail": " ",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
     "Información Extra": "Aportes y Contribuciones de los Empleados"
   },
 
@@ -269,7 +269,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "/facturas/Factura-Ampa-AFIP-CargasSociales-Septiembre.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": " ",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
     "Información Extra": "Aportes y Contribuciones de los Empleados"
   },
 
@@ -2642,11 +2642,18 @@
     "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
+
+
+
+
+
+
+
   {
     "id": 108,
     "Categoria": "Propiedades",
     "Tipo": "Departamento",
-    "Nombre": "DTO G4 3A",
+    "Nombre": "DPTO G4 3A",
     "Servicio": "Electricidad",
     "Empresa": "EDEA",
     "Impuesto": "",
@@ -2670,7 +2677,7 @@
     "id": 109,
     "Categoria": "Propiedades",
     "Tipo": "Departamento",
-    "Nombre": "DTO G4 3A",
+    "Nombre": "DPTO G4 3A",
     "Servicio": "Gas",
     "Empresa": "ADM SOLI",
     "Impuesto": "",
@@ -2694,7 +2701,7 @@
     "id": 110,
     "Categoria": "Propiedades",
     "Tipo": "Departamento",
-    "Nombre": "DTO G4 3A",
+    "Nombre": "DPTO G4 3A",
     "Servicio": "Expensas",
     "Empresa": "ADM SOLI",
     "Impuesto": "",
@@ -2718,7 +2725,7 @@
     "id": 111,
     "Categoria": "Propiedades",
     "Tipo": "Departamento",
-    "Nombre": "DTO G4 3A",
+    "Nombre": "DPTO G4 3A",
     "Servicio": "Agua",
     "Empresa": "OSSE",
     "Impuesto": "",
@@ -2742,7 +2749,7 @@
     "id": 112,
     "Categoria": "Propiedades",
     "Tipo": "Departamento",
-    "Nombre": "DTO G4 3A",
+    "Nombre": "DPTO G4 3A",
     "Servicio": "ARBA Inmobiliario",
     "Empresa": "ARBA INMOB",
     "Impuesto": "",
@@ -2766,7 +2773,7 @@
     "id": 113,
     "Categoria": "Propiedades",
     "Tipo": "Departamento",
-    "Nombre": "DTO G4 3A",
+    "Nombre": "DPTO G4 3A",
     "Servicio": "ARM",
     "Empresa": "ARM",
     "Impuesto": "",
@@ -2951,7 +2958,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-DptoE8-Electricidad.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "eduardo@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -2975,7 +2982,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-DptoE8-Gas.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "eduardo@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -2999,7 +3006,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-DptoE8-Expensas.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "eduardo@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3023,7 +3030,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-EiffelVIII-Agua.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "eduardo@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3047,7 +3054,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-Guemes2215-ARBA Inmobiliario.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "eduardo@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3071,7 +3078,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-Guemes2215-ARM.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "eduardo@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3095,7 +3102,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-DptoEiffelXI-Electricidad.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "eiffelxi@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3119,7 +3126,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-DptoEiffelXI-Gas.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "eiffelxi@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3143,7 +3150,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-Colon2180-Expensas.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "colon2180@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3167,7 +3174,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-LiviaOzzano-Agua.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "liviaozzano@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3191,7 +3198,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-ALQUILADO-ARBA Inmobiliario.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "alquilado@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3215,7 +3222,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-ALQUILADO-ARM.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "alquilado@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3239,7 +3246,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-DptoExxi-Electricidad.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "elina@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3263,7 +3270,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-DptoExxi-Gas.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "elina@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3287,7 +3294,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-Colon2628-Expensas.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "colon2628@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3311,7 +3318,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-ElinaCalvoParra-Agua.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "elina@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3335,7 +3342,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-Dpto-ARBA Inmobiliario.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "dpto@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3359,7 +3366,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-Dpto-ARM.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "mellardo@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3383,7 +3390,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-DptoNijocali-Electricidad.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "lina@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3407,7 +3414,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-DptoNijocali-Gas.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "lina@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3431,7 +3438,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-Colon2535-Expensas.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "colon2535@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3455,7 +3462,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-DNI93158871-Agua.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "lina@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3479,7 +3486,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-LinaNapolitano-ARBA Inmobiliario.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "lina@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3503,7 +3510,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-Dpto-ARM.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "lina@admbavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3575,7 +3582,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-Torre3-Expensas.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "bavaro@adm.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3719,7 +3726,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-Torre2-Expensas.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "adm@bavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -3863,7 +3870,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-Torre2-Expensas.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "adm@bavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -4007,7 +4014,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-Coch17-Expensas.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "adm@bavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -4103,7 +4110,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-Cochera17-Expensas.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "adm@bavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -4223,7 +4230,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-Torre4-Expensas.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "adm@bavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {
@@ -4319,7 +4326,7 @@
     "Numero de Factura": "",
     "Factura Imagen": "Factura-Cocheras2-Expensas.pdf",
     "Factura Digital Recibida": "",
-    "Factura Digital al mail": "adm@bavaro.com.ar",
+    "Factura Digital al mail": "alejandro@admbavaro.com.ar",
    "Información Extra": "Servicio Habilitado"
   },
   {

@@ -1,28 +1,158 @@
 .alquileres {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 10px;
+  border-bottom: 2px solid #00f7ff2c;
+  border-radius: 30px;
+  background-color: #121212; // Fondo oscuro
+  color: #e0e0e0; // Texto claro
+
+  h2 {
+    font-size: medium;
+    color: #00fbff;
+    margin-bottom: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: large;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .totales {
+    margin-bottom: 20px;
     padding: 10px;
-    border-bottom: 2px solid #00f7ff2c;
-    border-radius: 30px;
-    
-    h2 {
-      font-size: medium;
-      color: #00fbff; // Color del texto
-      margin-bottom: 20px; // Espacio debajo del h2
-    }
-    
-    form {
+    background-color: #1e1e1e;
+    border-radius: 5px;
+    border: 1px solid #00f7ff;
+
+    .total-item {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
+      padding: 5px;
+      font-size: 14px;
+
+      span {
+        color: #c9f7ff;
+      }
+    }
+  }
+
+  .lista-propiedades {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .propiedad-header,
+    .propiedad-item {
+      display: grid;
+      grid-template-columns: 60px repeat(7, 1fr);
+      gap: 2px;
       align-items: center;
-      width: 100%;
+      background-color: #1e1e1e31;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #00f7ff;
     }
-    
-    h1 {
-      font-size: large;
-      color: #ffffff;
-      text-align: center;
-      margin-top: 0;
+
+    .propiedad-header {
+      background-color: #040c3a;
+      color: #cffffd;
+      text-transform: uppercase;
+      padding: 10px;
+      font-size: 12px;
+      border: 1px solid #00ff6267;
     }
+
+    .propiedad-item {
+      background-color: #1e1e1e;
+      color: #fff;
+      font-size: 12px;
+
+      span {
+        white-space: nowrap;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .input-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+          color: #c9f7ff;
+          font-size: 16px;
+          margin-right: 5px;
+        }
+
+        input {
+          width: 80px;
+          padding: 5px;
+          font-size: 12px;
+          text-align: right;
+          background-color: #333;
+          color: #fff;
+          border: 1px solid #00fbff;
+          border-radius: 5px;
+        }
+      }
+
+      select {
+        width: 100px;
+        padding: 5px;
+        font-size: 12px;
+        background-color: #333;
+        color: #fff;
+        border: 1px solid #00fbff;
+        border-radius: 5px;
+        cursor: pointer;
+
+        option {
+          background-color: #333;
+          color: #fff;
+        }
+      }
+
+      button {
+        background-color: #00fff2;
+        border: none;
+        padding: 5px;
+        cursor: pointer;
+        color: #000;
+        font-weight: bold;
+        font-size: 12px;
+        transition: background-color 0.3s;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: #00fbff;
+        }
+
+        &:disabled {
+          background-color: #888;
+          cursor: not-allowed;
+        }
+      }
+
+      &.bloqueado {
+        background-color: #333;
+        pointer-events: none;
+        opacity: 0.7;
+
+        span {
+          color: #888;
+        }
+      }
+    }
+  }
 }

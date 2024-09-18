@@ -104,17 +104,7 @@ const Sidebar = () => {
           </li>
         </ul>
 
-        <h2>
-          <FiDollarSign size={20} color="gray" /> Banco
-        </h2>
-        <ul>
-          <li>
-            <Link to="/banco-saldos">Saldos</Link>
-          </li>
-          <li>
-            <Link to="/cobranza">Cobranza</Link>
-          </li>
-        </ul>
+       
 
         <h2>
           <FiBriefcase size={20} color="gray" /> Rentas
@@ -123,7 +113,24 @@ const Sidebar = () => {
           <li>
             <Link to="/alquileres">Alquileres</Link>
           </li>
+          <li>
+            <Link to="/rentas-cobranza">Cobranza</Link>
+          </li>
+
+          <li>
+            <Link to="/rentas-info-extra">Info Extra</Link>
+          </li>
+       
         </ul>
+
+        <h2>
+          <FiDollarSign size={20} color="gray" /> Banco
+        </h2>
+        <ul>
+          <li>
+            <Link to="/banco-saldos">Saldos</Link>
+          </li>
+                </ul>
 
         <h2>
           <FiLogIn size={20} color="gray" /> Tu Sesión

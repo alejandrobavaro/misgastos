@@ -1,29 +1,126 @@
 .facturas {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+  padding: 15px;
+  background-color: #121212;
+  color: #e0e0e0;
+  border-radius: 10px;
+
+  h2 {
+    color: #e0e0e0;
+    font-size: 22px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .filtro-input {
+    width: 100%;
     padding: 10px;
-    border-bottom: 2px solid #00f7ff2c;
-    border-radius: 30px;
-    
-    h2 {
-      font-size: medium;
-      color: #00fbff; // Color del texto
-      margin-bottom: 20px; // Espacio debajo del h2
-    }
-    
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-    }
-    
-    h1 {
-      font-size: large;
-      color: #ffffff;
-      text-align: center;
-      margin-top: 0;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+  }
+
+  .ordenar-btn {
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      background-color: #0097a7;
     }
   }
-  
+
+  .lista-facturas {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .factura-header,
+    .factura-item {
+      display: grid;
+      grid-template-columns: 60px repeat(6, 1fr) 80px;
+      gap: 8px;
+      align-items: center;
+      background-color: #1e1e1e;
+      padding: 8px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      border: 1px solid #333;
+    }
+
+    .factura-header {
+      background-color: #333;
+      color: #e0e0e0;
+      font-size: 12px;
+      font-weight: bold;
+      border-bottom: 2px solid #00bcd4;
+    }
+
+    .factura-item {
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+      font-size: 11px;
+
+      &:nth-child(odd) {
+        background-color: #2c2c2c;
+      }
+
+      &:hover {
+        background-color: #2c2c2c;
+      }
+
+      span {
+        text-align: center;
+        padding: 4px;
+      }
+
+      .id-col {
+        min-width: 60px;
+      }
+
+      .pagada {
+        color: #00ff00;
+      }
+
+      .pendiente {
+        color: #ff0000;
+      }
+
+      .descargar-btn {
+        padding: 5px 10px;
+        background-color: #00bcd4;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: #0097a7;
+        }
+      }
+    }
+  }
+
+  .paginacion {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    .pagina-btn {
+      padding: 10px;
+      margin: 0 5px;
+      background-color: #00bcd4;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #0097a7;
+      }
+    }
+  }
+}

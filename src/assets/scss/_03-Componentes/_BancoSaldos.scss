@@ -1,29 +1,82 @@
-.saldos-y-disponibles {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 10px;
-    border-bottom: 2px solid #00f7ff2c;
-    border-radius: 30px;
+.banco-saldos {
+  background-color: #282c34;
+  padding: 20px;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   
-    h2 {
-      font-size: medium;
-      color: #00fbff; // Color del texto
-      padding: 20px; // Ajustado para un espaciado adecuado
-    }
-  
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-    }
-  
-    h1 {
-      font-size: large;
-      color: #ffffff;
-      text-align: center;
-      margin-top: 0; // No es necesario poner "px" si es 0
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+  }
+
+  .mensaje {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 15px;
+  }
+
+  .saldo {
+    text-align: center;
+    font-size: 1.25em;
+    margin-bottom: 15px;
+    strong {
+      color: #00e676;
     }
   }
-  
+
+  .importar-pdf {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    input[type="file"] {
+      margin-left: 10px;
+      padding: 5px;
+    }
+  }
+
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    select {
+      padding: 10px;
+      border: 1px solid #666;
+      background-color: #333;
+      color: #fff;
+      border-radius: 5px;
+    }
+  }
+
+  .charts {
+    margin: 20px 0;
+    canvas {
+      width: 100%;
+      max-height: 400px;
+    }
+  }
+
+  .saldos-list {
+    margin-top: 20px;
+
+    h3 {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 1.3em;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        margin: 10px 0;
+        text-align: center;
+        font-size: 1.1em;
+        strong {
+          color: #90caf9;
+        }
+      }
+    }
+  }
+}
