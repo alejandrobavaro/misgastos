@@ -52,7 +52,7 @@
       box-shadow: 0 2px 4px rgb(0, 238, 255);
       display: flex;
       flex-direction: column;
-      font-size: 10px;
+      font-size: 12px;
       width: 100%;
   
       h3 {
@@ -64,7 +64,7 @@
       table {
         width: 100%;
         border-collapse: collapse;
-        font-size: 8px;
+        font-size: 12px;
   
         td {
           padding: 2px 4px;
@@ -73,7 +73,7 @@
         }
   
         td:first-child {
-          font-weight: bold;
+      color: #ffffff;
         }
       }
   
@@ -86,7 +86,7 @@
          .carousel {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
 
       button {
         background-color: transparent;
@@ -103,8 +103,8 @@
       }
 
       .thumbnail {
-        width: 150px;
-        height: 150px;
+        width: 300px;
+        height: 300px;
         object-fit: cover;
         border-radius: 5px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
