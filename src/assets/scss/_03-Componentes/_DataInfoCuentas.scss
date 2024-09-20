@@ -4,44 +4,37 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%; // Ajustado para tomar el 100% del ancho disponible
+  width: 100%;
   background-color: transparent;
   padding: 10px;
   border-radius: 20px;
   box-shadow: 0 0px 40px rgba(255, 255, 255, 0.658);
 
-  h2 {
-    font-size: 14px;
-    color: #00fbff;
-    margin-bottom: 10px;
-  }
-
   .data-container {
     display: grid;
-    grid-template-columns: 1fr; // Ajuste inicial para apilar columnas
+    grid-template-columns: 1fr;
     gap: 10px;
-    width: 100%; // Se ajusta al 100% del contenedor padre
+    width: 100%;
     max-width: 1200px;
 
-    // Para pantallas más grandes, se mantiene la distribución original
     @media (min-width: 769px) {
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(
+        2,
+        1fr
+      ); // Mostrar dos tarjetas por fila en pantallas grandes
     }
   }
 
   .data-item {
-    // background-color: #333;
-    color: #fff;
     border-radius: 5px;
     padding: 5px;
     box-shadow: 0 2px 4px rgb(0, 238, 255);
     display: flex;
     flex-direction: column;
-    font-size: 10px;
     width: 100%; // Se asegura que las tablas ocupen todo el ancho disponible
 
     h3 {
-      font-size: small;
+      font-size: large;
       color: #00fbff;
       margin-bottom: 5px;
     }
@@ -49,7 +42,7 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 8px;
+      font-size: small;
       overflow-x: auto; // Permite scroll si la tabla es muy ancha
 
       td {
@@ -57,16 +50,11 @@
         border: 1px solid #1c4747;
         color: #fff;
       }
-
-      td:first-child {
-        font-weight: bold;
-      }
     }
 
     a {
       color: #00fbff;
       text-decoration: none;
-      font-weight: bold;
       display: block;
       margin-top: 5px;
       border: 1px solid #00fbff;
@@ -76,8 +64,8 @@
       transition: background-color 0.3s, color 0.3s;
 
       &:hover {
-        background-color: #00fbff;
-        color: #333;
+        background-color: #138b8d4b;
+        color: #ffffff;
       }
     }
   }
@@ -124,7 +112,7 @@
       background-color: #ffffff;
       border-radius: 5px;
       padding: 5px 10px;
-      font-size: x-small;
+      font-size: small;
       margin-left: 10px;
       transition: border-color 0.3s;
 
@@ -180,19 +168,17 @@
 
   button {
     background-color: #246e6e62;
-    
+
     border: 1px solid transparent;
     border-radius: 8px;
     padding: 3px 5px;
-    font-size: small;
+    font-size: medium;
     cursor: pointer;
     color: white;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
     margin: 2px; // Añadir margen para evitar desbordamiento
-
-    
 
     &:hover,
     &.selected {
@@ -214,8 +200,3 @@
     grid-template-columns: 1fr; // Una tarjeta por fila en móviles
   }
 }
-
-
-
-
-

@@ -8,6 +8,7 @@ const RentasInfoExtra = () => {
 
   // Almacena el índice de la foto actual para cada item
   const [currentImageIndex, setCurrentImageIndex] = useState({});
+  const [previewPdf, setPreviewPdf] = useState(null); // Estado para controlar el PDF que se está previsualizando
 
   useEffect(() => {
     fetch("/inforentas.json")
@@ -52,6 +53,16 @@ const RentasInfoExtra = () => {
       ...prevState,
       [id]: (prevState[id] - 1 + totalImages) % totalImages, // Retrocede al índice anterior
     }));
+  };
+
+  // Función para mostrar la previsualización del PDF
+  const handlePreviewPdf = (pdfUrl) => {
+    setPreviewPdf(pdfUrl); // Establece el PDF seleccionado para previsualización
+  };
+
+  // Función para cerrar la previsualización del PDF
+  const closePdfPreview = () => {
+    setPreviewPdf(null); // Oculta la previsualización del PDF
   };
 
   return (
@@ -172,16 +183,35 @@ const RentasInfoExtra = () => {
                   </div>
                 )}
               </div>
-              <a
-                href={`/contratos-alquiler${item["Contrato Imagen"]}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                download={item["Contrato Imagen"]}
-              >
-                Ver Contrato
-              </a>
+
+              {/* Ver Contrato - Previsualizar PDF */}
+              <div className="pdf-options">
+                <button onClick={() => handlePreviewPdf(item["Contrato Imagen"])}>
+                  Previsualizar Contrato
+                </button>
+                <a
+                  href={`/contratos-alquiler${item["Contrato Imagen"]}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download={item["Contrato Imagen"]}
+                >
+                  Descargar Contrato
+                </a>
+              </div>
             </div>
           ))}
+        </div>
+      )}
+
+      {/* Mostrar previsualización del PDF si hay uno seleccionado */}
+      {previewPdf && (
+        <div className="pdf-preview">
+          <iframe
+            src={`/contratos-alquiler${previewPdf}`}
+            title="Previsualización del contrato"
+            className="pdf-viewer"
+          />
+          <button onClick={closePdfPreview}>Cerrar Previsualización</button>
         </div>
       )}
     </div>
