@@ -186,18 +186,20 @@ const RentasInfoExtra = () => {
 
               {/* Ver Contrato - Previsualizar PDF */}
               <div className="pdf-options">
-                <button onClick={() => handlePreviewPdf(item["Contrato Imagen"])}>
-                  Previsualizar Contrato
-                </button>
-                <a
-                  href={`/contratos-alquiler${item["Contrato Imagen"]}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  download={item["Contrato Imagen"]}
-                >
-                  Descargar Contrato
-                </a>
-              </div>
+  <button onClick={() => handlePreviewPdf(item["Contrato Imagen"])}>
+    Previsualizar Contrato
+  </button>
+  <a
+    href={`/contratos-alquiler${item["Contrato Imagen"]}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    download={item["Contrato Imagen"]}
+  >
+    Descargar Contrato
+  </a>
+</div>
+
+
             </div>
           ))}
         </div>
@@ -211,7 +213,10 @@ const RentasInfoExtra = () => {
             title="Previsualización del contrato"
             className="pdf-viewer"
           />
-          <button onClick={closePdfPreview}>Cerrar Previsualización</button>
+         <button onClick={closePdfPreview}>
+  &times;
+</button>
+
         </div>
       )}
     </div>
