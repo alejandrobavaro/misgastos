@@ -27,24 +27,22 @@
       grid-template-columns: 60px repeat(7, 1fr);
       gap: 2px;
       align-items: center;
-      background-color: #1e1e1e31;
+      background-color: transparent;
       padding: 2px;
       border-radius: 5px;
-      border: 1px solid #00f7ff;
-    }
+         }
 
     .cuenta-header {
-      background-color: #040c3a;
+      background-color: #040c3a67;
       color: #cffffd;
       text-transform: uppercase;
       padding: 15px;
       font-size: 12px;
-      border: 1px solid #00ff6267;
-      grid-template-columns: 60px repeat(7, 1fr);
+          grid-template-columns: 60px repeat(7, 1fr);
     }
 
     .cuenta-item {
-      background-color: #1e1e1e;
+      background-color: #064d5291;
       color: #fff;
       font-size: 12px;
 
@@ -84,29 +82,27 @@
 
         input {
           width: 60px;
-          padding: 5px;
+          padding: 2px;
           font-size: 12px;
           text-align: right;
           background-color: #ffffff;
           color: #000000;
-          border: 1px solid #00fbff;
-          border-radius: 5px;
+            border-radius: 5px;
         }
       }
 
       button {
-        background-color: #00fff2;
+        background-color: #05063879;
         border: none;
         padding: 5px;
         cursor: pointer;
-        color: #000;
-        font-weight: bold;
-        font-size: 12px;
+        color: #ffffff;
+                font-size: 12px;
         transition: background-color 0.3s;
         border-radius: 5px;
 
         &:hover {
-          background-color: #00fbff;
+          background-color: #00fbff54;
         }
       }
 

@@ -142,7 +142,7 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
                 <div className="date-text">
                   <div className="time-row">
                     <span>
-                      Son las{" "}
+                      Son las{""}
                       <span className="current-time">
                         {currentTime.toLocaleTimeString()}
                       </span>
@@ -150,7 +150,7 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
                   </div>
                   <div className="weekday-row">
                     <span>
-                      {" "}
+                      {""}
                       del día <span className="dia">{weekday},</span>
                     </span>
                   </div>
@@ -164,7 +164,7 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
                 {state.isAuthenticated ? (
                   <div className="auth-welcome-container">
                     <div className="auth-welcome">
-                      <span>Hola,</span>{" "}
+                      <span>Hola,</span>{""}
                       <span>{state.user.email.split("@")[0]}</span>
                     </div>
                     <Link

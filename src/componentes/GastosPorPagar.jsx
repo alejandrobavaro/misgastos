@@ -34,25 +34,17 @@ const GastosPorPagar = () => {
   const marcarComoPagada = (id) => {
     const importePagado = document.getElementById(`importe-${id}`).value;
     const numeroFactura = facturaInput[id] || "";
-
+  
     if (!importePagado || isNaN(importePagado) || importePagado.trim() === "") {
       Swal.fire({
         icon: "warning",
-        title:
-          "Debe ingresar el importe pagado en números antes de marcar la Factura como pagada",
+        title: "Debe ingresar el importe pagado en números antes de marcar la Factura como pagada",
       });
       return;
     }
-
-    if (!numeroFactura.trim()) {
-      Swal.fire({
-        icon: "warning",
-        title:
-          "Debe ingresar el número de factura antes de marcarla como pagada",
-      });
-      return;
-    }
-
+  
+    // No se valida el número de factura, es opcional.
+    
     const cuentasLocalStorage = localStorage.getItem("cuentas");
     if (cuentasLocalStorage) {
       const cuentas = JSON.parse(cuentasLocalStorage);
@@ -63,18 +55,18 @@ const GastosPorPagar = () => {
             FacturaPagada: "Si",
             ImportePagado: importePagado,
             FechaPagado: new Date().toLocaleDateString(),
-            NumeroFactura: numeroFactura,
+            NumeroFactura: numeroFactura, // Se guarda si fue ingresado.
             bloqueado: true,
           };
         }
         return cuenta;
       });
-
+  
       localStorage.setItem("cuentas", JSON.stringify(actualizadas));
       setCuentasPorPagar(
         actualizadas.filter((cuenta) => cuenta.FacturaPagada !== "Si")
       );
-
+  
       const totales = actualizadas.reduce((acc, cuenta) => {
         if (cuenta.FacturaPagada === "Si") {
           return acc + parseFloat(cuenta.ImportePagado) || 0;
@@ -84,6 +76,7 @@ const GastosPorPagar = () => {
       localStorage.setItem("totales", JSON.stringify(totales));
     }
   };
+  
 
   const limpiarLocalStorage = () => {
     localStorage.removeItem("cuentas");
@@ -133,8 +126,8 @@ const GastosPorPagar = () => {
     <div className="por-pagar">
       <div>
         <h2>
-          Gastos Por Pagar en{" "}
-          <span className="mes-corriente">{obtenerMesEnPalabras()}</span>{" "}
+          Gastos Por Pagar en{""}
+          <span className="mes-corriente">{obtenerMesEnPalabras()}</span>{""}
           <span>
             <button onClick={limpiarLocalStorage}>Limpiar LocalStorage</button>
             <button onClick={descargarJSON}>Descargar JSON</button>

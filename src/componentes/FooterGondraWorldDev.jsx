@@ -15,12 +15,12 @@ function FooterGondraWorldDev() {
             rel="noopener noreferrer"
           >
             <h3 class="texto-principal">
-              <i class="bi bi-balloon-heart"></i> Inverti en Vos{" "}
+              <i class="bi bi-balloon-heart"></i> Inverti en Vos{""}
               <i class="bi bi-balloon-heart"></i>
               <strong>
                 <span class="texto-secundario">
-                  {" "}
-                  <i class="bi bi-check-circle"></i> Inverti en tus Proyectos{" "}
+                  {""}
+                  <i class="bi bi-check-circle"></i> Inverti en tus Proyectos{""}
                   <i class="bi bi-check-circle"></i>
                 </span>
               </strong>

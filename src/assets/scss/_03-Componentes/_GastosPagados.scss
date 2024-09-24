@@ -108,24 +108,21 @@
       grid-template-columns: 60px repeat(7, 1fr);
       gap: 2px;
       align-items: center;
-      background-color: #1e1e1e31;
       padding: 2px;
       border-radius: 5px;
-      border: 1px solid #00f7ff;
     }
 
     .cuenta-header {
-      background-color: #040c3a;
+     background-color: #040c3a67;
       color: #cffffd;
       text-transform: uppercase;
       padding: 15px;
       font-size: 12px;
-      border: 1px solid #00ff6267;
-      grid-template-columns: 60px repeat(7, 1fr);
+          grid-template-columns: 60px repeat(7, 1fr);
     }
 
     .cuenta-item {
-      background-color: #1e1e1e;
+      background-color: #064d5291;
       color: #fff;
       font-size: 12px;
 
@@ -154,16 +151,16 @@
 }
 
 button {
-  background-color: #00f7ff; // Color del botón
-  color: #032027; // Color del texto del botón
+  background-color: #05063879;
   border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
+  padding: 5px;
   cursor: pointer;
-  font-size: 12px;
-  margin: 0 2px;
+  color: #ffffff;
+          font-size: 12px;
+  transition: background-color 0.3s;
+  border-radius: 5px;
 
   &:hover {
-    background-color: #00c7cc; // Color del botón al pasar el ratón
+    background-color: #00fbff54;
   }
 }

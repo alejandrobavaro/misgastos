@@ -60,7 +60,7 @@ const SesionLogin = () => {
                 </p>
                 <hr />
                 <p>
-                  Para ingresar como Invitado,{" "}
+                  Para ingresar como Invitado,{""}
                   <a href="/submit">Ingresa aquí.</a>
                 </p>
               </div>

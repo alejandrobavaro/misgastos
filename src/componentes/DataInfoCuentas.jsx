@@ -78,7 +78,7 @@ const DataInfoCuentas = () => {
 
             <div className="filter-field-select">
               <label htmlFor="filterField">
-                {" "}
+                {""}
                 <h6>Filtrar por:</h6>
               </label>
               <select
