@@ -7,7 +7,7 @@
   background-color: transparent;
   padding: 10px;
   border-radius: 20px;
-  box-shadow: 0 0px 40px rgba(255, 255, 255, 0.658);
+  box-shadow: 0 0px 20px rgba(255, 255, 255, 0.1);
 
   .filter-buttons {
     display: flex;
@@ -29,6 +29,7 @@
       &:hover {
         background-color: #00fbff;
         color: #333;
+        transform: scale(1.05);
       }
     }
   }
@@ -49,13 +50,14 @@
     color: #fff;
     border-radius: 5px;
     padding: 10px;
-    box-shadow: 0 2px 4px rgb(0, 238, 255);
+    box-shadow: 0 2px 4px rgba(0, 255, 255, 0.1);
     display: flex;
     flex-direction: column;
     font-size: 12px;
     width: 100%;
     background-color: transparent;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
+
 
 
     h3 {
@@ -81,7 +83,7 @@
 
       td:first-child {
         color: #00ffdd;
-        font-weight:100;
+        font-weight: 100;
       }
     }
 
@@ -99,7 +101,7 @@
         button {
           background-color: transparent;
           border: none;
-          font-size: 20px;
+          font-size: 25px;
           color: white;
           cursor: pointer;
           padding: 0 5px;
@@ -111,20 +113,15 @@
         }
 
         .thumbnail {
-          width: 400px;
-          height: 300px;
+          width: 520px;
+          height: 350px;
           object-fit: cover;
           border-radius: 5px;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
           transition: transform 0.3s ease;
-
-          &:hover {
-            transform: scale(1.05);
-          }
         }
       }
     }
-      }
+  }
 
   .pdf-preview {
     position: fixed;
@@ -148,115 +145,49 @@
     }
 
     button {
-      background-color:transparent;
-  color: #ffffff;
-  margin-bottom: auto;
-  border: none;
-    padding: 20px;
-  cursor: pointer;
-  font-size: 70px; /* Ajusta el tamaño del ícono */
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &:hover {
-
-    color: #00e1ff;
-      }
-    }
-  }
-}
-
-.pdf-options {
-  display: flex;
-  justify-content: center; /* Centramos los botones */
-  align-items: center;
-  gap: 10px; /* Espacio entre los botones */
-  margin-top: 10px;
-
-  button,
-  a {
-    background-color: #246e6e62; /* Fondo uniforme */
-    border: 1px solid #00fbff;
-    border-radius: 8px;
-    padding: 10px 20px; /* Tamaño consistente para ambos */
-    color: white;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    font-size: 14px;
-    min-width: 150px; /* Mismo ancho mínimo */
-    transition: all 0.3s ease;
-
-    &:hover {
-      background-color: #0b6f70;
+      background-color: transparent;
       color: #ffffff;
-    }
-  }
-
-  a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-
-
-//modal
-
-.image-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-
-  .modal-content {
-    position: relative;
-    display: flex;
-    align-items: center;
-
-    .large-image {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 8px;
-    }
-
-    .close-button,
-    .prev-button,
-    .next-button {
-      background: transparent;
+      margin-bottom: auto;
       border: none;
-      color: white;
-      font-size: 30px;
+      padding: 20px;
       cursor: pointer;
-      padding: 10px;
+      font-size: 70px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       &:hover {
-        color: #00fbff;
+        color: #00e1ff;
       }
-    }
-
-    .prev-button,
-    .next-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .prev-button {
-      left: 10px;
-    }
-
-    .next-button {
-      right: 10px;
     }
   }
 }
+
+
+
+.share-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+
+  button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #00e1ff;
+    }
+
+    h6 {
+      margin-top: 5px;
+      font-size: large;
+      color: #555;
+
+      
+    }
+  }  }
