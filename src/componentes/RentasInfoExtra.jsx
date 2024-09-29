@@ -57,13 +57,13 @@ const RentasInfoExtra = () => {
     window.open(whatsappUrl, "_blank");
   };
 
-  const shareOnTwitter = (item) => {
-    const message = `Mirá esta propiedad: ${item.Nombre}.\nDescripción: ${item.Tipo}\nValor alquiler: ${item.Alquilado}`;
-    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-      message
-    )}`;
-    window.open(twitterUrl, "_blank");
-  };
+  // const shareOnTwitter = (item) => {
+  //   const message = `Mirá esta propiedad: ${item.Nombre}.\nDescripción: ${item.Tipo}\nValor alquiler: ${item.Alquilado}`;
+  //   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+  //     message
+  //   )}`;
+  //   window.open(twitterUrl, "_blank");
+  // };
 
   const shareOnFacebook = (item) => {
     const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
@@ -80,15 +80,7 @@ const RentasInfoExtra = () => {
     window.open(instagramUrl, "_blank");
   };
 
-  const shareOnLinkedIn = (item) => {
-    const message = `Mirá esta propiedad: ${item.Nombre}.`;
-    const linkedInUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
-      window.location.href
-    )}&title=${encodeURIComponent(item.Nombre)}&summary=${encodeURIComponent(
-      message
-    )}`;
-    window.open(linkedInUrl, "_blank");
-  };
+
 
   const shareOnEmail = (item) => {
     const subject = `Interesado en la propiedad: ${item.Nombre}`;
@@ -282,18 +274,16 @@ const RentasInfoExtra = () => {
                 <button onClick={() => shareOnWhatsApp(item)}>
                   <BsWhatsapp />
                 </button>
-                <button onClick={() => shareOnTwitter(item)}>
+                {/* <button onClick={() => shareOnTwitter(item)}>
                   <BsTwitter />
-                </button>
+                </button> */}
                 <button onClick={() => shareOnFacebook(item)}>
                   <BsFacebook />
                 </button>
                 <button onClick={() => shareOnInstagram(item)}>
                   <BsInstagram />
                 </button>
-                <button onClick={() => shareOnLinkedIn(item)}>
-                  <BsLinkedin />
-                </button>
+                
                 <button onClick={() => shareOnEmail(item)}>
                   <BsEnvelope />
                 </button>
